@@ -1,0 +1,24 @@
+PODS:
+  - CocoaAsyncSocket (7.6.4)
+  - CocoaMQTT (1.2.5):
+    - CocoaAsyncSocket (~> 7.6.3)
+  - SwiftIconFont (6.1.1)
+
+DEPENDENCIES:
+  - CocoaMQTT
+  - SwiftIconFont
+
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+    - CocoaMQTT
+    - SwiftIconFont
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
+  CocoaMQTT: a61490ed3b328011c5d75169a77781983e2bb221
+  SwiftIconFont: 0a772c5ac65a40c9b0675efa37b4928158bd8e43
+
+PODFILE CHECKSUM: a3b073f28656bdcd09387e8cbb6bd6502ddc274f
+
+COCOAPODS: 1.9.3

@@ -1,0 +1,6 @@
+framework module Pods_CarTracker {
+  umbrella header "Pods-CarTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}
