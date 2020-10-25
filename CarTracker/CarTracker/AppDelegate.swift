@@ -12,20 +12,26 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
-        
+        let mqtt = MQTTConnectionManager.shared();
+        mqtt.subscribe()
+        let settings = UIUserNotificationSettings(types: UIUserNotificationType.alert, categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(settings)
+
         return true
     }
     
+    //background
     func applicationDidEnterBackground(_ application: UIApplication) {
 //        RKMQTTConnectionManager.setDelegate(delegate: self)
+        print("applicationDidEnterBackground")
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 //        completionHandler(UIBackgroundFetchResult.newData)
+        print("performFetchWithCompletionHandler")
     }
     // MARK: UISceneSession Lifecycle
 

@@ -17,8 +17,20 @@
 		56D33EBD25399D100026368C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EBC25399D100026368C /* MapViewController.swift */; };
 		56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EBF253AFD1F0026368C /* AppConstant.swift */; };
 		56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */; };
+		56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */; };
+		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
 		B1FA61CDC0D40B7ED636960C /* Pods_CarTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56DE6F9C2545375C006AA5BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56D33E982538A78E0026368C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56D33E9F2538A78E0026368C;
+			remoteInfo = CarTracker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		434CC202B45CA5C46F0B5F7B /* Pods-CarTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.release.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +47,10 @@
 		56D33EBC25399D100026368C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		56D33EBF253AFD1F0026368C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionManager.swift; sourceTree = "<group>"; };
+		56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDelegate.swift; sourceTree = "<group>"; };
+		56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DE6F992545375C006AA5BB /* CarTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTrackerTests.swift; sourceTree = "<group>"; };
+		56DE6F9B2545375C006AA5BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,6 +63,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56DE6F942545375C006AA5BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				56D33EA22538A78E0026368C /* CarTracker */,
+				56DE6F982545375C006AA5BB /* CarTrackerTests */,
 				56D33EA12538A78E0026368C /* Products */,
 				696CAEA67C3651C9C0893D36 /* Pods */,
 				EC371B7DB40BBF7974A9F943 /* Frameworks */,
@@ -64,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				56D33EA02538A78E0026368C /* CarTracker.app */,
+				56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +130,7 @@
 		56DC5B542541DEC000AC3D66 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				56DC5B582543CA2400AC3D66 /* Delegate */,
 				56DC5B552541DEE500AC3D66 /* Manager */,
 			);
 			path = Service;
@@ -116,6 +142,23 @@
 				56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		56DC5B582543CA2400AC3D66 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		56DE6F982545375C006AA5BB /* CarTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				56DE6F992545375C006AA5BB /* CarTrackerTests.swift */,
+				56DE6F9B2545375C006AA5BB /* Info.plist */,
+			);
+			path = CarTrackerTests;
 			sourceTree = "<group>";
 		};
 		696CAEA67C3651C9C0893D36 /* Pods */ = {
@@ -157,6 +200,24 @@
 			productReference = 56D33EA02538A78E0026368C /* CarTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		56DE6F962545375C006AA5BB /* CarTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56DE6FA02545375C006AA5BB /* Build configuration list for PBXNativeTarget "CarTrackerTests" */;
+			buildPhases = (
+				56DE6F932545375C006AA5BB /* Sources */,
+				56DE6F942545375C006AA5BB /* Frameworks */,
+				56DE6F952545375C006AA5BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56DE6F9D2545375C006AA5BB /* PBXTargetDependency */,
+			);
+			name = CarTrackerTests;
+			productName = CarTrackerTests;
+			productReference = 56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -169,6 +230,10 @@
 				TargetAttributes = {
 					56D33E9F2538A78E0026368C = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					56DE6F962545375C006AA5BB = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 56D33E9F2538A78E0026368C;
 					};
 				};
 			};
@@ -186,6 +251,7 @@
 			projectRoot = "";
 			targets = (
 				56D33E9F2538A78E0026368C /* CarTracker */,
+				56DE6F962545375C006AA5BB /* CarTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +264,13 @@
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
 				56D33EAB2538A78E0026368C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56DE6F952545375C006AA5BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,11 +329,28 @@
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
 				56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */,
+				56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */,
 				56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56DE6F932545375C006AA5BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56DE6F9D2545375C006AA5BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56D33E9F2538A78E0026368C /* CarTracker */;
+			targetProxy = 56DE6F9C2545375C006AA5BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		56D33EA92538A78E0026368C /* Main.storyboard */ = {
@@ -332,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -386,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -404,6 +494,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JCZ22M9H;
 				INFOPLIST_FILE = CarTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JCZ22M9H;
 				INFOPLIST_FILE = CarTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,6 +523,48 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56DE6F9E2545375C006AA5BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3JCZ22M9H;
+				INFOPLIST_FILE = CarTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vnest.va.CarTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarTracker.app/CarTracker";
+			};
+			name = Debug;
+		};
+		56DE6F9F2545375C006AA5BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3JCZ22M9H;
+				INFOPLIST_FILE = CarTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vnest.va.CarTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarTracker.app/CarTracker";
 			};
 			name = Release;
 		};
@@ -451,6 +585,15 @@
 			buildConfigurations = (
 				56D33EB52538A7910026368C /* Debug */,
 				56D33EB62538A7910026368C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56DE6FA02545375C006AA5BB /* Build configuration list for PBXNativeTarget "CarTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56DE6F9E2545375C006AA5BB /* Debug */,
+				56DE6F9F2545375C006AA5BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
