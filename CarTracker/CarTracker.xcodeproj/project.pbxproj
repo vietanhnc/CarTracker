@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		565832462548835A00991FD4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565832442548835A00991FD4 /* WelcomeVC.swift */; };
+		565832472548835A00991FD4 /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565832452548835A00991FD4 /* WelcomeVC.xib */; };
+		5658324A254B269000991FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583249254B269000991FD4 /* BaseViewController.swift */; };
+		5658324E254E86C600991FD4 /* MobilePhoneInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5658324C254E86C600991FD4 /* MobilePhoneInputVC.swift */; };
+		5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */; };
+		56583252254E8FAA00991FD4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583250254E8FAA00991FD4 /* BaseTabBarController.swift */; };
+		56583253254E8FAA00991FD4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583251254E8FAA00991FD4 /* BaseNavigationController.swift */; };
 		56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EA32538A78E0026368C /* AppDelegate.swift */; };
 		56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EA52538A78E0026368C /* SceneDelegate.swift */; };
 		56D33EA82538A78E0026368C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EA72538A78E0026368C /* ViewController.swift */; };
@@ -35,7 +42,14 @@
 /* Begin PBXFileReference section */
 		434CC202B45CA5C46F0B5F7B /* Pods-CarTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.release.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.release.xcconfig"; sourceTree = "<group>"; };
 		48B5AF5FDBD880F5053404F4 /* Pods-CarTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.debug.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		56D33EA02538A78E0026368C /* CarTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		565832442548835A00991FD4 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		565832452548835A00991FD4 /* WelcomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
+		56583249254B269000991FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5658324C254E86C600991FD4 /* MobilePhoneInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePhoneInputVC.swift; sourceTree = "<group>"; };
+		5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobilePhoneInputVC.xib; sourceTree = "<group>"; };
+		56583250254E8FAA00991FD4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		56583251254E8FAA00991FD4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		56D33EA02538A78E0026368C /* CarManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D33EA32538A78E0026368C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D33EA52538A78E0026368C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56D33EA72538A78E0026368C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +87,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56583248254B266D00991FD4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				56583251254E8FAA00991FD4 /* BaseNavigationController.swift */,
+				56583250254E8FAA00991FD4 /* BaseTabBarController.swift */,
+				56583249254B269000991FD4 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5658324B254E868A00991FD4 /* Activation */ = {
+			isa = PBXGroup;
+			children = (
+				5658324C254E86C600991FD4 /* MobilePhoneInputVC.swift */,
+				5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */,
+			);
+			path = Activation;
+			sourceTree = "<group>";
+		};
 		56D33E972538A78E0026368C = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +120,7 @@
 		56D33EA12538A78E0026368C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56D33EA02538A78E0026368C /* CarTracker.app */,
+				56D33EA02538A78E0026368C /* CarManagement.app */,
 				56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */,
 			);
 			name = Products;
@@ -112,9 +145,13 @@
 		56D33EBB2539971A0026368C /* ScreenController */ = {
 			isa = PBXGroup;
 			children = (
+				5658324B254E868A00991FD4 /* Activation */,
+				56583248254B266D00991FD4 /* Base */,
 				56D33EA72538A78E0026368C /* ViewController.swift */,
 				56D33EB72538B3EB0026368C /* TabBarViewController.swift */,
 				56D33EBC25399D100026368C /* MapViewController.swift */,
+				565832442548835A00991FD4 /* WelcomeVC.swift */,
+				565832452548835A00991FD4 /* WelcomeVC.xib */,
 			);
 			path = ScreenController;
 			sourceTree = "<group>";
@@ -197,7 +234,7 @@
 			);
 			name = CarTracker;
 			productName = CarTracker;
-			productReference = 56D33EA02538A78E0026368C /* CarTracker.app */;
+			productReference = 56D33EA02538A78E0026368C /* CarManagement.app */;
 			productType = "com.apple.product-type.application";
 		};
 		56DE6F962545375C006AA5BB /* CarTrackerTests */ = {
@@ -261,9 +298,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
 				56D33EAB2538A78E0026368C /* Main.storyboard in Resources */,
+				565832472548835A00991FD4 /* WelcomeVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,12 +362,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56583253254E8FAA00991FD4 /* BaseNavigationController.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,
 				56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
+				5658324A254B269000991FD4 /* BaseViewController.swift in Sources */,
 				56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */,
+				565832462548835A00991FD4 /* WelcomeVC.swift in Sources */,
+				56583252254E8FAA00991FD4 /* BaseTabBarController.swift in Sources */,
+				5658324E254E86C600991FD4 /* MobilePhoneInputVC.swift in Sources */,
 				56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */,
 				56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */,
 			);
@@ -494,13 +538,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JCZ22M9H;
 				INFOPLIST_FILE = CarTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vnest.va.CarTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vnest.carmanagement;
+				PRODUCT_NAME = CarManagement;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,13 +558,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JCZ22M9H;
 				INFOPLIST_FILE = CarTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vnest.va.CarTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = vn.vnest.carmanagement;
+				PRODUCT_NAME = CarManagement;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

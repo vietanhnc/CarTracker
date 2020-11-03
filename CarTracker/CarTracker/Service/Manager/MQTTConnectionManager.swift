@@ -30,6 +30,11 @@ class MQTTConnectionManager{
         return sharedMQTTManager
     }
     
+    func isConnect() -> String {
+        
+        return mqttSubscriber!.connState.description
+    }
+    
     func config(){
         //config sub
         delegate = MQTTDelegate()
@@ -62,7 +67,7 @@ class MQTTConnectionManager{
         mqttPublisher?.delegate = delegate
     }
     
-    func subscribe(){
+    func connect(){
         mqttSubscriber!.connect()
 //        mqttSubscriber!.subscribe("/vnest/phone/subscribe/ec420904bba9e463bcd4e89e37e7e0f7")
     }

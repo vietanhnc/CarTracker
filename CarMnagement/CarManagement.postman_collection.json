@@ -1,0 +1,809 @@
+{
+	"info": {
+		"_postman_id": "d2614bb5-e882-4973-9c2a-e56f1abecb8b",
+		"name": "CarManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetActiveCode",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\":\"0978598490\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}GetActiveCode",
+					"host": [
+						"{{baseUrl}}GetActiveCode"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetActiveCode",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Lê Thanh Bình\",\r\n    \"email\":\"binhlt@vnest.vn\",\r\n    \"phone\":\"0966588046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7082/getactivecode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7082",
+							"path": [
+								"getactivecode"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\"statusCode\":\"201\",\"code\":\"1\",\"description\":\"OK\"}"
+				}
+			]
+		},
+		{
+			"name": "ActivePhone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\":\"0966588046\",\r\n    \"activeCode\":\"691397\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}active",
+					"host": [
+						"{{baseUrl}}active"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ActivePhoneOK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"0966588046\",\r\n    \"activeCode\":\"691397\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7082/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7082",
+							"path": [
+								"active"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\"accessToken\":\"0df155ff2fdf4513908404bbcac9a87f78e76aae47ee76a85218e98e7fbe1f88\",\"code\":\"1\"}"
+				},
+				{
+					"name": "ActivatedPhone",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"0966588046\",\r\n    \"activeCode\":\"6913971\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7082/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7082",
+							"path": [
+								"active"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "89"
+						}
+					],
+					"cookie": [],
+					"body": "{\"statusCode\":\"400\",\"errorCode\":\"PHONE_IS_USED\",\"code\":\"0\",\"description\":\"Phone is used\"}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"0966588046\",\r\n    \"Password\":\"691397\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}login",
+					"host": [
+						"{{baseUrl}}login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LoginOK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\":\"0966588046\",\r\n    \"Password\":\"691397\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7082/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7082",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\"accessToken\":\"0df155ff2fdf4513908404bbcac9a87f78e76aae47ee76a85218e98e7fbe1f88\",\"code\":\"1\"}"
+				}
+			]
+		},
+		{
+			"name": "GetInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}GetInfo",
+					"host": [
+						"{{baseUrl}}GetInfo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetInfo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "0df155ff2fdf4513908404bbcac9a87f78e76aae47ee76a85218e98e7fbe1f88",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:7082/GetInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7082",
+							"path": [
+								"GetInfo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "148"
+						}
+					],
+					"cookie": [],
+					"body": "{\"info\":{\"phone\":\"0966588046\",\"activeDate\":\"Oct 24, 2020\",\"email\":\"binhlt@vnest.vn\",\"name\":\"Lê Thanh Bình\"},\"dvds\":[],\"code\":\"1\",\"description\":\"\"}"
+				}
+			]
+		},
+		{
+			"name": "getCurrentLocation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}GetCurrLocation?imei=352538105405602&deviceId=ba5ac6a339e96d36",
+					"host": [
+						"{{baseUrl}}GetCurrLocation"
+					],
+					"query": [
+						{
+							"key": "imei",
+							"value": "352538105405602"
+						},
+						{
+							"key": "deviceId",
+							"value": "ba5ac6a339e96d36"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getCurrentLocation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{accesstoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}GetCurrLocation?imei=352538105405602&deviceId=ba5ac6a339e96d36",
+							"host": [
+								"{{baseUrl}}GetCurrLocation"
+							],
+							"query": [
+								{
+									"key": "imei",
+									"value": "352538105405602"
+								},
+								{
+									"key": "deviceId",
+									"value": "ba5ac6a339e96d36"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "152"
+						}
+					],
+					"cookie": [],
+					"body": "{\"postion\":{\"lat\":\"20.9888465\",\"lng\":\"105.8465157\",\"seq\":1,\"time\":1603766948,\"input\":\"1:20.9888465:105.8465157:1603766948\"},\"code\":\"1\",\"description\":\"\"}"
+				}
+			]
+		},
+		{
+			"name": "activeDVD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\",\r\n    \"brand\":\"Toyota\",\r\n    \"model\":\"Inova\",\r\n    \"bks\":\"\",\r\n    \"phone\":\"0966588046\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}ActiveDVD",
+					"host": [
+						"{{baseUrl}}ActiveDVD"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "activeDVD",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{accesstoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\",\r\n    \"brand\":\"Toyota\",\r\n    \"model\":\"Inova\",\r\n    \"bks\":\"\",\r\n    \"phone\":\"0966588046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}ActiveDVD",
+							"host": [
+								"{{baseUrl}}ActiveDVD"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\"statusCode\":\"201\",\"code\":\"1\",\"description\":\"OK\"}"
+				},
+				{
+					"name": "activeDVD_activated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{accesstoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\",\r\n    \"brand\":\"Toyota\",\r\n    \"model\":\"Inova\",\r\n    \"bks\":\"\",\r\n    \"phone\":\"0966588046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}ActiveDVD",
+							"host": [
+								"{{baseUrl}}ActiveDVD"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "95"
+						}
+					],
+					"cookie": [],
+					"body": "{\"statusCode\":\"400\",\"errorCode\":\"DVD_IS_ACTIVATED\",\"code\":\"0\",\"description\":\"DVD is activated\"}"
+				}
+			]
+		},
+		{
+			"name": "UpdateInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Lê Thanh Bình\",\r\n    \"email\":\"binh@vnest.vn\",\r\n    \"phone\":\"0966588046\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}UpdateInfo",
+					"host": [
+						"{{baseUrl}}UpdateInfo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateInfo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Lê Thanh Bình\",\r\n    \"email\":\"binh@vnest.vn\",\r\n    \"phone\":\"0966588046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}UpdateInfo",
+							"host": [
+								"{{baseUrl}}UpdateInfo"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.12.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Oct 2020 07:30:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "resendOTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\":\"0966588046\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}ResendCode",
+					"host": [
+						"{{baseUrl}}ResendCode"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "resendOTP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"0966588046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}ResendCode",
+							"host": [
+								"{{baseUrl}}ResendCode"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.12.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Oct 2020 07:31:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\"activeCode\":\"691397\",\"statusCode\":\"201\",\"errorCode\":\"\",\"code\":\"1\",\"description\":\"\"}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

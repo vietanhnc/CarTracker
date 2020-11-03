@@ -7,5 +7,5 @@ target 'CarTracker' do
 
   # Pods for CarTracker
 pod 'SwiftIconFont'
-pod 'CocoaMQTT' 
+pod 'CocoaMQTT'
 end
