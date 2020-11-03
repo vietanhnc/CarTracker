@@ -14,6 +14,7 @@
 		5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */; };
 		56583252254E8FAA00991FD4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583250254E8FAA00991FD4 /* BaseTabBarController.swift */; };
 		56583253254E8FAA00991FD4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583251254E8FAA00991FD4 /* BaseNavigationController.swift */; };
+		56D1EA552551BD0700DB0851 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1EA542551BD0700DB0851 /* Request.swift */; };
 		56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EA32538A78E0026368C /* AppDelegate.swift */; };
 		56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EA52538A78E0026368C /* SceneDelegate.swift */; };
 		56D33EA82538A78E0026368C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EA72538A78E0026368C /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobilePhoneInputVC.xib; sourceTree = "<group>"; };
 		56583250254E8FAA00991FD4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		56583251254E8FAA00991FD4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		56D1EA542551BD0700DB0851 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		56D33EA02538A78E0026368C /* CarManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D33EA32538A78E0026368C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56D33EA52538A78E0026368C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 				5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */,
 			);
 			path = Activation;
+			sourceTree = "<group>";
+		};
+		56D1EA532551BCC300DB0851 /* NetworkCore */ = {
+			isa = PBXGroup;
+			children = (
+				56D1EA542551BD0700DB0851 /* Request.swift */,
+			);
+			path = NetworkCore;
 			sourceTree = "<group>";
 		};
 		56D33E972538A78E0026368C = {
@@ -167,6 +177,7 @@
 		56DC5B542541DEC000AC3D66 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				56D1EA532551BCC300DB0851 /* NetworkCore */,
 				56DC5B582543CA2400AC3D66 /* Delegate */,
 				56DC5B552541DEE500AC3D66 /* Manager */,
 			);
@@ -373,6 +384,7 @@
 				565832462548835A00991FD4 /* WelcomeVC.swift in Sources */,
 				56583252254E8FAA00991FD4 /* BaseTabBarController.swift in Sources */,
 				5658324E254E86C600991FD4 /* MobilePhoneInputVC.swift in Sources */,
+				56D1EA552551BD0700DB0851 /* Request.swift in Sources */,
 				56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */,
 				56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */,
 			);

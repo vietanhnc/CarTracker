@@ -13,6 +13,8 @@ import typealias CommonCrypto.CC_LONG
 
 class AppConstant{
     public static var BASE_URL = "3d.vnest.vn"
+    public static var BASE_HTTP_URL = "https://vnest.vn/car-management/"
+
     public static var SUBCRIBE_PORT :UInt16 = 1885
     public static var PUBLISH_PORT :UInt16 = 2885
     public static var SUBSCRIBE_TOPIC_BASE_URL = "/vnest/phone/subscribe/"

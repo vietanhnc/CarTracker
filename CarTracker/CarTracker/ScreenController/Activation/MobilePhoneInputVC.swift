@@ -10,13 +10,18 @@ import UIKit
 
 class MobilePhoneInputVC: BaseViewController {
 
+    @IBOutlet var txtPhone: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func btnContinueTouch(_ sender: Any) {
+        let parameters = ["phone":txtPhone.text!]
+        Request.shared().post(url: "GetActiveCode", parameters: parameters)
+    }
+    
     /*
     // MARK: - Navigation
 

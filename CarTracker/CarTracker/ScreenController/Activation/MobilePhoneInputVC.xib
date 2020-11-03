@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MobilePhoneInputVC" customModule="CarManagement" customModuleProvider="target">
             <connections>
+                <outlet property="txtPhone" destination="SvX-s5-ZZ8" id="J48-JC-a49"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,19 +22,29 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="npi-51-099">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oio-rW-02K">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="134.5"/>
-                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO9-eA-eQI">
+                    <rect key="frame" x="86" y="433" width="242" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="TIẾP TỤC">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnContinueTouch:" destination="-1" eventType="touchUpInside" id="Yhc-Bd-SUx"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0978598490" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SvX-s5-ZZ8">
+                    <rect key="frame" x="86" y="391" width="242" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="continue" textContentType="tel"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="npi-51-099" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2PI-uG-EBv"/>
-                <constraint firstItem="npi-51-099" firstAttribute="top" secondItem="oio-rW-02K" secondAttribute="top" multiplier="200" id="CIY-Ca-dly"/>
-                <constraint firstItem="oio-rW-02K" firstAttribute="height" secondItem="npi-51-099" secondAttribute="height" multiplier="0.15" id="MUf-ex-IDQ"/>
-                <constraint firstItem="oio-rW-02K" firstAttribute="trailing" secondItem="npi-51-099" secondAttribute="trailing" id="eCr-gB-ECN"/>
                 <constraint firstItem="npi-51-099" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mbI-zP-BfV"/>
-                <constraint firstItem="oio-rW-02K" firstAttribute="leading" secondItem="npi-51-099" secondAttribute="leading" id="sqX-N5-YJi"/>
                 <constraint firstAttribute="trailing" secondItem="npi-51-099" secondAttribute="trailing" id="yCo-mv-esf"/>
                 <constraint firstAttribute="bottom" secondItem="npi-51-099" secondAttribute="bottom" id="ybr-5O-odl"/>
             </constraints>

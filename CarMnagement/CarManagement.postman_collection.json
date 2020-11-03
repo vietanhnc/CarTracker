@@ -489,7 +489,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\",\r\n    \"brand\":\"Toyota\",\r\n    \"model\":\"Inova\",\r\n    \"bks\":\"\",\r\n    \"phone\":\"0966588046\"\r\n}",
+					"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\",\r\n    \"brand\":\"Toyota\",\r\n    \"model\":\"Inova\",\r\n    \"bks\":\"\",\r\n    \"year\":\"2015\",\r\n    \"phone\":\"0966588046\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -801,6 +801,136 @@
 					],
 					"cookie": [],
 					"body": "{\"activeCode\":\"691397\",\"statusCode\":\"201\",\"errorCode\":\"\",\"code\":\"1\",\"description\":\"\"}"
+				}
+			]
+		},
+		{
+			"name": "getCarBrands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}GetCarBrand",
+					"host": [
+						"{{baseUrl}}GetCarBrand"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getCarBrands",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}GetCarBrand",
+							"host": [
+								"{{baseUrl}}GetCarBrand"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "6213"
+						}
+					],
+					"cookie": [],
+					"body": "{\"brands\":[{\"id\":1,\"image\":\"https://vnest.vn/car-logo/tesla-logo.png\",\"name\":\"Tesla\",\"type\":\"Luxury Electric Vehicles\",\"folderName\":\"Tesla\"},{\"id\":2,\"image\":\"https://vnest.vn/car-logo/bmw-logo.png\",\"name\":\"BMW\",\"type\":\"Luxury Vehicles\",\"folderName\":\"BMW\"},{\"id\":3,\"image\":\"https://vnest.vn/car-logo/ferrari-logo.png\",\"name\":\"Ferrari\",\"type\":\"Luxury Sports Cars\",\"folderName\":\"Ferrari\"},{\"id\":4,\"image\":\"https://vnest.vn/car-logo/ford-logo.png\",\"name\":\"Ford\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Ford\"},{\"id\":5,\"image\":\"https://vnest.vn/car-logo/porsche-logo.png\",\"name\":\"Porsche\",\"type\":\"Luxury Sports Cars\",\"folderName\":\"Porsche\"},{\"id\":6,\"image\":\"https://vnest.vn/car-logo/honda-logo.png\",\"name\":\"Honda\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Honda\"},{\"id\":7,\"image\":\"https://vnest.vn/car-logo/lamborghini-logo.png\",\"name\":\"Lamborghini\",\"type\":\"Luxury Sports Cars\",\"folderName\":\"Lamborghini\"},{\"id\":8,\"image\":\"https://vnest.vn/car-logo/toyota-logo.png\",\"name\":\"Toyota\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Toyota\"},{\"id\":9,\"image\":\"https://vnest.vn/car-logo/bentley-logo.png\",\"name\":\"Bentley\",\"type\":\"Ultra-luxury Cars\",\"folderName\":\"Bentley\"},{\"id\":10,\"image\":\"https://vnest.vn/car-logo/maserati-logo.png\",\"name\":\"Maserati\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Maserati\"},{\"id\":11,\"image\":\"https://vnest.vn/car-logo/audi-logo.png\",\"name\":\"Audi\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Audi\"},{\"id\":12,\"image\":\"https://vnest.vn/car-logo/jeep-logo.png\",\"name\":\"Jeep\",\"type\":\"Sport Utility Vehicles\",\"folderName\":\"Jeep\"},{\"id\":13,\"image\":\"https://vnest.vn/car-logo/subaru-logo.png\",\"name\":\"Subaru\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Subaru\"},{\"id\":14,\"image\":\"https://vnest.vn/car-logo/cadillac-logo.png\",\"name\":\"Cadillac\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Cadillac\"},{\"id\":15,\"image\":\"https://vnest.vn/car-logo/chrysler-logo.png\",\"name\":\"Chrysler\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Chrysler\"},{\"id\":16,\"image\":\"https://vnest.vn/car-logo/corvette-logo.png\",\"name\":\"Chevrolet Corvette\",\"type\":\"Sports Cars\",\"folderName\":\"Chevrolet-Corvette\"},{\"id\":17,\"image\":\"https://vnest.vn/car-logo/dodge-logo.png\",\"name\":\"Dodge\",\"type\":\"Performance Cars, Other\",\"folderName\":\"Dodge\"},{\"id\":18,\"image\":\"https://vnest.vn/car-logo/hyundai-logo.png\",\"name\":\"Hyundai\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Hyundai\"},{\"id\":19,\"image\":\"https://vnest.vn/car-logo/jaguar-logo.png\",\"name\":\"Jaguar\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Jaguar\"},{\"id\":20,\"image\":\"https://vnest.vn/car-logo/mazda-logo.png\",\"name\":\"Mazda\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Mazda\"},{\"id\":21,\"image\":\"https://vnest.vn/car-logo/ford-mustang-logo.png\",\"name\":\"Ford Mustang\",\"type\":\"Sports Cars\",\"folderName\":\"Ford-Mustang\"},{\"id\":22,\"image\":\"https://vnest.vn/car-logo/nissan-logo.png\",\"name\":\"Nissan\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Nissan\"},{\"id\":23,\"image\":\"https://vnest.vn/car-logo/alfa-romeo-logo.png\",\"name\":\"Alfa Romeo\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Alfa-Romeo\"},{\"id\":24,\"image\":\"https://vnest.vn/car-logo/bugatti-logo.png\",\"name\":\"Bugatti\",\"type\":\"Luxury Supercars\",\"folderName\":\"Bugatti\"},{\"id\":25,\"image\":\"https://vnest.vn/car-logo/buick-logo.png\",\"name\":\"Buick\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Buick\"},{\"id\":26,\"image\":\"https://vnest.vn/car-logo/lexus-logo.png\",\"name\":\"Lexus\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Lexus\"},{\"id\":27,\"image\":\"https://vnest.vn/car-logo/rolls-royce-logo.png\",\"name\":\"Rolls-Royce\",\"type\":\"Ultra-luxury Cars\",\"folderName\":\"Rolls-Royce\"},{\"id\":28,\"image\":\"https://vnest.vn/car-logo/acura-logo.png\",\"name\":\"Acura\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Acura\"},{\"id\":29,\"image\":\"https://vnest.vn/car-logo/aston-martin-logo.png\",\"name\":\"Aston Martin\",\"type\":\"Luxury Sports Cars\",\"folderName\":\"Aston-Martin\"},{\"id\":30,\"image\":\"https://vnest.vn/car-logo/chevrolet-logo.png\",\"name\":\"Chevrolet\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Chevrolet\"},{\"id\":31,\"image\":\"https://vnest.vn/car-logo/kia-logo.png\",\"name\":\"Kia\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Kia\"},{\"id\":32,\"image\":\"https://vnest.vn/car-logo/mercedes-benz-logo.png\",\"name\":\"Mercedes-Benz\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Mercedes-Benz\"},{\"id\":33,\"image\":\"https://vnest.vn/car-logo/volkswagen-logo.png\",\"name\":\"Volkswagen\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Volkswagen\"},{\"id\":34,\"image\":\"https://vnest.vn/car-logo/volvo-logo.png\",\"name\":\"Volvo\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Volvo\"},{\"id\":35,\"image\":\"https://vnest.vn/car-logo/mclaren-logo.png\",\"name\":\"McLaren\",\"type\":\"Luxury Sports Cars\",\"folderName\":\"McLaren\"},{\"id\":36,\"image\":\"https://vnest.vn/car-logo/mitsubishi-logo.png\",\"name\":\"Mitsubishi\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Mitsubishi\"},{\"id\":37,\"image\":\"https://vnest.vn/car-logo/gmc-logo.png\",\"name\":\"GMC\",\"type\":\"Pickup Trucks, Other\",\"folderName\":\"GMC\"},{\"id\":38,\"image\":\"https://vnest.vn/car-logo/infiniti-logo.png\",\"name\":\"Infiniti\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Infiniti\"},{\"id\":39,\"image\":\"https://vnest.vn/car-logo/lincoln-logo.png\",\"name\":\"Lincoln\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Lincoln\"},{\"id\":40,\"image\":\"https://vnest.vn/car-logo/peugeot-logo.png\",\"name\":\"Peugeot\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Peugeot\"},{\"id\":41,\"image\":\"https://vnest.vn/car-logo/pontiac-logo.png\",\"name\":\"Pontiac\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Pontiac\"},{\"id\":42,\"image\":\"https://vnest.vn/car-logo/saab-logo.png\",\"name\":\"Saab\",\"type\":\"Manufacturer\",\"folderName\":\"Saab\"},{\"id\":43,\"image\":\"https://vnest.vn/car-logo/genesis-logo.png\",\"name\":\"Genesis\",\"type\":\"Luxury Vehicles\",\"folderName\":\"Genesis\"},{\"id\":44,\"image\":\"https://vnest.vn/car-logo/suzuki-logo.png\",\"name\":\"Suzuki\",\"type\":\"Economy Cars\",\"folderName\":\"Suzuki\"},{\"id\":45,\"image\":\"https://vnest.vn/car-logo/citroen-logo.png\",\"name\":\"Citroën\",\"type\":\"Mass-Market Cars\",\"folderName\":\"Citroën\"},{\"id\":46,\"image\":\"https://vnest.vn/car-logo/fiat-logo.png\",\"name\":\"Fiat\",\"type\":\"Small Cars\",\"folderName\":\"Fiat\"},{\"id\":47,\"image\":\"https://vnest.vn/car-logo/lotus-logo.png\",\"name\":\"Lotus\",\"type\":\"Sports Cars, Racing Cars\",\"folderName\":\"Lotus\"},{\"id\":48,\"image\":\"https://vnest.vn/car-logo/mini-logo.png\",\"name\":\"Mini\",\"type\":\"Luxury Small Cars\",\"folderName\":\"Mini\"}],\"code\":\"1\",\"description\":\"\"}"
+				}
+			]
+		},
+		{
+			"name": "getCarModels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}GetCarModel?brandId=1",
+					"host": [
+						"{{baseUrl}}GetCarModel"
+					],
+					"query": [
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getCarModels",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}GetCarModel?brandId=1",
+							"host": [
+								"{{baseUrl}}GetCarModel"
+							],
+							"query": [
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "492"
+						}
+					],
+					"cookie": [],
+					"body": "{\"brandId\":0,\"models\":[{\"name\":\"Tesla Model S\",\"image\":\"https://vnest.vn/car-logo/Tesla/Tesla-Model-S-Indoors.jpg\"},{\"name\":\"Tesla Model X\",\"image\":\"https://vnest.vn/car-logo/Tesla/Tesla-Model-X.jpg\"},{\"name\":\"Tesla Cybertruck\",\"image\":\"https://vnest.vn/car-logo/Tesla/tesla-cyber-truck.jpg\"},{\"name\":\"Tesla Model Y\",\"image\":\"https://vnest.vn/car-logo/Tesla/tesla-model-y.jpg\"},{\"name\":\"Tesla Model 3\",\"image\":\"https://vnest.vn/car-logo/Tesla/tesla-model-3.jpg\"}],\"code\":\"1\",\"description\":\"\"}"
 				}
 			]
 		}
