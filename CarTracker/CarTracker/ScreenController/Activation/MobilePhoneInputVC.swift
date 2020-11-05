@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class MobilePhoneInputVC: BaseViewController {
     
     @IBOutlet var txtPhone: UITextField!
@@ -21,11 +21,17 @@ class MobilePhoneInputVC: BaseViewController {
     }
     
     @IBAction func btnContinueTouch(_ sender: Any) {
-        let parameters = ["phone":txtPhone.text!]
-        service.sendOTP(txtPhone.text!)
-        //        Request.shared().post(url: "GetActiveCode", parameters: parameters)
+        
+        super.fetch(APIRouter.sendOTP(txtPhone.text!)) { (data, error) in
+            self.sendOTPCompletion(data, error)
+        }
     }
     
+    func sendOTPCompletion(_ dataParam:JSON?,_ error:String){
+        guard let data = dataParam else{
+            super.showAlert("")
+        }
+    }
     /*
      // MARK: - Navigation
      

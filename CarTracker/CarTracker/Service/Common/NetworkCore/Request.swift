@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 class Request {
     
     //singleton
@@ -26,18 +27,19 @@ class Request {
         return result
     }
     
-    func post(_ apiRouter:APIRouter){
+    func fetch(_ apiRouter:APIRouter,completion: @escaping (_ data:JSON?,_ error:String) -> Void){
         print(apiRouter.getBody())
         AF.request(apiRouter).responseJSON{response in
-//            debugPrint(response)
-//            let json = String(data: response.data!, encoding: String.Encoding.utf8)
-//            print(json)
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                completion(json,"")
+                break
+            case .failure:
+                completion(nil,"Có lỗi xảy ra!")
+                break
+            }
         }
-        //        print(parameters!)
-        //        AF.request(buildURL(url), method: .post,  parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-        //                    debugPrint(response)
-        //                    let json = String(data: response.data!, encoding: String.Encoding.utf8)
-        //                    print(json)
-        //        }
     }
 }

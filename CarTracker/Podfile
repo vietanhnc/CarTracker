@@ -11,5 +11,6 @@ pod 'CocoaMQTT'
 pod "RxSwift"
 pod "RxCocoa"
 pod 'RealmSwift'
-pod 'Alamofire', '~> 5.2'
+pod 'Alamofire'
+pod 'SwiftyJSON'
 end

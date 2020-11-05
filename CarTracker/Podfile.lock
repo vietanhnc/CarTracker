@@ -15,14 +15,16 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SwiftIconFont (6.1.1)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
+  - Alamofire
   - CocoaMQTT
   - RealmSwift
   - RxCocoa
   - RxSwift
   - SwiftIconFont
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SwiftIconFont
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
@@ -46,7 +49,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftIconFont: 0a772c5ac65a40c9b0675efa37b4928158bd8e43
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: bd1c6c57b6b1bd8147647e7df40e83dfd0ed5f7f
+PODFILE CHECKSUM: 56bdcd903e85bcc7d112530c5f1cbc957c9bb225
 
 COCOAPODS: 1.10.0

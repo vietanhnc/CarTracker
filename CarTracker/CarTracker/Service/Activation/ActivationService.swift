@@ -10,6 +10,8 @@ import Foundation
 
 class ActivationService{
     func sendOTP(_ phone :String) {
-        Request.shared().post(APIRouter.sendOTP(phone))
+//        Request.shared().post(APIRouter.sendOTP(phone), completion: {data in
+//            print(data)
+//        })
     }
 }

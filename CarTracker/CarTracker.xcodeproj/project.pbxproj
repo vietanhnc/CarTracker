@@ -26,6 +26,7 @@
 		56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EB72538B3EB0026368C /* TabBarViewController.swift */; };
 		56D33EBD25399D100026368C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EBC25399D100026368C /* MapViewController.swift */; };
 		56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EBF253AFD1F0026368C /* AppConstant.swift */; };
+		56D6322E25545E4400909F59 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6322D25545E4400909F59 /* AppUtils.swift */; };
 		56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */; };
 		56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */; };
 		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
@@ -66,6 +67,7 @@
 		56D33EB72538B3EB0026368C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		56D33EBC25399D100026368C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		56D33EBF253AFD1F0026368C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		56D6322D25545E4400909F59 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionManager.swift; sourceTree = "<group>"; };
 		56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDelegate.swift; sourceTree = "<group>"; };
 		56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				56D33EBF253AFD1F0026368C /* AppConstant.swift */,
+				56D6322D25545E4400909F59 /* AppUtils.swift */,
 			);
 			path = AppConfig;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,
 				56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
+				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
 				5658324A254B269000991FD4 /* BaseViewController.swift in Sources */,
 				56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */,
