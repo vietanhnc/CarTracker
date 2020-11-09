@@ -42,15 +42,15 @@ class BaseViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func fetch(_ apiRouter:APIRouter,completion: @escaping (_ data:JSON?,_ error:String) -> Void) {
-        self.showLoading()
-        Request.shared().fetch(apiRouter) { (data, error) in
-            self.hideLoading()
-            if error.isEmpty {
-                completion(data,error)
-            }else{
-                self.showAlert(error)
-            }
+    func fetch(_ apiRouter:APIRouter,completion: @escaping (_ data:BaseResponse?) -> Void) {
+//        self.showLoading()
+        Request.shared().fetch(apiRouter) { (data) in
+//            self.hideLoading()
+//            if let er = error {
+//                completion(data,er)
+//            }else{
+//                self.showAlert(error?.description)
+//            }
         }
     }
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         let vc = WelcomeVC()
-        window?.rootViewController = vc
+        let navi = BaseNavigationController(rootViewController: vc)
+        navi.navigationBar.isTranslucent = false
+        window?.rootViewController = navi
         window?.makeKeyAndVisible()
         
         // Override point for customization after application launch.
@@ -26,8 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let settings = UIUserNotificationSettings(types: UIUserNotificationType.alert, categories: nil)
 //        UIApplication.shared.registerUserNotificationSettings(settings)
         
-        
-        
+        // Get on-disk location of the default Realm
+        let realm = try! Realm()
+        print("Realm is located at:", realm.configuration.fileURL!)
         return true
     }
     

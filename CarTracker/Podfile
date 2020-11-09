@@ -13,4 +13,6 @@ pod "RxCocoa"
 pod 'RealmSwift'
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'NVActivityIndicatorView'
+pod "SwiftSpinner"
 end

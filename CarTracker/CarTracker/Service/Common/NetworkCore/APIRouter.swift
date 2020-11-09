@@ -12,6 +12,7 @@ import Alamofire
 enum APIRouter: URLRequestConvertible{
     
     case sendOTP(_ phone: String)
+    case reSendOTP(_ phone: String)
     case active(_ phone: String,_ activeCode: String)
     
     
@@ -21,19 +22,21 @@ enum APIRouter: URLRequestConvertible{
             return "GetActiveCode"
         case .active:
             return "active"
+        case .reSendOTP:
+            return "ResendCode"
         }
     }
     
     private var method: HTTPMethod{
         switch self {
-        case .sendOTP,.active:
+        case .sendOTP,.active,.reSendOTP:
             return .post
         }
     }
     
     private var body:Parameters{
         switch self {
-        case .sendOTP(let phone):
+        case .sendOTP(let phone),.reSendOTP(let phone):
             return ["phone":phone]
         case .active(let phone, let activeCode):
             return ["phone":phone,"activeCode":activeCode]
@@ -44,9 +47,13 @@ enum APIRouter: URLRequestConvertible{
         return body
     }
     
+    func getURL() -> String {
+        return AppConstant.BASE_HTTP_URL + path
+    }
+    
     func asURLRequest() throws -> URLRequest {
-        let strURL = AppConstant.BASE_HTTP_URL + path
-        let url = try strURL.asURL();
+//        let strURL = AppConstant.BASE_HTTP_URL + path
+        let url = try self.getURL().asURL();
         var urlRequest: URLRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
 //        urlRequest = try URLEncoding.default.encode(urlRequest, with: param)

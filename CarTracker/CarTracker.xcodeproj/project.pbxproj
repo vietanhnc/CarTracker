@@ -27,9 +27,17 @@
 		56D33EBD25399D100026368C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EBC25399D100026368C /* MapViewController.swift */; };
 		56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D33EBF253AFD1F0026368C /* AppConstant.swift */; };
 		56D6322E25545E4400909F59 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6322D25545E4400909F59 /* AppUtils.swift */; };
+		56D632312557961D00909F59 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632302557961D00909F59 /* BaseError.swift */; };
+		56D632332557C27000909F59 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632322557C27000909F59 /* BaseResponse.swift */; };
+		56D632362557CA7000909F59 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632352557CA7000909F59 /* LoadingView.swift */; };
+		56D632382557D17F00909F59 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632372557D17F00909F59 /* AlertView.swift */; };
+		56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6323A25596E6D00909F59 /* DateExtension.swift */; };
+		56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15682559A95D00D5C4F1 /* SystemParameter.swift */; };
 		56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */; };
 		56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */; };
 		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
+		56E2B622255981BF0011CEDA /* OTPInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2B620255981BF0011CEDA /* OTPInputVC.swift */; };
+		56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E2B621255981BF0011CEDA /* OTPInputVC.xib */; };
 		B1FA61CDC0D40B7ED636960C /* Pods_CarTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,11 +76,19 @@
 		56D33EBC25399D100026368C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		56D33EBF253AFD1F0026368C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		56D6322D25545E4400909F59 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
+		56D632302557961D00909F59 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
+		56D632322557C27000909F59 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		56D632352557CA7000909F59 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		56D632372557D17F00909F59 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		56D6323A25596E6D00909F59 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		56DC15682559A95D00D5C4F1 /* SystemParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemParameter.swift; sourceTree = "<group>"; };
 		56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionManager.swift; sourceTree = "<group>"; };
 		56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDelegate.swift; sourceTree = "<group>"; };
 		56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DE6F992545375C006AA5BB /* CarTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTrackerTests.swift; sourceTree = "<group>"; };
 		56DE6F9B2545375C006AA5BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E2B620255981BF0011CEDA /* OTPInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputVC.swift; sourceTree = "<group>"; };
+		56E2B621255981BF0011CEDA /* OTPInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPInputVC.xib; sourceTree = "<group>"; };
 		FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +126,8 @@
 			children = (
 				5658324C254E86C600991FD4 /* MobilePhoneInputVC.swift */,
 				5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */,
+				56E2B620255981BF0011CEDA /* OTPInputVC.swift */,
+				56E2B621255981BF0011CEDA /* OTPInputVC.xib */,
 			);
 			path = Activation;
 			sourceTree = "<group>";
@@ -164,6 +182,8 @@
 		56D33EA22538A78E0026368C /* CarTracker */ = {
 			isa = PBXGroup;
 			children = (
+				56D632342557CA5400909F59 /* Component */,
+				56D6322F255795DB00909F59 /* Object */,
 				56DC5B542541DEC000AC3D66 /* Service */,
 				56D33EBE2539D4420026368C /* AppConfig */,
 				56D33EBB2539971A0026368C /* ScreenController */,
@@ -198,6 +218,34 @@
 				56D6322D25545E4400909F59 /* AppUtils.swift */,
 			);
 			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		56D6322F255795DB00909F59 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				56D6323925596E5800909F59 /* Extension */,
+				56D632302557961D00909F59 /* BaseError.swift */,
+				56D632322557C27000909F59 /* BaseResponse.swift */,
+				56DC15682559A95D00D5C4F1 /* SystemParameter.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		56D632342557CA5400909F59 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				56D632352557CA7000909F59 /* LoadingView.swift */,
+				56D632372557D17F00909F59 /* AlertView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		56D6323925596E5800909F59 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				56D6323A25596E6D00909F59 /* DateExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		56DC5B542541DEC000AC3D66 /* Service */ = {
@@ -339,6 +387,7 @@
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
 				56D33EAB2538A78E0026368C /* Main.storyboard in Resources */,
 				565832472548835A00991FD4 /* WelcomeVC.xib in Resources */,
+				56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,17 +449,24 @@
 			files = (
 				56583253254E8FAA00991FD4 /* BaseNavigationController.swift in Sources */,
 				56D1EA5B25530CF100DB0851 /* APIRouter.swift in Sources */,
+				56D632382557D17F00909F59 /* AlertView.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,
 				56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */,
+				56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */,
+				56D632332557C27000909F59 /* BaseResponse.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
 				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
+				56E2B622255981BF0011CEDA /* OTPInputVC.swift in Sources */,
+				56D632312557961D00909F59 /* BaseError.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
 				5658324A254B269000991FD4 /* BaseViewController.swift in Sources */,
 				56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */,
 				56D1EA5925530CB100DB0851 /* ActivationService.swift in Sources */,
+				56D632362557CA7000909F59 /* LoadingView.swift in Sources */,
 				565832462548835A00991FD4 /* WelcomeVC.swift in Sources */,
 				56583252254E8FAA00991FD4 /* BaseTabBarController.swift in Sources */,
+				56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */,
 				5658324E254E86C600991FD4 /* MobilePhoneInputVC.swift in Sources */,
 				56D1EA552551BD0700DB0851 /* Request.swift in Sources */,
 				56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */,

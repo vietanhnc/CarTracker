@@ -15,17 +15,20 @@ class WelcomeVC: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.setNeedsStatusBarAppearanceUpdate()
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         let mpvc = MobilePhoneInputVC()
-        mpvc.modalPresentationStyle = .fullScreen
-        mpvc.modalTransitionStyle = .crossDissolve
-        self.present(mpvc, animated: true, completion: nil)
+//        mpvc.modalPresentationStyle = .fullScreen
+//        mpvc.modalTransitionStyle = .crossDissolve
+//        self.present(mpvc, animated: true, completion: nil)
         
-//        self.show(mpvc, sender: self)
+//        let navi = BaseNavigationController(rootViewController: mpvc)
+//        navi.navigationBar.isTranslucent = false
+        self.navigationController?.pushViewController(mpvc, animated: true)
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
