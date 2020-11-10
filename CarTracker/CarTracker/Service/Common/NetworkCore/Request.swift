@@ -46,7 +46,7 @@ class Request {
                 let code:Int! = Int(json["code"].string ?? "-1")
                 let error = BaseError(statusCode, code , json["errorCode"].string,json["description"].string)
                 var baseResp:BaseResponse? = nil
-                if statusCode>=200,statusCode<300 {
+                if httpStatusCode>=200,httpStatusCode<300 {
                     baseResp = BaseResponse(json, error,true)
                 }else{
                     baseResp = BaseResponse(json, error,false)

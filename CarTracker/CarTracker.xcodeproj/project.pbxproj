@@ -33,6 +33,8 @@
 		56D632382557D17F00909F59 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632372557D17F00909F59 /* AlertView.swift */; };
 		56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6323A25596E6D00909F59 /* DateExtension.swift */; };
 		56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15682559A95D00D5C4F1 /* SystemParameter.swift */; };
+		56DC1591255B024E00D5C4F1 /* InfoInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */; };
+		56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */; };
 		56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */; };
 		56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */; };
 		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
@@ -82,6 +84,8 @@
 		56D632372557D17F00909F59 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		56D6323A25596E6D00909F59 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		56DC15682559A95D00D5C4F1 /* SystemParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemParameter.swift; sourceTree = "<group>"; };
+		56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoInputVC.swift; sourceTree = "<group>"; };
+		56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoInputVC.xib; sourceTree = "<group>"; };
 		56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionManager.swift; sourceTree = "<group>"; };
 		56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDelegate.swift; sourceTree = "<group>"; };
 		56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,8 @@
 				5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */,
 				56E2B620255981BF0011CEDA /* OTPInputVC.swift */,
 				56E2B621255981BF0011CEDA /* OTPInputVC.xib */,
+				56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */,
+				56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */,
 			);
 			path = Activation;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 			files = (
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
+				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
 				56D33EAB2538A78E0026368C /* Main.storyboard in Resources */,
 				565832472548835A00991FD4 /* WelcomeVC.xib in Resources */,
@@ -461,6 +468,7 @@
 				56D632312557961D00909F59 /* BaseError.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
 				5658324A254B269000991FD4 /* BaseViewController.swift in Sources */,
+				56DC1591255B024E00D5C4F1 /* InfoInputVC.swift in Sources */,
 				56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */,
 				56D1EA5925530CB100DB0851 /* ActivationService.swift in Sources */,
 				56D632362557CA7000909F59 /* LoadingView.swift in Sources */,

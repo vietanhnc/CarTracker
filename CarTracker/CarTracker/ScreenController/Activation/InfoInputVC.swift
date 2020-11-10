@@ -1,20 +1,24 @@
 //
-//  OTPInputVC.swift
+//  InfoInputVC.swift
 //  CarTracker
 //
-//  Created by VietAnh on 11/9/20.
+//  Created by VietAnh on 11/11/20.
 //  Copyright © 2020 MSB. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
-class OTPInputVC: BaseViewController {
+class InfoInputVC: BaseViewController {
 
-    @IBOutlet var txtOTP: UITextField!
+    @IBOutlet var txtName: UITextField!
+    @IBOutlet var txtEmail: UITextField!
+    
     let service :ActivationService = ActivationService()
     var currentOTP:SystemParameter? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
     
@@ -23,34 +27,15 @@ class OTPInputVC: BaseViewController {
             let realm = try Realm()
             if let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first {
                 self.currentOTP = currentOTP
-                txtOTP.text = currentOTP.name
             }
         } catch{
         }
     }
     
-    @IBAction func btnConfirmTouch(_ sender: Any) {
-        guard let cOTPUnwraped = self.currentOTP else { return }
-        service.active(cOTPUnwraped.desc, cOTPUnwraped.name, completion: {data in
-            if let errorMsg = data {
-                AlertView.show(errorMsg)
-            }else{
-                let infoVC = InfoInputVC()
-                self.navigationController?.pushViewController(infoVC, animated: false)
-            }
-        })
+    @IBAction func btnContinueTouch(_ sender: Any) {
         
     }
     
-    @IBAction func btnResendTouch(_ sender: Any) {
-        guard let cOTPUnwraped = self.currentOTP else {
-            return
-        }
-        service.resendOTP(cOTPUnwraped.desc, completion: { data in
-            let otp = data!.response["activeCode"].stringValue
-            self.txtOTP.text = otp
-        })
-    }
     /*
     // MARK: - Navigation
 

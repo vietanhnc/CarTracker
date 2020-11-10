@@ -56,6 +56,7 @@ enum APIRouter: URLRequestConvertible{
         let url = try self.getURL().asURL();
         var urlRequest: URLRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
+//        urlRequest.addValue(<#T##value: String##String#>, forHTTPHeaderField: <#T##String#>)
 //        urlRequest = try URLEncoding.default.encode(urlRequest, with: param)
         let data = try JSONSerialization.data(withJSONObject: body, options: [])
         urlRequest.httpBody = data
