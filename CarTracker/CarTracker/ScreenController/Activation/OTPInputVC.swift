@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 class OTPInputVC: BaseViewController {
-
+    
     @IBOutlet var txtOTP: UITextField!
     let service :ActivationService = ActivationService()
     var currentOTP:SystemParameter? = nil
@@ -22,7 +22,7 @@ class OTPInputVC: BaseViewController {
         do{
             let realm = try Realm()
             if let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first {
-                self.currentOTP = currentOTP
+                self.currentOTP = SystemParameter(currentOTP)
                 txtOTP.text = currentOTP.name
             }
         } catch{
@@ -52,13 +52,13 @@ class OTPInputVC: BaseViewController {
         })
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

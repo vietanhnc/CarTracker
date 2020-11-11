@@ -35,6 +35,9 @@
 		56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15682559A95D00D5C4F1 /* SystemParameter.swift */; };
 		56DC1591255B024E00D5C4F1 /* InfoInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */; };
 		56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */; };
+		56DC1596255C4FB700D5C4F1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC1595255C4FB700D5C4F1 /* UserInfo.swift */; };
+		56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC159A255C58D200D5C4F1 /* MainVC.swift */; };
+		56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC159B255C58D200D5C4F1 /* MainVC.xib */; };
 		56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */; };
 		56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */; };
 		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
@@ -86,6 +89,9 @@
 		56DC15682559A95D00D5C4F1 /* SystemParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemParameter.swift; sourceTree = "<group>"; };
 		56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoInputVC.swift; sourceTree = "<group>"; };
 		56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoInputVC.xib; sourceTree = "<group>"; };
+		56DC1595255C4FB700D5C4F1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		56DC159A255C58D200D5C4F1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		56DC159B255C58D200D5C4F1 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionManager.swift; sourceTree = "<group>"; };
 		56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDelegate.swift; sourceTree = "<group>"; };
 		56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +212,7 @@
 		56D33EBB2539971A0026368C /* ScreenController */ = {
 			isa = PBXGroup;
 			children = (
+				56DC1599255C58B300D5C4F1 /* Main */,
 				5658324B254E868A00991FD4 /* Activation */,
 				56583248254B266D00991FD4 /* Base */,
 				56D33EA72538A78E0026368C /* ViewController.swift */,
@@ -233,6 +240,7 @@
 				56D632302557961D00909F59 /* BaseError.swift */,
 				56D632322557C27000909F59 /* BaseResponse.swift */,
 				56DC15682559A95D00D5C4F1 /* SystemParameter.swift */,
+				56DC1595255C4FB700D5C4F1 /* UserInfo.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -252,6 +260,15 @@
 				56D6323A25596E6D00909F59 /* DateExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		56DC1599255C58B300D5C4F1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				56DC159A255C58D200D5C4F1 /* MainVC.swift */,
+				56DC159B255C58D200D5C4F1 /* MainVC.xib */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		56DC5B542541DEC000AC3D66 /* Service */ = {
@@ -389,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
+				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
@@ -458,10 +476,12 @@
 				56D1EA5B25530CF100DB0851 /* APIRouter.swift in Sources */,
 				56D632382557D17F00909F59 /* AlertView.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
+				56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */,
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,
 				56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */,
 				56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */,
 				56D632332557C27000909F59 /* BaseResponse.swift in Sources */,
+				56DC1596255C4FB700D5C4F1 /* UserInfo.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
 				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
 				56E2B622255981BF0011CEDA /* OTPInputVC.swift in Sources */,

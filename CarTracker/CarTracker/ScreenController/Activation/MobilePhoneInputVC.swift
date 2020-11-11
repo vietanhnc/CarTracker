@@ -17,13 +17,13 @@ class MobilePhoneInputVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        txtPhone.text = String(Date().millisecondsSince1970)
+//        txtPhone.text = String(Date().millisecondsSince1970)
     }
     
     @IBAction func btnContinueTouch(_ sender: Any) {
         service.sendOTP(txtPhone.text!, completion: { data in
             let otpVC = OTPInputVC()
-            self.navigationController?.pushViewController(otpVC, animated: true)
+            self.navigationController?.pushViewController(otpVC, animated: false)
         })
     }
     

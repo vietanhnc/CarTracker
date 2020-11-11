@@ -74,6 +74,42 @@ class ActivationService{
                             currentOTP.ext1 = accessToken
                         }
                     }
+                    completion(nil)
+                } catch{
+                }
+            }else{
+                let errorMsg = data?.error.description ?? ""
+                completion(errorMsg);
+            }
+        })
+    }
+    
+    func updateInfo(_ name:String,_ email:String,_ phone:String,completion: @escaping (_ data:String?) -> Void) {
+        Request.shared().fetch(APIRouter.UpdateInfo(name, email, phone), completion: { data in
+            guard data != nil else{ AlertView.showError(); return }
+            if data!.isSuccess {
+                //save UserInfo
+                do{
+                    let realm = try Realm()
+                    guard let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first
+                          else {
+                        AlertView.showError(); return
+                    }
+                    var currentUser = realm.objects(UserInfo.self).first
+                    try realm.write {
+                        if currentUser != nil {
+                            //delete
+                            realm.delete(currentUser!)
+                        }
+                        currentUser = UserInfo()
+                        currentUser!.phone = currentOTP.desc
+                        currentUser!.activeCode = currentOTP.name
+                        currentUser!.accessToken = currentOTP.ext1
+                        currentUser!.name = name
+                        currentUser!.email = email
+                        realm.add(currentUser!)
+                    }
+                    completion(nil)
                 } catch{
                 }
             }else{

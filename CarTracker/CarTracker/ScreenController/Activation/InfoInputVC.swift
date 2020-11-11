@@ -26,14 +26,19 @@ class InfoInputVC: BaseViewController {
         do{
             let realm = try Realm()
             if let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first {
-                self.currentOTP = currentOTP
+                self.currentOTP = SystemParameter(currentOTP)
             }
         } catch{
         }
     }
     
     @IBAction func btnContinueTouch(_ sender: Any) {
-        
+        guard let phone = self.currentOTP?.desc else {return}
+        guard let name = txtName.text else {return}
+        guard let email = txtEmail.text else {return}
+        service.updateInfo(name, email, phone, completion: { data in
+            
+        })
     }
     
     /*

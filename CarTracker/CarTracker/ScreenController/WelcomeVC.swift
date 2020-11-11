@@ -27,7 +27,7 @@ class WelcomeVC: BaseViewController {
         
 //        let navi = BaseNavigationController(rootViewController: mpvc)
 //        navi.navigationBar.isTranslucent = false
-        self.navigationController?.pushViewController(mpvc, animated: true)
+        self.navigationController?.pushViewController(mpvc, animated: false)
         
     }
     

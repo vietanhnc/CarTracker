@@ -29,7 +29,9 @@ class Request {
     }
     
     func fetch(_ apiRouter:APIRouter,completion: @escaping (_ response:BaseResponse?) -> Void){
+        print("============================================")
         print("REQUEST_URL:\(apiRouter.getURL())")
+        print("REQUEST_HEADER:\(apiRouter.header ?? ["":""])")
         print("REQUEST_BODY:\(apiRouter.getBody())")
         LoadingView.show()
         AF.request(apiRouter).responseJSON{response in
