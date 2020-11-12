@@ -1,14 +1,14 @@
 //
-//  MainVC.swift
+//  Main2VCViewController.swift
 //  CarTracker
 //
-//  Created by VietAnh on 11/12/20.
+//  Created by VietAnh on 11/13/20.
 //  Copyright © 2020 MSB. All rights reserved.
 //
 
 import UIKit
 
-class MainVC: BaseViewController {
+class Main2VC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

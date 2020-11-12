@@ -37,7 +37,12 @@ class InfoInputVC: BaseViewController {
         guard let name = txtName.text else {return}
         guard let email = txtEmail.text else {return}
         service.updateInfo(name, email, phone, completion: { data in
-            
+            if data == nil {
+                let main = MainTabBarVC()
+                self.navigationController?.pushViewController(main, animated: false)
+            }else{
+                AlertView.show(data)
+            }
         })
     }
     

@@ -38,6 +38,10 @@
 		56DC1596255C4FB700D5C4F1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC1595255C4FB700D5C4F1 /* UserInfo.swift */; };
 		56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC159A255C58D200D5C4F1 /* MainVC.swift */; };
 		56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC159B255C58D200D5C4F1 /* MainVC.xib */; };
+		56DC15A2255DA5F000D5C4F1 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15A0255DA5F000D5C4F1 /* MainTabBarVC.swift */; };
+		56DC15A3255DA5F000D5C4F1 /* MainTabBarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */; };
+		56DC15A8255DA7AC00D5C4F1 /* Main2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15A6255DA7AC00D5C4F1 /* Main2VC.swift */; };
+		56DC15A9255DA7AC00D5C4F1 /* Main2VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC15A7255DA7AC00D5C4F1 /* Main2VC.xib */; };
 		56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */; };
 		56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */; };
 		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
@@ -92,6 +96,10 @@
 		56DC1595255C4FB700D5C4F1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		56DC159A255C58D200D5C4F1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		56DC159B255C58D200D5C4F1 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		56DC15A0255DA5F000D5C4F1 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarVC.xib; sourceTree = "<group>"; };
+		56DC15A6255DA7AC00D5C4F1 /* Main2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main2VC.swift; sourceTree = "<group>"; };
+		56DC15A7255DA7AC00D5C4F1 /* Main2VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main2VC.xib; sourceTree = "<group>"; };
 		56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionManager.swift; sourceTree = "<group>"; };
 		56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDelegate.swift; sourceTree = "<group>"; };
 		56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +275,10 @@
 			children = (
 				56DC159A255C58D200D5C4F1 /* MainVC.swift */,
 				56DC159B255C58D200D5C4F1 /* MainVC.xib */,
+				56DC15A0255DA5F000D5C4F1 /* MainTabBarVC.swift */,
+				56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */,
+				56DC15A6255DA7AC00D5C4F1 /* Main2VC.swift */,
+				56DC15A7255DA7AC00D5C4F1 /* Main2VC.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -406,10 +418,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
+				56DC15A9255DA7AC00D5C4F1 /* Main2VC.xib in Resources */,
 				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
+				56DC15A3255DA5F000D5C4F1 /* MainTabBarVC.xib in Resources */,
 				56D33EAB2538A78E0026368C /* Main.storyboard in Resources */,
 				565832472548835A00991FD4 /* WelcomeVC.xib in Resources */,
 				56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */,
@@ -476,6 +490,7 @@
 				56D1EA5B25530CF100DB0851 /* APIRouter.swift in Sources */,
 				56D632382557D17F00909F59 /* AlertView.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
+				56DC15A8255DA7AC00D5C4F1 /* Main2VC.swift in Sources */,
 				56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */,
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,
 				56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */,
@@ -483,6 +498,7 @@
 				56D632332557C27000909F59 /* BaseResponse.swift in Sources */,
 				56DC1596255C4FB700D5C4F1 /* UserInfo.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
+				56DC15A2255DA5F000D5C4F1 /* MainTabBarVC.swift in Sources */,
 				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
 				56E2B622255981BF0011CEDA /* OTPInputVC.swift in Sources */,
 				56D632312557961D00909F59 /* BaseError.swift in Sources */,

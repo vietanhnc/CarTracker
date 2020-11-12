@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class WelcomeVC: BaseViewController {
 
     
@@ -20,14 +20,22 @@ class WelcomeVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let mpvc = MobilePhoneInputVC()
+        var nextView:UIViewController = MobilePhoneInputVC()
 //        mpvc.modalPresentationStyle = .fullScreen
 //        mpvc.modalTransitionStyle = .crossDissolve
 //        self.present(mpvc, animated: true, completion: nil)
         
 //        let navi = BaseNavigationController(rootViewController: mpvc)
 //        navi.navigationBar.isTranslucent = false
-        self.navigationController?.pushViewController(mpvc, animated: false)
+        do {
+            let realm = try Realm()
+            let currentUser = realm.objects(UserInfo.self).first
+            if currentUser != nil {
+                nextView = MainTabBarVC()
+            }
+        } catch{}
+        
+        self.navigationController?.pushViewController(nextView, animated: false)
         
     }
     
