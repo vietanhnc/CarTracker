@@ -29,7 +29,7 @@ class MobilePhoneInputVC: BaseViewController {
     
     func sendOTPCompletion(_ dataParam:JSON?,_ error:String){
         guard dataParam != nil else{
-            super.showAlert("")
+            AlertView.show()
             return
         }
     }

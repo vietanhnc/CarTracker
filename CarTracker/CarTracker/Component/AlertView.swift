@@ -35,7 +35,7 @@ extension UIViewController {
 class AlertView{
     static var currentOverlayTarget : UIView?
     
-    static func showError(){
+    static func show(){
         self.show("Có lỗi xảy ra!")
     }
     

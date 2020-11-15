@@ -15,4 +15,7 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'NVActivityIndicatorView'
 pod "SwiftSpinner"
+#pod 'SwiftSVG', '~> 2.0'
+#pod "Macaw"
+pod 'Localize-Swift', '~> 3.2'
 end

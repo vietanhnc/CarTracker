@@ -3,6 +3,12 @@ PODS:
   - CocoaAsyncSocket (7.6.4)
   - CocoaMQTT (1.2.5):
     - CocoaAsyncSocket (~> 7.6.3)
+  - Localize-Swift (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
+    - Localize-Swift/UIKit (= 3.2.0)
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - Localize-Swift/UIKit (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
@@ -24,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CocoaMQTT
+  - Localize-Swift (~> 3.2)
   - NVActivityIndicatorView
   - RealmSwift
   - RxCocoa
@@ -37,6 +44,7 @@ SPEC REPOS:
     - Alamofire
     - CocoaAsyncSocket
     - CocoaMQTT
+    - Localize-Swift
     - NVActivityIndicatorView
     - Realm
     - RealmSwift
@@ -51,6 +59,7 @@ SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaMQTT: a61490ed3b328011c5d75169a77781983e2bb221
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   Realm: 031fdd4be7094d01b43af1a5e49766ab644bb800
   RealmSwift: 43cf2e114baa9d17d34eb81e7d0def31f21cd444
@@ -61,6 +70,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: 0f15c006307f8d8bbac075638927ec1361b565d7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 26c88acac24ff3640aee29d82eee14feca4e4d5b
+PODFILE CHECKSUM: 097c2dc065ab3065599b173052746a801d0ce86f
 
 COCOAPODS: 1.10.0

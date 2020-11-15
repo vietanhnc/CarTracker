@@ -7,20 +7,31 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class MainTabBarVC: BaseTabBarController {
+    
+    func setupUI() {
+        let main1 = MainVC()
+        let main1Nav = BaseNavigationController(rootViewController: main1)
+        let main1Icon = UIImage(named: "cole3")
+        main1Nav.tabBarItem = UITabBarItem(title: "service".localized(),image: main1Icon,selectedImage: nil)
+        let main2 = Main2VC()
+        let main2Nav = BaseNavigationController(rootViewController: main2)
+        main2Nav.tabBarItem = UITabBarItem(title: "carLocation".localized(),image: UIImage(named: "location"),selectedImage: nil)
+        self.tabBar.tintColor = AppUtils.getAccentColor()
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13.0)], for: .normal)
 
+
+        self.viewControllers = [main1Nav,main2Nav]
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let tabbarController = UITabBarController()
-        let main1 = MainVC()
-        main1.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
-        let main1Nav = BaseNavigationController(rootViewController: main1)
+        self.setupUI()
+//        print(Localize.availableLanguages())
         
-        let main2 = Main2VC()
-        main2.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
-        let main2Nav = BaseNavigationController(rootViewController: main2)
-        self.viewControllers = [main1Nav,main2Nav]
+//        let tabbarController = UITabBarController()
+
         
 //        tabbarController.viewControllers = [homeNavi, messagesNavi, friendsNavi, profileNavi]
 

@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-
+import Localize_Swift
 class BaseViewController: UIViewController {
     var loading:UIActivityIndicatorView? = nil
     override func viewDidLoad() {
@@ -20,27 +20,31 @@ class BaseViewController: UIViewController {
     func setupData() {}
     
     func setupUI() {
-        loading = UIActivityIndicatorView(style: .gray)
-        loading!.center = self.view.center
-        self.view.addSubview(loading!)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+//        loading = UIActivityIndicatorView(style: .gray)
+//        loading!.center = self.view.center
+//        self.view.addSubview(loading!)
     }
     
-    func showLoading(){
-        loading!.startAnimating()
+    @objc func setText(){
     }
     
-    func hideLoading(){
-        if let indicator = loading {
-            indicator.stopAnimating()
-        }
-    }
+//    func showLoading(){
+//        loading!.startAnimating()
+//    }
+//
+//    func hideLoading(){
+//        if let indicator = loading {
+//            indicator.stopAnimating()
+//        }
+//    }
     
-    func showAlert(_ message:String?) -> Void {
-        let msg = (message ?? "").isEmpty ? "Có lỗi xảy ra!" : message!;
-        let alert = UIAlertController(title: "Thông báo", message: msg, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func showAlert(_ message:String?) -> Void {
+//        let msg = (message ?? "").isEmpty ? "Có lỗi xảy ra!" : message!;
+//        let alert = UIAlertController(title: "Thông báo", message: msg, preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+//    }
     
     func fetch(_ apiRouter:APIRouter,completion: @escaping (_ data:BaseResponse?) -> Void) {
 //        self.showLoading()
@@ -52,5 +56,16 @@ class BaseViewController: UIViewController {
 //                self.showAlert(error?.description)
 //            }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
+    }
+    
+    // Remove the LCLLanguageChangeNotification on viewWillDisappear
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 }

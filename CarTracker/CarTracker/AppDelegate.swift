@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import Localize_Swift
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -20,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navi.navigationBar.isTranslucent = false
         window?.rootViewController = navi
         window?.makeKeyAndVisible()
-        
+        Localize.setCurrentLanguage("vi")
+
         // Override point for customization after application launch.
 //        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
 //        let mqtt = MQTTConnectionManager.shared();

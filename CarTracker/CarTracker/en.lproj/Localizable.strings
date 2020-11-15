@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  CarTracker
+
+  Created by VietAnh on 11/14/20.
+  Copyright © 2020 MSB. All rights reserved.
+*/
+"service" = "Dịch vụ";
+"carLocation" = "Vị trí xe";
+"notification" = "Thông báo";
+"account" = "Tài khoản";

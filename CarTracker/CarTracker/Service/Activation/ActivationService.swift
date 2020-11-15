@@ -12,7 +12,7 @@ class ActivationService{
     func sendOTP(_ phone :String,completion: @escaping (_ errorMsg:String?) -> Void) {
         Request.shared().fetch(APIRouter.sendOTP(phone), completion: {data in
             guard data != nil else{
-                AlertView.showError()
+                AlertView.show()
                 return
             }
             if data!.error.statusCode == 400 {
@@ -47,7 +47,7 @@ class ActivationService{
     func resendOTP(_ phone :String,completion: @escaping (_ data:BaseResponse?) -> Void) {
         Request.shared().fetch(APIRouter.reSendOTP(phone), completion: {data in
             guard data != nil else{
-                AlertView.showError()
+                AlertView.show()
                 return
             }
             if data!.isSuccess {
@@ -63,7 +63,7 @@ class ActivationService{
     
     func active(_ phone:String,_ activeCode:String,completion: @escaping (_ data:String?) -> Void){
         Request.shared().fetch(APIRouter.active(phone, activeCode), completion: {data in
-            guard data != nil else{ AlertView.showError(); return }
+            guard data != nil else{ AlertView.show(); return }
             if data!.isSuccess {
                 //save accessToken
                 let accessToken:String! = data?.response["accessToken"].stringValue
@@ -86,14 +86,14 @@ class ActivationService{
     
     func updateInfo(_ name:String,_ email:String,_ phone:String,completion: @escaping (_ data:String?) -> Void) {
         Request.shared().fetch(APIRouter.UpdateInfo(name, email, phone), completion: { data in
-            guard data != nil else{ AlertView.showError(); return }
+            guard data != nil else{ AlertView.show(); return }
             if data!.isSuccess {
                 //save UserInfo
                 do{
                     let realm = try Realm()
                     guard let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first
                           else {
-                        AlertView.showError(); return
+                        AlertView.show(); return
                     }
                     var currentUser = realm.objects(UserInfo.self).first
                     try realm.write {

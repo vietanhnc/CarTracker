@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "welcome"; ObjectID = "MKi-fO-lcj"; */
+"MKi-fO-lcj.text" = "welcome";
+
+/* Class = "UILabel"; text = "map"; ObjectID = "QE4-R8-4fk"; */
+"QE4-R8-4fk.text" = "map";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "SeI-yZ-ZKv"; */
+"SeI-yZ-ZKv.title" = "Item 2";
+
+/* Class = "UILabel"; text = "setting"; ObjectID = "gqx-Lb-3wa"; */
+"gqx-Lb-3wa.text" = "setting";
