@@ -10,9 +10,11 @@ import Foundation
 import RealmSwift
 
 class MainService{
-    
+    let service :ActivationService = ActivationService()
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
-        completion(nil,nil)
+        Request.shared().fetch(APIRouter.GetInfo(""),completion: {data in
+            completion(nil,nil)
+        })
         
 //        Request.shared().fetch(APIRouter.sendOTP(phone), completion: {data in
 //            guard data != nil else{

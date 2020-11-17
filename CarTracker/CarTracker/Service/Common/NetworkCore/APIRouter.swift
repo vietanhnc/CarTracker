@@ -15,6 +15,8 @@ enum APIRouter: URLRequestConvertible{
     case reSendOTP(_ phone: String)
     case active(_ phone: String,_ activeCode: String)
     case UpdateInfo(_ name: String,_ email: String,_ phone: String)
+    case login(_ UserName:String,_ Password:String)
+    case GetInfo(_ phone: String)
     
     private var path: String {
         switch self {
@@ -26,17 +28,24 @@ enum APIRouter: URLRequestConvertible{
             return "ResendCode"
         case .UpdateInfo:
             return "UpdateInfo"
+        case .login:
+            return "login"
+        case .GetInfo:
+            return "GetInfo"
         }
     }
     
     private var method: HTTPMethod{
         switch self {
-        case .sendOTP,.active,.reSendOTP,.UpdateInfo:
+        case .sendOTP,.active,.reSendOTP,.UpdateInfo,.login:
             return .post
+        default:
+            return .get
         }
+        
     }
     
-    private var body:Parameters{
+    private var body:Parameters?{
         switch self {
         case .sendOTP(let phone),.reSendOTP(let phone):
             return ["phone":phone]
@@ -44,10 +53,14 @@ enum APIRouter: URLRequestConvertible{
             return ["phone":phone,"activeCode":activeCode]
         case .UpdateInfo(let name,let email,let phone):
             return ["name":name,"email":email,"phone":phone]
+        case .login(let UserName,let Password):
+            return ["UserName":UserName,"Password":Password]
+        default:
+            return nil
         }
     }
     
-    func getBody() -> Parameters {
+    func getBody() -> Parameters? {
         return body
     }
     
@@ -57,8 +70,8 @@ enum APIRouter: URLRequestConvertible{
     
     public var header:[String:String]?{
         switch self {
-        case .UpdateInfo:
-            return ["accessToken":self.getAccessToken()]
+        case .UpdateInfo,.login,.GetInfo:
+            return ["accesstoken":self.getAccessToken()]
         default:
             return nil
         }
@@ -67,8 +80,8 @@ enum APIRouter: URLRequestConvertible{
     private func getAccessToken()->String{
         do{
             let realm = try Realm()
-            if let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first {
-                return currentOTP.ext1
+            if let currentOTP = realm.objects(UserInfo.self).first {
+                return currentOTP.accessToken
             }
         } catch{
         }
@@ -82,8 +95,10 @@ enum APIRouter: URLRequestConvertible{
         urlRequest.httpMethod = method.rawValue
         urlRequest.allHTTPHeaderFields = header
 //        urlRequest = try URLEncoding.default.encode(urlRequest, with: param)
-        let data = try JSONSerialization.data(withJSONObject: body, options: [])
-        urlRequest.httpBody = data
+        if body != nil {
+            let data = try JSONSerialization.data(withJSONObject: body, options: [])
+            urlRequest.httpBody = data
+        }
         return urlRequest
     }
 }

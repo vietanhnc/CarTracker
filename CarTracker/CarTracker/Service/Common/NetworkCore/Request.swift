@@ -55,7 +55,8 @@ class Request {
                 }
                 completion(baseResp)
                 break
-            case .failure:
+            case .failure(let error):
+                print(error)
 //                let error = BaseError(nil, nil, nil, "Có lỗi xảy ra!")
                 let baseReps = BaseResponse(nil,nil,false)
                 completion(baseReps)

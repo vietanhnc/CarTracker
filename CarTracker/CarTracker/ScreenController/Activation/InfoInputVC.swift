@@ -14,7 +14,7 @@ class InfoInputVC: BaseViewController {
     @IBOutlet var txtEmail: UITextField!
     
     let service :ActivationService = ActivationService()
-    var currentOTP:SystemParameter? = nil
+    var currentOTP:UserInfo? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +25,15 @@ class InfoInputVC: BaseViewController {
     override func setupData(){
         do{
             let realm = try Realm()
-            if let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first {
-                self.currentOTP = SystemParameter(currentOTP)
+            if let currentOTP = realm.objects(UserInfo.self).first {
+                self.currentOTP = currentOTP.clone()
             }
         } catch{
         }
     }
     
     @IBAction func btnContinueTouch(_ sender: Any) {
-        guard let phone = self.currentOTP?.desc else {return}
+        guard let phone = self.currentOTP?.phone else {return}
         guard let name = txtName.text else {return}
         guard let email = txtEmail.text else {return}
         service.updateInfo(name, email, phone, completion: { data in

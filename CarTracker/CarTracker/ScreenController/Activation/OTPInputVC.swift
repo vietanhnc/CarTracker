@@ -12,7 +12,7 @@ class OTPInputVC: BaseViewController {
     
     @IBOutlet var txtOTP: UITextField!
     let service :ActivationService = ActivationService()
-    var currentOTP:SystemParameter? = nil
+    var currentOTP:UserInfo? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,9 +21,9 @@ class OTPInputVC: BaseViewController {
     override func setupData(){
         do{
             let realm = try Realm()
-            if let currentOTP = realm.objects(SystemParameter.self).filter("type == 'OTP_ACTIVE'").first {
-                self.currentOTP = SystemParameter(currentOTP)
-                txtOTP.text = currentOTP.name
+            if let currentOTP = realm.objects(UserInfo.self).first {
+                self.currentOTP = currentOTP.clone()
+                txtOTP.text = currentOTP.activeCode
             }
         } catch{
         }
@@ -31,7 +31,7 @@ class OTPInputVC: BaseViewController {
     
     @IBAction func btnConfirmTouch(_ sender: Any) {
         guard let cOTPUnwraped = self.currentOTP else { return }
-        service.active(cOTPUnwraped.desc, cOTPUnwraped.name, completion: {data in
+        service.active(cOTPUnwraped.phone, cOTPUnwraped.activeCode, completion: {data in
             if let errorMsg = data {
                 AlertView.show(errorMsg)
             }else{
@@ -46,7 +46,7 @@ class OTPInputVC: BaseViewController {
         guard let cOTPUnwraped = self.currentOTP else {
             return
         }
-        service.resendOTP(cOTPUnwraped.desc, completion: { data in
+        service.resendOTP(cOTPUnwraped.phone, completion: { data in
             let otp = data!.response["activeCode"].stringValue
             self.txtOTP.text = otp
         })

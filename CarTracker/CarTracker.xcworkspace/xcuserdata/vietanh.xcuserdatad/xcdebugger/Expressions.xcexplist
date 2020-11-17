@@ -8,7 +8,19 @@
             <PersistentString
                value = "json[&quot;statusCode&quot;]">
             </PersistentString>
+            <PersistentString
+               value = "apiRouter">
+            </PersistentString>
+            <PersistentString
+               value = "response.result">
+            </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "APIRouter.asURLRequest():APIRouter.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in MobilePhoneInputVC.btnContinueTouch(_:):MobilePhoneInputVC.swift">
@@ -19,13 +31,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
-      </ContextState>
-      <ContextState
-         contextName = "MainVC.setupUI():MainVC.swift">
+         contextName = "BaseViewController.setupUI():BaseViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "view1.heightAnchor">
+               value = "self.view.center">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,10 +42,10 @@
          contextName = "BaseViewController.showLoading():BaseViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "BaseViewController.setupUI():BaseViewController.swift">
+         contextName = "MainVC.setupUI():MainVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.center">
+               value = "view1.heightAnchor">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

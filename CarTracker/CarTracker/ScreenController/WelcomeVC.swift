@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 class WelcomeVC: BaseViewController {
-
+    let service :ActivationService = ActivationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,22 +21,35 @@ class WelcomeVC: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         var nextView:UIViewController = MobilePhoneInputVC()
-//        mpvc.modalPresentationStyle = .fullScreen
-//        mpvc.modalTransitionStyle = .crossDissolve
-//        self.present(mpvc, animated: true, completion: nil)
-        
-//        let navi = BaseNavigationController(rootViewController: mpvc)
-//        navi.navigationBar.isTranslucent = false
         do {
             let realm = try Realm()
             let currentUser = realm.objects(UserInfo.self).first
             if currentUser != nil {
-                nextView = MainTabBarVC()
+                if currentUser?.phone == nil || currentUser!.phone.isEmpty {
+                    self.push(MobilePhoneInputVC())
+                }else if currentUser?.activeCode == nil || currentUser!.activeCode.isEmpty{
+                    self.push(OTPInputVC())
+                }else if currentUser?.name == nil || currentUser!.name.isEmpty{
+                    self.push(InfoInputVC())
+                }else{
+                    //login
+                    service.login(currentUser!.phone, currentUser!.activeCode, completion: { error in
+                        if error == nil{
+                            self.push(MainTabBarVC())
+                        }
+                    })
+                }
+            }else{
+                self.push(MobilePhoneInputVC())
             }
         } catch{}
         
-        self.navigationController?.pushViewController(nextView, animated: false)
         
+        
+    }
+    
+    func push(_ toViewController:UIViewController) {
+        self.navigationController?.pushViewController(toViewController, animated: false)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
