@@ -8,25 +8,50 @@
 
 import Foundation
 import RealmSwift
-
 class MainService{
     let service :ActivationService = ActivationService()
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
-        Request.shared().fetch(APIRouter.GetInfo(""),completion: {data in
+        Request.shared().fetch(APIRouter.GetInfo,completion: {data in
             completion(nil,nil)
         })
         
-//        Request.shared().fetch(APIRouter.sendOTP(phone), completion: {data in
-//            guard data != nil else{
-//                AlertView.show()
-//                return
-//            }
-//            if data!.error.statusCode == 400 {
-//                //PHONE_IS_USED call resend
-//            }else{
-//                let otp = data!.response["activeCode"].stringValue
-//                completion(nil)
-//            }
-//        })
+        //        Request.shared().fetch(APIRouter.sendOTP(phone), completion: {data in
+        //            guard data != nil else{
+        //                AlertView.show()
+        //                return
+        //            }
+        //            if data!.error.statusCode == 400 {
+        //                //PHONE_IS_USED call resend
+        //            }else{
+        //                let otp = data!.response["activeCode"].stringValue
+        //                completion(nil)
+        //            }
+        //        })
     }
+    
+    func fetchGetCarBrand(completion: @escaping (_ errorMsg:String?,_ brands:[Brand]?) -> Void) {
+        Request.shared().fetch(APIRouter.GetCarBrand,completion: {data in
+            guard let dataUW = data else{ AlertView.show(); return }
+            if dataUW.isSuccess {
+                let brandJSON = dataUW.response["brands"]
+                var result = [Brand]()
+                for (index,subJson):(String, JSON) in brandJSON {
+                    let brand = Brand(fromJson: subJson)
+                    result.append(brand)
+                }
+                completion(nil,nil)
+            }else{
+                let errorMsg = data?.error.description ?? ""
+                completion(errorMsg,nil);
+            }
+//            let brandJSON = data["brands"]
+//            var result = [Brand]()
+//            for (index,subJson):(String, JSON) in brandJSON {
+//                let brand = Brand(fromJson: subJson)
+//                result.append(brand)
+//            }
+//            completion(nil,nil)
+        })
+    }
+    
 }

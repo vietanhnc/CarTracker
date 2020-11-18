@@ -30,22 +30,6 @@ class MainVC: BaseViewController {
         NSLayoutConstraint.activate([
             view1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: paddingTop)
         ])
-//        NSLayoutConstraint.activate([
-//            view1.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            view1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: paddingTop),
-//            view1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: CGFloat(0.333)),
-//            view1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            view1.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//        ])
-        //carousel1
-//        carousel1.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            carousel1.centerXAnchor.constraint(equalTo: carousel1.superview!.centerXAnchor),
-//            carousel1.topAnchor.constraint(equalTo: carousel1.superview!.topAnchor),
-//            carousel1.heightAnchor.constraint(equalTo: carousel1.superview!.heightAnchor, multiplier: CGFloat(0.75)),
-//            carousel1.leadingAnchor.constraint(equalTo: carousel1.superview!.leadingAnchor),
-//            carousel1.trailingAnchor.constraint(equalTo: carousel1.superview!.trailingAnchor),
-//        ])
         btnBuy.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.layoutIfNeeded()
@@ -53,11 +37,24 @@ class MainVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+        super.viewWillDisappear(animated)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     @IBAction func btnActiveTouch(_ sender: Any) {
+        let nextView = SelectBrandVC()
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
+    
+    
     
     @IBAction func btnBuyTouch(_ sender: Any) {
     }

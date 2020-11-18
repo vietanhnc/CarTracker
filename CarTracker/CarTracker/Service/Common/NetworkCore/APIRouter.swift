@@ -16,7 +16,8 @@ enum APIRouter: URLRequestConvertible{
     case active(_ phone: String,_ activeCode: String)
     case UpdateInfo(_ name: String,_ email: String,_ phone: String)
     case login(_ UserName:String,_ Password:String)
-    case GetInfo(_ phone: String)
+    case GetInfo
+    case GetCarBrand
     
     private var path: String {
         switch self {
@@ -32,6 +33,8 @@ enum APIRouter: URLRequestConvertible{
             return "login"
         case .GetInfo:
             return "GetInfo"
+        case .GetCarBrand:
+            return "GetCarBrand"
         }
     }
     
@@ -70,7 +73,7 @@ enum APIRouter: URLRequestConvertible{
     
     public var header:[String:String]?{
         switch self {
-        case .UpdateInfo,.login,.GetInfo:
+        case .UpdateInfo,.login,.GetInfo,.GetCarBrand:
             return ["accesstoken":self.getAccessToken()]
         default:
             return nil

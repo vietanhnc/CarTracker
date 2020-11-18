@@ -15,11 +15,13 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         setupData()
         setupUI()
+        
     }
     
     func setupData() {}
     
     func setupUI() {
+        self.setNeedsStatusBarAppearanceUpdate()
         NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
 //        loading = UIActivityIndicatorView(style: .gray)
 //        loading!.center = self.view.center
@@ -67,5 +69,8 @@ class BaseViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
