@@ -25,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7C-mI-hLx">
-                    <rect key="frame" x="0.0" y="150" width="414" height="220.66666666666663"/>
+                    <rect key="frame" x="0.0" y="150.00000000000003" width="414" height="257.66666666666674"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NF3-Ws-8K1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="154.66666666666666"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="193.33333333333334"/>
                             <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rfc-7x-Gtj">
                                 <size key="itemSize" width="128" height="128"/>
@@ -38,10 +38,10 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8Y-r7-3kr">
-                            <rect key="frame" x="0.0" y="154.66666666666669" width="414" height="66"/>
+                            <rect key="frame" x="0.0" y="193.33333333333331" width="414" height="64.333333333333314"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hl-Zx-A8U">
-                                    <rect key="frame" x="10" y="10" width="187" height="46"/>
+                                    <rect key="frame" x="10" y="10.000000000000004" width="187" height="44.333333333333343"/>
                                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                                     <state key="normal" title="Mua"/>
                                     <connections>
@@ -49,7 +49,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy0-F8-dTE">
-                                    <rect key="frame" x="217" y="10" width="187" height="46"/>
+                                    <rect key="frame" x="217" y="10.000000000000004" width="187" height="44.333333333333343"/>
                                     <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Kich Hoat"/>
                                     <connections>
@@ -70,11 +70,11 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="NF3-Ws-8K1" firstAttribute="height" secondItem="f7C-mI-hLx" secondAttribute="height" multiplier="0.7" id="72r-hI-ltk"/>
+                        <constraint firstItem="NF3-Ws-8K1" firstAttribute="height" secondItem="f7C-mI-hLx" secondAttribute="height" multiplier="0.75" id="72r-hI-ltk"/>
                         <constraint firstItem="l8Y-r7-3kr" firstAttribute="leading" secondItem="NF3-Ws-8K1" secondAttribute="leading" id="H7u-Pb-e4y"/>
                         <constraint firstItem="l8Y-r7-3kr" firstAttribute="top" secondItem="NF3-Ws-8K1" secondAttribute="bottom" id="Ur6-iU-Ek1"/>
                         <constraint firstItem="NF3-Ws-8K1" firstAttribute="centerX" secondItem="f7C-mI-hLx" secondAttribute="centerX" id="dPT-oO-1x2"/>
-                        <constraint firstItem="l8Y-r7-3kr" firstAttribute="height" secondItem="f7C-mI-hLx" secondAttribute="height" multiplier="0.3" id="fqq-M6-z6i"/>
+                        <constraint firstItem="l8Y-r7-3kr" firstAttribute="height" secondItem="f7C-mI-hLx" secondAttribute="height" multiplier="0.25" id="fqq-M6-z6i"/>
                         <constraint firstItem="l8Y-r7-3kr" firstAttribute="width" secondItem="NF3-Ws-8K1" secondAttribute="width" id="h1y-uR-jKh"/>
                         <constraint firstItem="NF3-Ws-8K1" firstAttribute="top" secondItem="f7C-mI-hLx" secondAttribute="top" id="rRO-Em-khq"/>
                         <constraint firstItem="NF3-Ws-8K1" firstAttribute="width" secondItem="f7C-mI-hLx" secondAttribute="width" id="wtc-ba-fhr"/>
@@ -91,7 +91,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="f7C-mI-hLx" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.3" id="D2D-lF-pyf"/>
+                <constraint firstItem="f7C-mI-hLx" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.35" id="D2D-lF-pyf"/>
                 <constraint firstItem="f7C-mI-hLx" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="coC-MH-YXE"/>
                 <constraint firstItem="f7C-mI-hLx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="uZf-36-ZsC"/>
                 <constraint firstItem="f7C-mI-hLx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xLx-ly-3eO"/>

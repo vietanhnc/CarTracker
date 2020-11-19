@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftIconFont
+//import SwiftIconFont
 class MapViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -17,21 +17,21 @@ class MapViewController: UIViewController {
     }
     
     func initView(){
-        guard let tabbar = self.tabBarController?.tabBar else {
-            return
-        }
-        if let itemMap = tabbar.items?[0]{
-            let mapIcon = UIImage(from: .fontAwesome5, code: "map", size: CGSize(width: 30, height: 30));
-            itemMap.selectedImage = mapIcon
-            itemMap.image = mapIcon
-            itemMap.title = "Bản đồ"
-        }
-        if let itemMap2 = tabbar.items?[1]{
-            let mapIcon = UIImage(from: .fontAwesome5, code: "cogs", size: CGSize(width: 30, height: 30));
-            itemMap2.selectedImage = mapIcon
-            itemMap2.image = mapIcon
-            itemMap2.title = "Cài đặt"
-        }
+//        guard let tabbar = self.tabBarController?.tabBar else {
+//            return
+//        }
+//        if let itemMap = tabbar.items?[0]{
+//            let mapIcon = UIImage(from: .fontAwesome5, code: "map", size: CGSize(width: 30, height: 30));
+//            itemMap.selectedImage = mapIcon
+//            itemMap.image = mapIcon
+//            itemMap.title = "Bản đồ"
+//        }
+//        if let itemMap2 = tabbar.items?[1]{
+//            let mapIcon = UIImage(from: .fontAwesome5, code: "cogs", size: CGSize(width: 30, height: 30));
+//            itemMap2.selectedImage = mapIcon
+//            itemMap2.image = mapIcon
+//            itemMap2.title = "Cài đặt"
+//        }
     }
     /*
      // MARK: - Navigation

@@ -6,15 +6,15 @@ target 'CarTracker' do
   use_frameworks!
 
   # Pods for CarTracker
-pod 'SwiftIconFont'
-pod 'CocoaMQTT'
+#pod 'SwiftIconFont'
+#pod 'CocoaMQTT'
 pod "RxSwift"
 pod "RxCocoa"
 pod 'RealmSwift'
 pod 'Alamofire'
 pod 'SwiftyJSON'
-pod 'NVActivityIndicatorView'
-pod "SwiftSpinner"
+#pod 'NVActivityIndicatorView'
+#pod "SwiftSpinner"
 #pod 'SwiftSVG', '~> 2.0'
 #pod "Macaw"
 pod 'Localize-Swift', '~> 3.2'

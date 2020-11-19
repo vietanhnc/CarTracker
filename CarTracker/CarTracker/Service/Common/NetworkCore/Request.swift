@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import SwiftSpinner
+//import SwiftSpinner
 class Request {
     
     //singleton

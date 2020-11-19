@@ -770,6 +770,7 @@
 			baseConfigurationReference = 48B5AF5FDBD880F5053404F4 /* Pods-CarTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JCZ22M9H;
 				INFOPLIST_FILE = CarTracker/Info.plist;
@@ -780,6 +781,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vn.vnest.carmanagement;
 				PRODUCT_NAME = CarManagement;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -790,6 +792,7 @@
 			baseConfigurationReference = 434CC202B45CA5C46F0B5F7B /* Pods-CarTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JCZ22M9H;
 				INFOPLIST_FILE = CarTracker/Info.plist;
@@ -800,6 +803,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vn.vnest.carmanagement;
 				PRODUCT_NAME = CarManagement;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

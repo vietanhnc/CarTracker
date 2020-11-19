@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import CocoaMQTT
+//import CocoaMQTT
 
 class ViewController: UIViewController {
-    var mqtt: CocoaMQTT?
+//    var mqtt: CocoaMQTT?
     
     
     

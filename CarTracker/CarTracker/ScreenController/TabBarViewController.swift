@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftIconFont
+//import SwiftIconFont
 
 class TabBarViewController: UITabBarController {
 
