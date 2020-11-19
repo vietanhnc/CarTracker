@@ -50,7 +50,7 @@ class MainVC: BaseViewController {
     }
     
     @IBAction func btnActiveTouch(_ sender: Any) {
-        let nextView = SelectBrandVC()
+        let nextView = ScanDeviceVC()
         self.navigationController?.pushViewController(nextView, animated: true)
     }
     

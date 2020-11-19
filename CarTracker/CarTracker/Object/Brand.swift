@@ -12,12 +12,15 @@ import RealmSwift
 
 class Brand : Object{
 
-    var folderName : String!
-    var id : Int!
-    var image : String!
-    var name : String!
-    var type : String!
-
+    @objc dynamic var folderName = ""
+    @objc dynamic var id = 0
+    @objc dynamic var image = ""
+    @objc dynamic var name = ""
+    @objc dynamic var type = ""
+    
+    override init() {
+        super.init()
+    }
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */

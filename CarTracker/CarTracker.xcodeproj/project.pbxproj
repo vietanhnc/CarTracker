@@ -35,6 +35,8 @@
 		56D632362557CA7000909F59 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632352557CA7000909F59 /* LoadingView.swift */; };
 		56D632382557D17F00909F59 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632372557D17F00909F59 /* AlertView.swift */; };
 		56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6323A25596E6D00909F59 /* DateExtension.swift */; };
+		56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */; };
+		56DBE47D25657D3000EF87E0 /* ScanDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */; };
 		56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15682559A95D00D5C4F1 /* SystemParameter.swift */; };
 		56DC1591255B024E00D5C4F1 /* InfoInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */; };
 		56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */; };
@@ -100,6 +102,8 @@
 		56D632352557CA7000909F59 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		56D632372557D17F00909F59 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		56D6323A25596E6D00909F59 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDeviceVC.swift; sourceTree = "<group>"; };
+		56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanDeviceVC.xib; sourceTree = "<group>"; };
 		56DC15682559A95D00D5C4F1 /* SystemParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemParameter.swift; sourceTree = "<group>"; };
 		56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoInputVC.swift; sourceTree = "<group>"; };
 		56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoInputVC.xib; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 		56D33EBB2539971A0026368C /* ScreenController */ = {
 			isa = PBXGroup;
 			children = (
+				56DBE46F25657CB900EF87E0 /* AddDevice */,
 				56DC1599255C58B300D5C4F1 /* Main */,
 				5658324B254E868A00991FD4 /* Activation */,
 				56583248254B266D00991FD4 /* Base */,
@@ -290,6 +295,17 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		56DBE46F25657CB900EF87E0 /* AddDevice */ = {
+			isa = PBXGroup;
+			children = (
+				56D0FE0A256505D400757E2A /* SelectBrandVC.swift */,
+				56D0FE0B256505D400757E2A /* SelectBrandVC.xib */,
+				56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */,
+				56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */,
+			);
+			path = AddDevice;
+			sourceTree = "<group>";
+		};
 		56DC1599255C58B300D5C4F1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,8 +315,6 @@
 				56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */,
 				56DC15A6255DA7AC00D5C4F1 /* Main2VC.swift */,
 				56DC15A7255DA7AC00D5C4F1 /* Main2VC.xib */,
-				56D0FE0A256505D400757E2A /* SelectBrandVC.swift */,
-				56D0FE0B256505D400757E2A /* SelectBrandVC.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -476,6 +490,7 @@
 				565832472548835A00991FD4 /* WelcomeVC.xib in Resources */,
 				56D0FE0D256505D400757E2A /* SelectBrandVC.xib in Resources */,
 				56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */,
+				56DBE47D25657D3000EF87E0 /* ScanDeviceVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +572,7 @@
 				56D632312557961D00909F59 /* BaseError.swift in Sources */,
 				56DC172125619F8600D5C4F1 /* CarDevice.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
+				56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */,
 				5658324A254B269000991FD4 /* BaseViewController.swift in Sources */,
 				56DC1591255B024E00D5C4F1 /* InfoInputVC.swift in Sources */,
 				56D33EA62538A78E0026368C /* SceneDelegate.swift in Sources */,

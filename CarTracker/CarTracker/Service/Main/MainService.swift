@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import SwiftyJSON
 class MainService{
     let service :ActivationService = ActivationService()
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
@@ -39,18 +40,11 @@ class MainService{
                     let brand = Brand(fromJson: subJson)
                     result.append(brand)
                 }
-                completion(nil,nil)
+                completion(nil,result)
             }else{
                 let errorMsg = data?.error.description ?? ""
                 completion(errorMsg,nil);
             }
-//            let brandJSON = data["brands"]
-//            var result = [Brand]()
-//            for (index,subJson):(String, JSON) in brandJSON {
-//                let brand = Brand(fromJson: subJson)
-//                result.append(brand)
-//            }
-//            completion(nil,nil)
         })
     }
     

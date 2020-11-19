@@ -1,29 +1,22 @@
 //
-//  SelectBrandVC.swift
+//  ScanDeviceVC.swift
 //  CarTracker
 //
-//  Created by Viet Anh on 11/18/20.
+//  Created by VietAnh on 11/18/20.
 //  Copyright © 2020 MSB. All rights reserved.
 //
 
 import UIKit
 
-class SelectBrandVC: BaseViewController {
-    
-    let mainService :MainService = MainService()
-    
+class ScanDeviceVC: BaseViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        mainService.fetchGetCarBrand { (error, data) in
-            
-        }
-    }
-    
+
     /*
     // MARK: - Navigation
 

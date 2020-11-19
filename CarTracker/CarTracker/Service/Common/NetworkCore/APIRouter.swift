@@ -102,6 +102,7 @@ enum APIRouter: URLRequestConvertible{
             let data = try JSONSerialization.data(withJSONObject: body, options: [])
             urlRequest.httpBody = data
         }
+        urlRequest.cachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy
         return urlRequest
     }
 }
