@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  CarTracker
+
+  Created by Viet Anh on 11/19/20.
+  Copyright © 2020 MSB. All rights reserved.
+*/
+"NSCameraUsageDescription" = "Uses the camera for scanning QR-Code of DVD";

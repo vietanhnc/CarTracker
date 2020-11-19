@@ -14,6 +14,7 @@
 		5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */; };
 		56583252254E8FAA00991FD4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583250254E8FAA00991FD4 /* BaseTabBarController.swift */; };
 		56583253254E8FAA00991FD4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583251254E8FAA00991FD4 /* BaseNavigationController.swift */; };
+		5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5682F5DC2566930700A56C25 /* InfoPlist.strings */; };
 		56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE0A256505D400757E2A /* SelectBrandVC.swift */; };
 		56D0FE0D256505D400757E2A /* SelectBrandVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D0FE0B256505D400757E2A /* SelectBrandVC.xib */; };
 		56D0FE112565408600757E2A /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE102565408600757E2A /* Brand.swift */; };
@@ -79,6 +80,8 @@
 		5658324D254E86C600991FD4 /* MobilePhoneInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobilePhoneInputVC.xib; sourceTree = "<group>"; };
 		56583250254E8FAA00991FD4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		56583251254E8FAA00991FD4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		5682F5DB2566930700A56C25 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5682F5DF2566930A00A56C25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56D0FE0A256505D400757E2A /* SelectBrandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBrandVC.swift; sourceTree = "<group>"; };
 		56D0FE0B256505D400757E2A /* SelectBrandVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBrandVC.xib; sourceTree = "<group>"; };
 		56D0FE102565408600757E2A /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
@@ -233,6 +236,7 @@
 				56D33EAC2538A7910026368C /* Assets.xcassets */,
 				56D33EAE2538A7910026368C /* LaunchScreen.storyboard */,
 				56D33EB12538A7910026368C /* Info.plist */,
+				5682F5DC2566930700A56C25 /* InfoPlist.strings */,
 				56DC16E7255FEBBE00D5C4F1 /* Localizable.strings */,
 			);
 			path = CarTracker;
@@ -479,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
+				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
 				56DC15A9255DA7AC00D5C4F1 /* Main2VC.xib in Resources */,
 				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
@@ -607,6 +612,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5682F5DC2566930700A56C25 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5682F5DB2566930700A56C25 /* vi */,
+				5682F5DF2566930A00A56C25 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		56D33EA92538A78E0026368C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
