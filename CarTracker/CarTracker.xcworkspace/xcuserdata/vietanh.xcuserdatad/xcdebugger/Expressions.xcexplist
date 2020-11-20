@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.carBrands">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in Request.fetch(_:completion:):Request.swift">
          <PersistentStrings>
             <PersistentString

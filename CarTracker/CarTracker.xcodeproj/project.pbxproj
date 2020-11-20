@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		563DAEAD25679ED900EF3468 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DAEAB25679ED900EF3468 /* BrandCell.swift */; };
+		563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 563DAEAC25679ED900EF3468 /* BrandCell.xib */; };
 		565832462548835A00991FD4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565832442548835A00991FD4 /* WelcomeVC.swift */; };
 		565832472548835A00991FD4 /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565832452548835A00991FD4 /* WelcomeVC.xib */; };
 		5658324A254B269000991FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583249254B269000991FD4 /* BaseViewController.swift */; };
@@ -73,6 +75,8 @@
 /* Begin PBXFileReference section */
 		434CC202B45CA5C46F0B5F7B /* Pods-CarTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.release.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.release.xcconfig"; sourceTree = "<group>"; };
 		48B5AF5FDBD880F5053404F4 /* Pods-CarTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.debug.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		563DAEAB25679ED900EF3468 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
+		563DAEAC25679ED900EF3468 /* BrandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandCell.xib; sourceTree = "<group>"; };
 		565832442548835A00991FD4 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		565832452548835A00991FD4 /* WelcomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
 		56583249254B269000991FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				56D0FE0B256505D400757E2A /* SelectBrandVC.xib */,
 				56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */,
 				56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */,
+				563DAEAB25679ED900EF3468 /* BrandCell.swift */,
+				563DAEAC25679ED900EF3468 /* BrandCell.xib */,
 			);
 			path = AddDevice;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
 				56DC15A9255DA7AC00D5C4F1 /* Main2VC.xib in Resources */,
 				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
+				563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
@@ -560,6 +567,7 @@
 				56DC172A2561A13600D5C4F1 /* MainService.swift in Sources */,
 				56D632382557D17F00909F59 /* AlertView.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
+				563DAEAD25679ED900EF3468 /* BrandCell.swift in Sources */,
 				56DC15A8255DA7AC00D5C4F1 /* Main2VC.swift in Sources */,
 				56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */,
 				56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */,

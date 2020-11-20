@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SelectBrandVC: BaseViewController {
     
+    @IBOutlet weak var brandCollectionView: UICollectionView!
     let mainService :MainService = MainService()
     var carBrands: [Brand]? = nil
     
@@ -18,10 +20,16 @@ class SelectBrandVC: BaseViewController {
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         mainService.fetchGetCarBrand { (error, data) in
-            if error != nil{
+            if error == nil{
                 self.carBrands = data
+                self.brandCollectionView.reloadData()
             }
         }
+        brandCollectionView.delegate = self
+        brandCollectionView.dataSource = self
+        brandCollectionView.register(UINib.init(nibName: "BrandCell", bundle: nil), forCellWithReuseIdentifier: "brandCell")
+        
+
     }
     
     
@@ -39,4 +47,26 @@ class SelectBrandVC: BaseViewController {
     }
     */
 
+}
+extension SelectBrandVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        carBrands.count
+        var itemCount = 0
+        if let carBrandsUW = self.carBrands {
+            itemCount = carBrandsUW.count
+        }
+        return itemCount
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let carBrandsUW = carBrands!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "brandCell", for: indexPath) as! BrandCell
+//        let cell = BrandCell()
+        let item = carBrandsUW[indexPath.row]
+//        cell.nameLabel.text = item.name
+//        cell.avatarImageView.image = UIImage(named: item.avatar)
+        let url = URL(string: item.image)
+        cell.brandImg?.kf.setImage(with: url)
+        return cell
+    }
 }
