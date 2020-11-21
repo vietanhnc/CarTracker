@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
+         contextName = "ScanDeviceVC.viewDidAppear(_:):ScanDeviceVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.carBrands">
+               value = "qrString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

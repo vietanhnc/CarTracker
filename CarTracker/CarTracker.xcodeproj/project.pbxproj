@@ -40,6 +40,8 @@
 		56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6323A25596E6D00909F59 /* DateExtension.swift */; };
 		56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */; };
 		56DBE47D25657D3000EF87E0 /* ScanDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */; };
+		56DBE4B325682D1400EF87E0 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE4B225682D1400EF87E0 /* UIColorExt.swift */; };
+		56DBE4B72568C44100EF87E0 /* CarBrandColView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE4B62568C44100EF87E0 /* CarBrandColView.swift */; };
 		56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15682559A95D00D5C4F1 /* SystemParameter.swift */; };
 		56DC1591255B024E00D5C4F1 /* InfoInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */; };
 		56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */; };
@@ -111,6 +113,8 @@
 		56D6323A25596E6D00909F59 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDeviceVC.swift; sourceTree = "<group>"; };
 		56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanDeviceVC.xib; sourceTree = "<group>"; };
+		56DBE4B225682D1400EF87E0 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		56DBE4B62568C44100EF87E0 /* CarBrandColView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandColView.swift; sourceTree = "<group>"; };
 		56DC15682559A95D00D5C4F1 /* SystemParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemParameter.swift; sourceTree = "<group>"; };
 		56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoInputVC.swift; sourceTree = "<group>"; };
 		56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoInputVC.xib; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 		56D632342557CA5400909F59 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				56DBE4BC2568EEC200EF87E0 /* CarBrand */,
 				56D632352557CA7000909F59 /* LoadingView.swift */,
 				56D632372557D17F00909F59 /* AlertView.swift */,
 			);
@@ -299,6 +304,7 @@
 			children = (
 				56D6323A25596E6D00909F59 /* DateExtension.swift */,
 				56DC15C2255F8D8900D5C4F1 /* UIViewExt.swift */,
+				56DBE4B225682D1400EF87E0 /* UIColorExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -310,10 +316,18 @@
 				56D0FE0B256505D400757E2A /* SelectBrandVC.xib */,
 				56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */,
 				56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */,
-				563DAEAB25679ED900EF3468 /* BrandCell.swift */,
-				563DAEAC25679ED900EF3468 /* BrandCell.xib */,
 			);
 			path = AddDevice;
+			sourceTree = "<group>";
+		};
+		56DBE4BC2568EEC200EF87E0 /* CarBrand */ = {
+			isa = PBXGroup;
+			children = (
+				563DAEAB25679ED900EF3468 /* BrandCell.swift */,
+				563DAEAC25679ED900EF3468 /* BrandCell.xib */,
+				56DBE4B62568C44100EF87E0 /* CarBrandColView.swift */,
+			);
+			path = CarBrand;
 			sourceTree = "<group>";
 		};
 		56DC1599255C58B300D5C4F1 /* Main */ = {
@@ -577,6 +591,7 @@
 				56D632332557C27000909F59 /* BaseResponse.swift in Sources */,
 				56DC1596255C4FB700D5C4F1 /* UserInfo.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
+				56DBE4B325682D1400EF87E0 /* UIColorExt.swift in Sources */,
 				56DC15C3255F8D8900D5C4F1 /* UIViewExt.swift in Sources */,
 				56DC15A2255DA5F000D5C4F1 /* MainTabBarVC.swift in Sources */,
 				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
@@ -598,6 +613,7 @@
 				56D1EA552551BD0700DB0851 /* Request.swift in Sources */,
 				56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */,
 				56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */,
+				56DBE4B72568C44100EF87E0 /* CarBrandColView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

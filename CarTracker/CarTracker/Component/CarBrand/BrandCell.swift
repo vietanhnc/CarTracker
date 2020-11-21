@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class BrandCell: UICollectionViewCell {
 
@@ -15,7 +16,6 @@ class BrandCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        self.collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "brandCell")
     }
 
 }

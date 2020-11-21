@@ -1,52 +1,34 @@
 //
-//  SelectBrandVC.swift
+//  CardBrandColView.swift
 //  CarTracker
 //
-//  Created by Viet Anh on 11/18/20.
+//  Created by VietAnh on 11/21/20.
 //  Copyright © 2020 MSB. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
 
-class SelectBrandVC: BaseViewController {
-    
-    @IBOutlet weak var brandCollectionView: UICollectionView!
-    let mainService :MainService = MainService()
+class CarBrandColView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var carBrands: [Brand]? = nil
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        mainService.fetchGetCarBrand { (error, data) in
-            if error == nil{
-                self.carBrands = data
-                self.brandCollectionView.reloadData()
-            }
-        }
-        brandCollectionView.delegate = self
-        brandCollectionView.dataSource = self
-        brandCollectionView.register(UINib.init(nibName: "BrandCell", bundle: nil), forCellWithReuseIdentifier: "brandCell")
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
+        self.dataSource = self
+        self.delegate = self
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-extension SelectBrandVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        carBrands.count
         var itemCount = 0

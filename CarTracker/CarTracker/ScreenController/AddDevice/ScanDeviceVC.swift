@@ -15,19 +15,21 @@ class ScanDeviceVC: BaseViewController ,AVCaptureMetadataOutputObjectsDelegate{
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    var qrcode = BehaviorRelay<String?>(value:nil)
-    
+    var qrcode = PublishSubject<String>() //BehaviorRelay<String?>(value:nil)
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initObserver()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         #if targetEnvironment(simulator)
         let value = "{\"brand\":\"SPRD\",\"deviceId\":\"8c9f1ec58f78c95f\",\"host\":\"bsp-04\",\"imei\":\"862523112642812\",\"model\":\"sp9853i_1h10_vmm\",\"sdk\":\"27\",\"versionCode\":\"2\"}"
-        self.qrcode.accept(value)
+        self.qrcode.onNext(value)
         #else
         initCamera()
         #endif
-        
     }
     
     func goNext(_ qr:String?){
@@ -53,6 +55,7 @@ class ScanDeviceVC: BaseViewController ,AVCaptureMetadataOutputObjectsDelegate{
     func initObserver(){
         qrcode.asObservable().subscribe { event in
             guard let value = event.element else{ return }
+            print(event)
             self.goNext(value)
         }.disposed(by: disposeBag)
     }
@@ -134,7 +137,7 @@ class ScanDeviceVC: BaseViewController ,AVCaptureMetadataOutputObjectsDelegate{
     }
     
     func found(code: String) {
-        self.qrcode.accept(code)
+        self.qrcode.onNext(code)
         print("read:\(code)")
     }
     
