@@ -625,6 +625,154 @@
 			]
 		},
 		{
+			"name": "UpdateFCM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accesstoken",
+						"type": "text",
+						"value": "{{accesstoken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcm\":\"fcm_token\",\r\n    \"os\":\"1\"//0:android;1:ios\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}UpdateFCM",
+					"host": [
+						"{{baseUrl}}UpdateFCM"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "activeDVD_activated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{accesstoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\",\r\n    \"brand\":\"Toyota\",\r\n    \"model\":\"Inova\",\r\n    \"bks\":\"\",\r\n    \"phone\":\"0966588046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}ActiveDVD",
+							"host": [
+								"{{baseUrl}}ActiveDVD"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "95"
+						}
+					],
+					"cookie": [],
+					"body": "{\"statusCode\":\"400\",\"errorCode\":\"DVD_IS_ACTIVATED\",\"code\":\"0\",\"description\":\"DVD is activated\"}"
+				},
+				{
+					"name": "activeDVD",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{accesstoken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\",\r\n    \"brand\":\"Toyota\",\r\n    \"model\":\"Inova\",\r\n    \"bks\":\"\",\r\n    \"phone\":\"0966588046\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}ActiveDVD",
+							"host": [
+								"{{baseUrl}}ActiveDVD"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\"statusCode\":\"201\",\"code\":\"1\",\"description\":\"OK\"}"
+				}
+			]
+		},
+		{
 			"name": "UpdateInfo",
 			"request": {
 				"method": "POST",
@@ -931,6 +1079,165 @@
 					],
 					"cookie": [],
 					"body": "{\"brandId\":0,\"models\":[{\"name\":\"Tesla Model S\",\"image\":\"https://vnest.vn/car-logo/Tesla/Tesla-Model-S-Indoors.jpg\"},{\"name\":\"Tesla Model X\",\"image\":\"https://vnest.vn/car-logo/Tesla/Tesla-Model-X.jpg\"},{\"name\":\"Tesla Cybertruck\",\"image\":\"https://vnest.vn/car-logo/Tesla/tesla-cyber-truck.jpg\"},{\"name\":\"Tesla Model Y\",\"image\":\"https://vnest.vn/car-logo/Tesla/tesla-model-y.jpg\"},{\"name\":\"Tesla Model 3\",\"image\":\"https://vnest.vn/car-logo/Tesla/tesla-model-3.jpg\"}],\"code\":\"1\",\"description\":\"\"}"
+				}
+			]
+		},
+		{
+			"name": "getJsonFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staffLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\":\"admin\",\r\n    \"Password\":\"08xbP8snKpz6qILK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}StaffLogin",
+					"host": [
+						"{{baseUrl}}StaffLogin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "staffLogin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\":\"admin\",\r\n    \"Password\":\"08xbP8snKpz6qILK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}StaffLogin",
+							"host": [
+								"{{baseUrl}}StaffLogin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\"accessToken\":\"ba3f24e9b17c4f0d832253699ac5f53d21232f297a57a5a743894a0e4a801fc3\",\"code\":\"1\"}"
+				}
+			]
+		},
+		{
+			"name": "StaffGetAccessToken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accesstoken",
+						"value": "{{stafftoken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}StaffGetActiveCode",
+					"host": [
+						"{{baseUrl}}StaffGetActiveCode"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "StaffGetAccessToken",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{stafftoken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}StaffGetActiveCode",
+							"host": [
+								"{{baseUrl}}StaffGetActiveCode"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "102"
+						}
+					],
+					"cookie": [],
+					"body": "{\"activeCode\":\"3UII1G6WBI\",\"rest\":\"999\",\"statusCode\":\"201\",\"errorCode\":\"\",\"code\":\"1\",\"description\":\"\"}"
 				}
 			]
 		}
