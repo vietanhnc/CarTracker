@@ -17,6 +17,7 @@ class Brand : Object{
     @objc dynamic var image = ""
     @objc dynamic var name = ""
     @objc dynamic var type = ""
+    var isSelect:Bool = false
     
     override init() {
         super.init()

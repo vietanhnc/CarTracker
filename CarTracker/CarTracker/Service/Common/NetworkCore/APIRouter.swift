@@ -18,6 +18,7 @@ enum APIRouter: URLRequestConvertible{
     case login(_ UserName:String,_ Password:String)
     case GetInfo
     case GetCarBrand
+    case GetCarBrandModel(_ brandId:String)
     
     private var path: String {
         switch self {
@@ -35,6 +36,8 @@ enum APIRouter: URLRequestConvertible{
             return "GetInfo"
         case .GetCarBrand:
             return "GetCarBrand"
+        case .GetCarBrandModel:
+            return "GetCarBrandModel"
         }
     }
     
@@ -58,6 +61,8 @@ enum APIRouter: URLRequestConvertible{
             return ["name":name,"email":email,"phone":phone]
         case .login(let UserName,let Password):
             return ["UserName":UserName,"Password":Password]
+        case .GetCarBrandModel(let brandId):
+            return ["brandId":brandId]
         default:
             return nil
         }

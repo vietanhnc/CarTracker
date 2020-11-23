@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ScanDeviceVC.viewDidAppear(_:):ScanDeviceVC.swift">
+         contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "qrString">
+               value = "self.carBrands">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -21,6 +21,22 @@
             </PersistentString>
             <PersistentString
                value = "response.result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SelectBrandVC.viewDidLoad():SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.brandCollectionView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectBrandVC.collectionView(_:cellForItemAt:):SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionView as? CarBrandColView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -47,5 +47,21 @@ class MainService{
             }
         })
     }
-    
+    func fetchGetCarBrandModel(_ brandId:String,completion: @escaping (_ errorMsg:String?,_ brands:[Brand]?) -> Void) {
+        Request.shared().fetch(APIRouter.GetCarBrandModel(brandId),completion: {data in
+            guard let dataUW = data else{ AlertView.show(); return }
+            if dataUW.isSuccess {
+                let brandJSON = dataUW.response["models"]
+                var result = [Brand]()
+                for (index,subJson):(String, JSON) in brandJSON {
+                    let brand = Brand(fromJson: subJson)
+                    result.append(brand)
+                }
+                completion(nil,result)
+            }else{
+                let errorMsg = data?.error.description ?? ""
+                completion(errorMsg,nil);
+            }
+        })
+    }
 }

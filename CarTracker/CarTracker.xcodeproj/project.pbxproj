@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		563DAEAD25679ED900EF3468 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DAEAB25679ED900EF3468 /* BrandCell.swift */; };
 		563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 563DAEAC25679ED900EF3468 /* BrandCell.xib */; };
+		563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DAEBF256BD9F800EF3468 /* BrandModel.swift */; };
+		563DAEC2256BD9F800EF3468 /* BrandModel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 563DAEC0256BD9F800EF3468 /* BrandModel.xib */; };
 		565832462548835A00991FD4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565832442548835A00991FD4 /* WelcomeVC.swift */; };
 		565832472548835A00991FD4 /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565832452548835A00991FD4 /* WelcomeVC.xib */; };
 		5658324A254B269000991FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583249254B269000991FD4 /* BaseViewController.swift */; };
@@ -79,6 +81,8 @@
 		48B5AF5FDBD880F5053404F4 /* Pods-CarTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.debug.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		563DAEAB25679ED900EF3468 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
 		563DAEAC25679ED900EF3468 /* BrandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandCell.xib; sourceTree = "<group>"; };
+		563DAEBF256BD9F800EF3468 /* BrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandModel.swift; sourceTree = "<group>"; };
+		563DAEC0256BD9F800EF3468 /* BrandModel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandModel.xib; sourceTree = "<group>"; };
 		565832442548835A00991FD4 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		565832452548835A00991FD4 /* WelcomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
 		56583249254B269000991FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				563DAEAB25679ED900EF3468 /* BrandCell.swift */,
 				563DAEAC25679ED900EF3468 /* BrandCell.xib */,
 				56DBE4B62568C44100EF87E0 /* CarBrandColView.swift */,
+				563DAEBF256BD9F800EF3468 /* BrandModel.swift */,
+				563DAEC0256BD9F800EF3468 /* BrandModel.xib */,
 			);
 			path = CarBrand;
 			sourceTree = "<group>";
@@ -509,6 +515,7 @@
 				563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
+				563DAEC2256BD9F800EF3468 /* BrandModel.xib in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
 				56DC15A3255DA5F000D5C4F1 /* MainTabBarVC.xib in Resources */,
 				56DC16E5255FEBBE00D5C4F1 /* Localizable.strings in Resources */,
@@ -600,6 +607,7 @@
 				56D632312557961D00909F59 /* BaseError.swift in Sources */,
 				56DC172125619F8600D5C4F1 /* CarDevice.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
+				563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */,
 				56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */,
 				5658324A254B269000991FD4 /* BaseViewController.swift in Sources */,
 				56DC1591255B024E00D5C4F1 /* InfoInputVC.swift in Sources */,
