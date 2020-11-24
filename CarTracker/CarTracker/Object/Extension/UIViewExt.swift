@@ -27,3 +27,12 @@ extension UIView {
         }
     }
 }
+//extension UITextField
+//{
+//    open override func draw(_ rect: CGRect) {
+//        self.layer.masksToBounds = true
+//        self.layer.borderWidth = 1.0
+//        self.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
+//        self.layer.cornerRadius = 10.0
+//    }
+//}

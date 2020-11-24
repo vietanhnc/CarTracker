@@ -18,7 +18,7 @@ enum APIRouter: URLRequestConvertible{
     case login(_ UserName:String,_ Password:String)
     case GetInfo
     case GetCarBrand
-    case GetCarBrandModel(_ brandId:String)
+    case GetCarBrandModel(_ brandId:Int)
     
     private var path: String {
         switch self {
@@ -37,7 +37,7 @@ enum APIRouter: URLRequestConvertible{
         case .GetCarBrand:
             return "GetCarBrand"
         case .GetCarBrandModel:
-            return "GetCarBrandModel"
+            return "GetCarModel"
         }
     }
     
@@ -61,8 +61,6 @@ enum APIRouter: URLRequestConvertible{
             return ["name":name,"email":email,"phone":phone]
         case .login(let UserName,let Password):
             return ["UserName":UserName,"Password":Password]
-        case .GetCarBrandModel(let brandId):
-            return ["brandId":brandId]
         default:
             return nil
         }
@@ -72,8 +70,22 @@ enum APIRouter: URLRequestConvertible{
         return body
     }
     
+    private var parameter:Parameters?{
+        switch self{
+        case .GetCarBrandModel(let brandId):
+            return ["brandId":brandId]
+        default:
+            return nil
+        }
+    }
+    
     func getURL() -> String {
-        return AppConstant.BASE_HTTP_URL + path
+        switch self{
+        case .GetCarBrandModel:
+            return AppConstant.BASE_HTTP_URL + path
+        default:
+            return AppConstant.BASE_HTTP_URL + path
+        }
     }
     
     public var header:[String:String]?{
@@ -106,6 +118,10 @@ enum APIRouter: URLRequestConvertible{
         if body != nil {
             let data = try JSONSerialization.data(withJSONObject: body, options: [])
             urlRequest.httpBody = data
+        }
+        if parameter != nil {
+//            let parameters: Parameters = ["foo": "bar"]
+            urlRequest = try URLEncoding.queryString.encode(urlRequest, with: parameter)
         }
         urlRequest.cachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy
         return urlRequest

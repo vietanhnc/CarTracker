@@ -9,11 +9,14 @@
 import UIKit
 
 class BrandModel: UICollectionViewCell {
-
+    
     @IBOutlet weak var lblModelNam: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
 }

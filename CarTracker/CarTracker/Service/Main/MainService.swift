@@ -36,7 +36,7 @@ class MainService{
             if dataUW.isSuccess {
                 let brandJSON = dataUW.response["brands"]
                 var result = [Brand]()
-                for (index,subJson):(String, JSON) in brandJSON {
+                for (_,subJson):(String, JSON) in brandJSON {
                     let brand = Brand(fromJson: subJson)
                     result.append(brand)
                 }
@@ -47,14 +47,15 @@ class MainService{
             }
         })
     }
-    func fetchGetCarBrandModel(_ brandId:String,completion: @escaping (_ errorMsg:String?,_ brands:[Brand]?) -> Void) {
+    func fetchGetCarBrandModel(_ brandId:Int,completion: @escaping (_ errorMsg:String?,_ brands:[CarModel]?) -> Void) {
         Request.shared().fetch(APIRouter.GetCarBrandModel(brandId),completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }
             if dataUW.isSuccess {
-                let brandJSON = dataUW.response["models"]
-                var result = [Brand]()
-                for (index,subJson):(String, JSON) in brandJSON {
-                    let brand = Brand(fromJson: subJson)
+                let modelJSON = dataUW.response["models"]
+                var result = [CarModel]()
+                for (_,subJson):(String, JSON) in modelJSON {
+                    let brand = CarModel(fromJson: subJson)
+                    brand.brandId = dataUW.response["brandId"].intValue
                     result.append(brand)
                 }
                 completion(nil,result)

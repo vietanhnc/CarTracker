@@ -55,6 +55,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SelectBrandVC.textFieldDidEndEditing(_:reason:):SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textField.layer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "BaseViewController.setupUI():BaseViewController.swift">
          <PersistentStrings>
             <PersistentString

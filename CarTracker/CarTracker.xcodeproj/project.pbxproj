@@ -11,6 +11,7 @@
 		563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 563DAEAC25679ED900EF3468 /* BrandCell.xib */; };
 		563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DAEBF256BD9F800EF3468 /* BrandModel.swift */; };
 		563DAEC2256BD9F800EF3468 /* BrandModel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 563DAEC0256BD9F800EF3468 /* BrandModel.xib */; };
+		563DAEC6256CC3C100EF3468 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DAEC5256CC3C100EF3468 /* CarModel.swift */; };
 		565832462548835A00991FD4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565832442548835A00991FD4 /* WelcomeVC.swift */; };
 		565832472548835A00991FD4 /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565832452548835A00991FD4 /* WelcomeVC.xib */; };
 		5658324A254B269000991FD4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56583249254B269000991FD4 /* BaseViewController.swift */; };
@@ -83,6 +84,7 @@
 		563DAEAC25679ED900EF3468 /* BrandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandCell.xib; sourceTree = "<group>"; };
 		563DAEBF256BD9F800EF3468 /* BrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandModel.swift; sourceTree = "<group>"; };
 		563DAEC0256BD9F800EF3468 /* BrandModel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandModel.xib; sourceTree = "<group>"; };
+		563DAEC5256CC3C100EF3468 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		565832442548835A00991FD4 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		565832452548835A00991FD4 /* WelcomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeVC.xib; sourceTree = "<group>"; };
 		56583249254B269000991FD4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				56DC1595255C4FB700D5C4F1 /* UserInfo.swift */,
 				56DC172025619F8600D5C4F1 /* CarDevice.swift */,
 				56D0FE102565408600757E2A /* Brand.swift */,
+				563DAEC5256CC3C100EF3468 /* CarModel.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				56DC1596255C4FB700D5C4F1 /* UserInfo.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
 				56DBE4B325682D1400EF87E0 /* UIColorExt.swift in Sources */,
+				563DAEC6256CC3C100EF3468 /* CarModel.swift in Sources */,
 				56DC15C3255F8D8900D5C4F1 /* UIViewExt.swift in Sources */,
 				56DC15A2255DA5F000D5C4F1 /* MainTabBarVC.swift in Sources */,
 				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
