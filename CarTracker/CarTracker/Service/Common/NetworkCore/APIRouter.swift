@@ -19,6 +19,7 @@ enum APIRouter: URLRequestConvertible{
     case GetInfo
     case GetCarBrand
     case GetCarBrandModel(_ brandId:Int)
+    case ActiveDVD(_ imei:String,_ deviceId:String,_ brand:String,_ model:String,_ bks:String,_ year:String,_ phone:String)
     
     private var path: String {
         switch self {
@@ -38,12 +39,15 @@ enum APIRouter: URLRequestConvertible{
             return "GetCarBrand"
         case .GetCarBrandModel:
             return "GetCarModel"
+        case .ActiveDVD:
+            return "ActiveDVD"
+            
         }
     }
     
     private var method: HTTPMethod{
         switch self {
-        case .sendOTP,.active,.reSendOTP,.UpdateInfo,.login:
+        case .sendOTP,.active,.reSendOTP,.UpdateInfo,.login,.ActiveDVD:
             return .post
         default:
             return .get
@@ -61,6 +65,8 @@ enum APIRouter: URLRequestConvertible{
             return ["name":name,"email":email,"phone":phone]
         case .login(let UserName,let Password):
             return ["UserName":UserName,"Password":Password]
+        case .ActiveDVD(let imei,let deviceId,let brand,let model,let bks,let year,let phone):
+            return ["imei":imei,"deviceId":deviceId,"brand":brand,"model":model,"bks":bks,"year":year,"phone":phone]
         default:
             return nil
         }
@@ -90,7 +96,7 @@ enum APIRouter: URLRequestConvertible{
     
     public var header:[String:String]?{
         switch self {
-        case .UpdateInfo,.login,.GetInfo,.GetCarBrand:
+        case .UpdateInfo,.login,.GetInfo,.GetCarBrand,.ActiveDVD:
             return ["accesstoken":self.getAccessToken()]
         default:
             return nil

@@ -9,3 +9,10 @@
 "carLocation" = "Vị trí xe";
 "notification" = "Thông báo";
 "account" = "Tài khoản";
+"selectCar.text.bks" = "Biển số xe";
+"selectCar.text.brand" = "Hãng xe";
+"selectCar.text.model" = "Loại xe";
+"selectCar.text.year" = "Phiên bản";
+"selectCar.title" = "Kích hoạt thiết bị";
+"continue" = "Tiếp tục";
+"error.showAlert.enterFullInfo" = "Vui lòng nhập đầy đủ thông tin";

@@ -12,6 +12,11 @@ import Kingfisher
 
 class SelectBrandVC: BaseViewController,UITextFieldDelegate {
     
+    @IBOutlet var lblBKS: UILabel!
+    @IBOutlet var lblBrand: UILabel!
+    @IBOutlet var lblModel: UILabel!
+    @IBOutlet var lblYear: UILabel!
+    @IBOutlet var btnContinue: UIButton!
     @IBOutlet weak var txtBKS: UITextField!
     @IBOutlet weak var brandCollectionView: CarBrandColView!
     @IBOutlet weak var carModelCollectionView: UICollectionView!
@@ -37,17 +42,32 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
             }
         }
         
+//        "selectCar.text.bks" = "Biển số xe";
+//        "selectCar.text.brand" = "Hãng xe";
+//        "selectCar.text.model" = "Loại xe";
+//        "selectCar.text.year" = "Phiên bản";
+//        "continue" = "Tiếp tục";
+        self.title = "selectCar.title".localized()
+        
+        lblBKS.text = "selectCar.text.bks".localized()
+        lblBrand.text = "selectCar.text.brand".localized()
+        lblModel.text = "selectCar.text.model".localized()
+        lblYear.text = "selectCar.text.year".localized()
+        
         self.txtBKS.delegate = self
         txtBKS.layer.masksToBounds = true
         txtBKS.layer.borderWidth = 1.0
         txtBKS.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
-        txtBKS.layer.cornerRadius = 10.0
+        txtBKS.layer.cornerRadius = AppConstant.CORNER_RADIUS
 
         self.txtYear.delegate = self
         txtYear.layer.masksToBounds = true
         txtYear.layer.borderWidth = 1.0
         txtYear.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
-        txtYear.layer.cornerRadius = 10.0
+        txtYear.layer.cornerRadius = AppConstant.CORNER_RADIUS
+        
+        btnContinue.layer.cornerRadius = AppConstant.CORNER_RADIUS
+        btnContinue.setTitle("continue".localized(), for: .normal)
         
         brandCollectionView.tag = 1
         brandCollectionView.delegate = self
@@ -60,9 +80,22 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
         carModelCollectionView.dataSource = self
     }
     
-    func setSelectBrand(_ selectedBrand:Brand){
+    
+    @IBAction func btnContinueTouch(_ sender: Any) {
+        //validate
+        if txtBKS.text == "" || txtYear.text == "" || selectedCarBrand == nil || selectedCarModel == nil {
+            AlertView.show("error.showAlert.enterFullInfo".localized())
+        }
+        
+    }
+    
+    func setSelectBrand(_ sb:Brand){
+        let selectedId = self.selectedCarBrand?.id ?? -1
+        if sb.id == selectedId {
+            return
+        }
         for (_, element) in self.carBrands!.enumerated() {
-            if element.id == selectedBrand.id {
+            if element.id == sb.id {
                 element.isSelect = true;
                 self.selectedCarBrand = element
             }else{
@@ -70,9 +103,6 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
             }
         }
         self.getCarModel()
-        
-        
-//        self.carBrands = carBrandsUW;
     }
     
     func getCarModel(){
@@ -90,12 +120,12 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = AppUtils.getAccentColor().cgColor
-//        textField.backgroundColor = UIColor.systemPink;
+//        textField.backgroundColor = AppUtils.getAccentColor();
     }
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason)
     {
         textField.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
-//        textField.backgroundColor = UIColor.gray
+//        textField.backgroundColor = UIColor.init(hexaRGB: "#9C9C9C")!
     }
     /*
      // MARK: - Navigation
@@ -138,6 +168,7 @@ extension SelectBrandVC: UICollectionViewDelegate, UICollectionViewDataSource,UI
             cell.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
             cell.layer.cornerRadius = 10.0
             cell.clipsToBounds = true
+            
             if item.isSelect {
                 cell.layer.borderColor = AppUtils.getAccentColor().cgColor
             }
@@ -150,10 +181,14 @@ extension SelectBrandVC: UICollectionViewDelegate, UICollectionViewDataSource,UI
             cell.backgroundColor = UIColor.white
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
-            cell.layer.cornerRadius = 10.0
+            cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
             cell.clipsToBounds = true
+            cell.backgroundColor = UIColor.white
+            cell.lblModelNam.textColor = UIColor.init(hexaRGB: "#9C9C9C")!
             if item.isSelect {
                 cell.layer.borderColor = AppUtils.getAccentColor().cgColor
+                cell.backgroundColor = AppUtils.getAccentColor()
+                cell.lblModelNam.textColor = UIColor.white
             }
             return cell
         }
