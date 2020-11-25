@@ -3,58 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.carBrands">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in Request.fetch(_:completion:):Request.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "json[&quot;statusCode&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "apiRouter">
-            </PersistentString>
-            <PersistentString
-               value = "response.result">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in SelectBrandVC.viewDidLoad():SelectBrandVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.brandCollectionView">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SelectBrandVC.collectionView(_:cellForItemAt:):SelectBrandVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "collectionView as? CarBrandColView">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
-      </ContextState>
-      <ContextState
-         contextName = "APIRouter.asURLRequest():APIRouter.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in MobilePhoneInputVC.btnContinueTouch(_:):MobilePhoneInputVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationController?">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "SelectBrandVC.textFieldDidEndEditing(_:reason:):SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -71,6 +19,42 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in SelectBrandVC.viewDidLoad():SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.brandCollectionView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in Request.fetch(_:completion:):Request.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;statusCode&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "apiRouter">
+            </PersistentString>
+            <PersistentString
+               value = "response.result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.carBrands">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "APIRouter.asURLRequest():APIRouter.swift">
+      </ContextState>
+      <ContextState
          contextName = "BaseViewController.showLoading():BaseViewController.swift">
       </ContextState>
       <ContextState
@@ -78,6 +62,30 @@
          <PersistentStrings>
             <PersistentString
                value = "view1.heightAnchor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MainService.fetchCarDevice(completion:):MainService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "info[&quot;activeDate&quot;].stringValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectBrandVC.collectionView(_:cellForItemAt:):SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionView as? CarBrandColView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MobilePhoneInputVC.btnContinueTouch(_:):MobilePhoneInputVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController?">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

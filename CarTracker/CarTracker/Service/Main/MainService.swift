@@ -11,23 +11,43 @@ import RealmSwift
 import SwiftyJSON
 class MainService{
     let service :ActivationService = ActivationService()
-    func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
+    func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?,_ userInfo:UserInfo?) -> Void) {
         Request.shared().fetch(APIRouter.GetInfo,completion: {data in
-            completion(nil,nil)
+            guard let dataUW = data else{ AlertView.show(); return }
+            if dataUW.isSuccess {
+                let info = dataUW.response["info"]
+                let dvds = dataUW.response["dvds"]
+                let ui = self.saveUserInfo(info)
+                let carDevices = self.saveCarDevice(dvds)
+                completion(nil,carDevices,ui)
+            }else{
+                let errorMsg = data?.error.description ?? ""
+                completion(errorMsg,nil,nil);
+            }
         })
-        
-        //        Request.shared().fetch(APIRouter.sendOTP(phone), completion: {data in
-        //            guard data != nil else{
-        //                AlertView.show()
-        //                return
-        //            }
-        //            if data!.error.statusCode == 400 {
-        //                //PHONE_IS_USED call resend
-        //            }else{
-        //                let otp = data!.response["activeCode"].stringValue
-        //                completion(nil)
-        //            }
-        //        })
+    }
+    
+    func saveCarDevice(_ dvds:JSON) -> [CarDevice]? {
+        var result = [CarDevice]()
+        return result
+    }
+    
+    func saveUserInfo(_ info:JSON)->UserInfo{
+        var result = UserInfo()
+        do{
+            let realm = try Realm()
+            if let currentOTP = realm.objects(UserInfo.self).first {
+                result = currentOTP
+                try realm.write {
+                    currentOTP.activeDate = info["activeDate"].stringValue
+                    currentOTP.name = info["name"].stringValue
+                    currentOTP.phone = info["phone"].stringValue
+                    currentOTP.email = info["email"].stringValue
+                }
+            }
+        } catch{
+        }
+        return result
     }
     
     func fetchGetCarBrand(completion: @escaping (_ errorMsg:String?,_ brands:[Brand]?) -> Void) {

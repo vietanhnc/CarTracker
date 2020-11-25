@@ -14,6 +14,7 @@ class UserInfo: Object {
     @objc dynamic var email = ""
     @objc dynamic var activeCode = ""
     @objc dynamic var accessToken = ""
+    @objc dynamic var activeDate = ""
     
     func clone()->UserInfo {
         let result = UserInfo()
@@ -22,6 +23,7 @@ class UserInfo: Object {
         result.email = self.phone
         result.activeCode = self.activeCode
         result.accessToken = self.accessToken
+        result.activeDate = self.activeDate
         return result
     }
     

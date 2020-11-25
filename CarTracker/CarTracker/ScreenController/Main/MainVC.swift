@@ -10,6 +10,9 @@ import UIKit
 class MainVC: BaseViewController {
     
     @IBOutlet var view1: UIView!
+    @IBOutlet var viewNodata: UIView!
+    @IBOutlet weak var imgNoData: UIImageView!
+    @IBOutlet weak var lblNoData: UILabel!
     @IBOutlet var carousel1: UICollectionView!
     @IBOutlet var btnBuy: UIButton!
     @IBOutlet var btnActive: UIButton!
@@ -17,12 +20,13 @@ class MainVC: BaseViewController {
     let mainService :MainService = MainService()
     var carDeviceArr :[CarDevice]? = nil
     override func setupData() {
-        mainService.fetchCarDevice(completion: { error,data in
+        mainService.fetchCarDevice(completion: { error,data,userInfo in
             if(error == nil){
                 self.carDeviceArr = data
             }
         })
     }
+//    Hãy trang bị ngay cho xế cưng đầu DVD WebVision để tận hưởng những tính năng giải trí đỉnh cao
     
     override func setupUI() {
         let paddingTop:CGFloat = self.view.frame.height*2/12
@@ -31,6 +35,17 @@ class MainVC: BaseViewController {
             view1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: paddingTop)
         ])
         btnBuy.translatesAutoresizingMaskIntoConstraints = false
+
+        var myString = "Hãy trang bị ngay cho xế cưng đầu DVD WebVision để tận hưởng những tính năng giải trí đỉnh cao"
+        var subString = "DVD WebVision"
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 10)])
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(myString, subString),length:subString.count))
+//        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:10,length: 13))
+        
+        // set label Attribute
+        lblNoData.attributedText = myMutableString
+
         
         self.view.layoutIfNeeded()
     }

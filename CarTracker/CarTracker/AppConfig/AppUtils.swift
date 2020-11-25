@@ -42,5 +42,17 @@ class AppUtils{
         let md5part = MD5(string: (phone + AppConstant.SUBSCRIBE_TOPIC_SALT))
         return result + md5part
     }
+    
+    public static func getSubtringIndex(_ string:String,_ subString:String)->Int{
+        let str = string
+        if let range: Range<String.Index> = str.range(of: subString) {
+            let index: Int = str.distance(from: str.startIndex, to: range.lowerBound)
+            print(index)
+            return index
+        }
+        else {
+            return -1
+        }
+    }
 }
 
