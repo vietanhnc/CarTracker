@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 import Localize_Swift
-
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navi
         window?.makeKeyAndVisible()
         Localize.setCurrentLanguage("vi")
-
+        IQKeyboardManager.shared.enable = true
         // Override point for customization after application launch.
 //        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
 //        let mqtt = MQTTConnectionManager.shared();

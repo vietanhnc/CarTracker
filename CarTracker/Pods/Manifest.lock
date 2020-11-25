@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.0)
+  - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
@@ -24,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - IQKeyboardManagerSwift
   - Kingfisher (~> 5.0)
   - Localize-Swift (~> 3.2)
   - RealmSwift
@@ -34,6 +36,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - IQKeyboardManagerSwift
     - Kingfisher
     - Localize-Swift
     - Realm
@@ -45,6 +48,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
   Realm: 031fdd4be7094d01b43af1a5e49766ab644bb800
@@ -54,6 +58,6 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 24620b23dcc1be87df5c727135c32555d17dc0e0
+PODFILE CHECKSUM: ba438c02c514a923bef26d9422e7e6e8282a6b14
 
 COCOAPODS: 1.10.0

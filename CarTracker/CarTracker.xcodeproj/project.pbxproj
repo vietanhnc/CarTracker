@@ -22,6 +22,8 @@
 		5659DBFE256D6AB5007AD33E /* CBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DBFD256D6AB5007AD33E /* CBTextField.swift */; };
 		5659DC0B256D70BC007AD33E /* CMLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC0A256D70BC007AD33E /* CMLabel.swift */; };
 		5659DC1D256D737F007AD33E /* SelectBrandVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659DC1C256D737F007AD33E /* SelectBrandVC.xib */; };
+		5659DC24256EB9E3007AD33E /* ActiveDVDResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC22256EB9E3007AD33E /* ActiveDVDResultVC.swift */; };
+		5659DC25256EB9E3007AD33E /* ActiveDVDResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659DC23256EB9E3007AD33E /* ActiveDVDResultVC.xib */; };
 		5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5682F5DC2566930700A56C25 /* InfoPlist.strings */; };
 		56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE0A256505D400757E2A /* SelectBrandVC.swift */; };
 		56D0FE112565408600757E2A /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE102565408600757E2A /* Brand.swift */; };
@@ -97,6 +99,8 @@
 		5659DBFD256D6AB5007AD33E /* CBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTextField.swift; sourceTree = "<group>"; };
 		5659DC0A256D70BC007AD33E /* CMLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMLabel.swift; sourceTree = "<group>"; };
 		5659DC1C256D737F007AD33E /* SelectBrandVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBrandVC.xib; sourceTree = "<group>"; };
+		5659DC22256EB9E3007AD33E /* ActiveDVDResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDVDResultVC.swift; sourceTree = "<group>"; };
+		5659DC23256EB9E3007AD33E /* ActiveDVDResultVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveDVDResultVC.xib; sourceTree = "<group>"; };
 		5682F5DB2566930700A56C25 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5682F5DF2566930A00A56C25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56D0FE0A256505D400757E2A /* SelectBrandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBrandVC.swift; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 				5659DC1C256D737F007AD33E /* SelectBrandVC.xib */,
 				56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */,
 				56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */,
+				5659DC22256EB9E3007AD33E /* ActiveDVDResultVC.swift */,
+				5659DC23256EB9E3007AD33E /* ActiveDVDResultVC.xib */,
 			);
 			path = AddDevice;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 				5659DC1D256D737F007AD33E /* SelectBrandVC.xib in Resources */,
 				56DC15A9255DA7AC00D5C4F1 /* Main2VC.xib in Resources */,
 				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
+				5659DC25256EB9E3007AD33E /* ActiveDVDResultVC.xib in Resources */,
 				563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
@@ -618,6 +625,7 @@
 				56DC172125619F8600D5C4F1 /* CarDevice.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
 				563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */,
+				5659DC24256EB9E3007AD33E /* ActiveDVDResultVC.swift in Sources */,
 				5659DC0B256D70BC007AD33E /* CMLabel.swift in Sources */,
 				56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */,
 				5658324A254B269000991FD4 /* BaseViewController.swift in Sources */,

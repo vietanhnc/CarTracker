@@ -17,16 +17,16 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
     @IBOutlet var lblModel: UILabel!
     @IBOutlet var lblYear: UILabel!
     @IBOutlet var btnContinue: UIButton!
-    @IBOutlet weak var txtBKS: UITextField!
+    @IBOutlet var txtBKS: UITextField!
     @IBOutlet weak var brandCollectionView: CarBrandColView!
     @IBOutlet weak var carModelCollectionView: UICollectionView!
-    @IBOutlet weak var txtYear: UITextField!
+    @IBOutlet var txtYear: UITextField!
     let mainService :MainService = MainService()
     var carBrands: [Brand]? = nil
     var selectedCarBrand:Brand? = nil
     var carModel: [CarModel]? = nil
     var selectedCarModel: CarModel? = nil
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,11 +42,7 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
             }
         }
         
-//        "selectCar.text.bks" = "Biển số xe";
-//        "selectCar.text.brand" = "Hãng xe";
-//        "selectCar.text.model" = "Loại xe";
-//        "selectCar.text.year" = "Phiên bản";
-//        "continue" = "Tiếp tục";
+        
         self.title = "selectCar.title".localized()
         
         lblBKS.text = "selectCar.text.bks".localized()
@@ -54,13 +50,13 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
         lblModel.text = "selectCar.text.model".localized()
         lblYear.text = "selectCar.text.year".localized()
         
-        self.txtBKS.delegate = self
+        txtBKS.delegate = self
         txtBKS.layer.masksToBounds = true
         txtBKS.layer.borderWidth = 1.0
         txtBKS.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
         txtBKS.layer.cornerRadius = AppConstant.CORNER_RADIUS
 
-        self.txtYear.delegate = self
+        txtYear.delegate = self
         txtYear.layer.masksToBounds = true
         txtYear.layer.borderWidth = 1.0
         txtYear.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
@@ -79,14 +75,13 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
         carModelCollectionView.delegate = self
         carModelCollectionView.dataSource = self
     }
-    
-    
+
     @IBAction func btnContinueTouch(_ sender: Any) {
         //validate
         if txtBKS.text == "" || txtYear.text == "" || selectedCarBrand == nil || selectedCarModel == nil {
             AlertView.show("error.showAlert.enterFullInfo".localized())
+            return
         }
-        
     }
     
     func setSelectBrand(_ sb:Brand){
@@ -120,13 +115,18 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = AppUtils.getAccentColor().cgColor
-//        textField.backgroundColor = AppUtils.getAccentColor();
     }
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason)
     {
         textField.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
-//        textField.backgroundColor = UIColor.init(hexaRGB: "#9C9C9C")!
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return true;
+
+    }
+    
     /*
      // MARK: - Navigation
      

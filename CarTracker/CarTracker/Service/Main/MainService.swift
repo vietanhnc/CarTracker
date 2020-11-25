@@ -11,7 +11,7 @@ import RealmSwift
 import SwiftyJSON
 class MainService{
     let service :ActivationService = ActivationService()
-    func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?,_ userInfo:UserInfo?) -> Void) {
+    func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
         Request.shared().fetch(APIRouter.GetInfo,completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }
             if dataUW.isSuccess {
@@ -19,10 +19,10 @@ class MainService{
                 let dvds = dataUW.response["dvds"]
                 let ui = self.saveUserInfo(info)
                 let carDevices = self.saveCarDevice(dvds)
-                completion(nil,carDevices,ui)
+                completion(nil,carDevices)
             }else{
                 let errorMsg = data?.error.description ?? ""
-                completion(errorMsg,nil,nil);
+                completion(errorMsg,nil);
             }
         })
     }

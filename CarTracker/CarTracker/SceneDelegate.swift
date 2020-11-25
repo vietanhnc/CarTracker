@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -26,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = navi
         self.window = window
         window.makeKeyAndVisible()
+        IQKeyboardManager.shared.enable = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

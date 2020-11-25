@@ -19,4 +19,6 @@ pod 'SwiftyJSON'
 #pod "Macaw"
 pod 'Localize-Swift', '~> 3.2'
 pod 'Kingfisher', '~> 5.0'
+pod 'IQKeyboardManagerSwift'
+
 end

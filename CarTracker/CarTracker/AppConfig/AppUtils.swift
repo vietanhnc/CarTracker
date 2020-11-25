@@ -18,7 +18,10 @@ class AppUtils{
 //        #D62450
         return UIColor(red: CGFloat(0xD6) / 255.0, green: CGFloat(0x24) / 255.0, blue: CGFloat(0x50) / 255.0, alpha: 1);
     }
-    
+    public static func getSecondaryColor()->UIColor{
+//        #D62450
+        return UIColor(red: 80 / 255.0, green: 40 / 255.0, blue: 96 / 255.0, alpha: 1);
+    }
     public static func MD5(string: String) -> String {
         let length = Int(CC_MD5_DIGEST_LENGTH)
         let messageData = string.data(using:.utf8)!
