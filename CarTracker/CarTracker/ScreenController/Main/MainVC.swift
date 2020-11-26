@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-class MainVC: BaseViewController,UITextFieldDelegate {
+class MainVC: BaseViewController {
     
     @IBOutlet var view1: UIView!
     @IBOutlet var viewNodata: UIView!
@@ -18,11 +18,11 @@ class MainVC: BaseViewController,UITextFieldDelegate {
     @IBOutlet var carousel1: UICollectionView!
     @IBOutlet var btnBuy: UIButton!
     @IBOutlet var btnActive: UIButton!
-    @IBOutlet var txtTest: UITextField!
     
     let mainService :MainService = MainService()
     //    var carDeviceArr :[CarDevice]? = nil
     var carDeviceArr: PublishSubject<[CarDevice]?> = PublishSubject<[CarDevice]?>()
+    var dataSource:[CarDevice]? = nil
     private let disposeBag = DisposeBag()
     override func setupData() {
         mainService.fetchCarDevice(completion: { error,data in
@@ -31,14 +31,17 @@ class MainVC: BaseViewController,UITextFieldDelegate {
             }
         })
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder();
-//        self.btnActive.becomeFirstResponder()
-        return true;
-    }
     
     override func setupUI() {
-        txtTest.delegate = self
+        
+        carousel1.dataSource = self
+        carousel1.delegate = self
+        carousel1.register(UINib.init(nibName: "CarDeviceCell", bundle: nil), forCellWithReuseIdentifier: "CarDeviceCell")
+//        carDeviceArr.asObservable().bind(to: self.carousel1.rx.items) { (collectionView, row, element ) in
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarDeviceCell", for: IndexPath(row : row, section : 0))
+//            //customize cell
+//            return cell
+//        }.disposed(by: disposeBag)
         let paddingTop:CGFloat = self.view.frame.height*2/12
         view1.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -83,6 +86,8 @@ class MainVC: BaseViewController,UITextFieldDelegate {
         }else{
             showCollView(true)
         }
+        self.dataSource = value
+        self.carousel1.reloadData()
     }
     
     override func viewDidLoad() {
@@ -110,18 +115,30 @@ class MainVC: BaseViewController,UITextFieldDelegate {
         self.navigationController?.pushViewController(nextView, animated: true)
     }
     
-    
-    
     @IBAction func btnBuyTouch(_ sender: Any) {
     }
     
 }
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return dataSource?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let carDeviceUW = dataSource!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarDeviceCell", for: indexPath) as! CarDeviceCell
+        let item = carDeviceUW[indexPath.row]
+        cell.lblBKS.text = item.bks
+        cell.lblIMEI.text = item.imei
+        cell.lblExpire.text = item.expiredGuaranteeDate
+        cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
+        cell.backgroundColor = UIColor.init(hexaRGB: "#F7F7F7")
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemHeight = collectionView.bounds.height
+        let itemWidth = collectionView.bounds.width - 40
+        return CGSize(width: itemWidth, height: itemHeight)
     }
 }

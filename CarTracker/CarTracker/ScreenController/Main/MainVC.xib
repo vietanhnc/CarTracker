@@ -17,7 +17,6 @@
                 <outlet property="carousel1" destination="NF3-Ws-8K1" id="nEH-Ul-Ixg"/>
                 <outlet property="imgNoData" destination="RiX-xx-NhA" id="wcy-e6-EB4"/>
                 <outlet property="lblNoData" destination="Q2N-5E-iDn" id="AOU-ac-kbk"/>
-                <outlet property="txtTest" destination="goN-KN-33e" id="HZu-Q2-6cG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="view1" destination="f7C-mI-hLx" id="6xB-wO-Pbn"/>
                 <outlet property="viewNodata" destination="jRP-1b-IXk" id="vbl-6o-jOz"/>
@@ -54,17 +53,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7C-mI-hLx">
                     <rect key="frame" x="0.0" y="120" width="414" height="257.66666666666669"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NF3-Ws-8K1">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="180.33333333333334"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rfc-7x-Gtj">
-                                <size key="itemSize" width="128" height="128"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRP-1b-IXk">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRP-1b-IXk">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="180.33333333333334"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="RiX-xx-NhA">
@@ -91,6 +80,16 @@
                                 <constraint firstItem="RiX-xx-NhA" firstAttribute="top" secondItem="jRP-1b-IXk" secondAttribute="top" constant="10" id="uHa-yD-dKC"/>
                             </constraints>
                         </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NF3-Ws-8K1">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="180.33333333333334"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rfc-7x-Gtj">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8Y-r7-3kr">
                             <rect key="frame" x="0.0" y="180.33333333333331" width="414" height="64.333333333333314"/>
                             <subviews>
@@ -144,12 +143,6 @@
                         <constraint firstItem="NF3-Ws-8K1" firstAttribute="width" secondItem="f7C-mI-hLx" secondAttribute="width" id="wtc-ba-fhr"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="goN-KN-33e">
-                    <rect key="frame" x="159" y="375" width="97" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -231,20 +224,8 @@
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="364" height="170"/>
-            <point key="canvasLocation" x="-468.11594202898556" y="94.565217391304358"/>
+            <point key="canvasLocation" x="1357" y="63"/>
         </collectionViewCell>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MHq-5R-mhs">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="-5551" y="-236"/>
-        </imageView>
-        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Wfk-sD-bJ5">
-            <rect key="frame" x="0.0" y="0.0" width="97" height="34"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-            <textInputTraits key="textInputTraits"/>
-            <point key="canvasLocation" x="-385" y="234"/>
-        </textField>
     </objects>
     <resources>
         <image name="carPlaceHolder" width="355" height="139"/>

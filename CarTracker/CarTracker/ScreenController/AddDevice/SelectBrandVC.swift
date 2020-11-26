@@ -192,7 +192,6 @@ extension SelectBrandVC: UICollectionViewDelegate, UICollectionViewDataSource,UI
             cell.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
             cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
             cell.clipsToBounds = true
-            cell.backgroundColor = UIColor.white
             cell.lblModelNam.textColor = UIColor.init(hexaRGB: "#9C9C9C")!
             if item.isSelect {
                 cell.layer.borderColor = AppUtils.getAccentColor().cgColor

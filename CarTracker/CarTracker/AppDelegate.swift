@@ -33,13 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //migrate
         var configuration = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 2,
             migrationBlock: { migration, oldSchemaVersion in
-                if oldSchemaVersion < 1 {
+                if oldSchemaVersion < 2 {
 
                     // if just the name of your model's property changed you can do this
 //                    migration.renameProperty(onType: CarDevice.className(), from: "deviceDateExpire", to: "expiredGuaranteeDate")
-
+//                    migration.renameProperty(onType: CarDevice.className(), from: "carImageURL", to: "brand")
+//                    migration.renameProperty(onType: CarDevice.className(), from: "carName", to: "model")
+//                    migration.renameProperty(onType: CarDevice.className(), from: "carNumber", to: "bks")
+//                    migration.renameProperty(onType: CarDevice.className(), from: "deviceImageURL", to: "phone")
+//                    migration.renameProperty(onType: CarDevice.className(), from: "deviceName", to: "deviceId")
+//                    migration.renameProperty(onType: CarDevice.className(), from: "deviceIMEI", to: "imei")
+//                    migration.renameProperty(onType: CarDevice.className(), from: "deviceDateActive", to: "activeDate")
                     // if you want to fill a new property with some values you have to enumerate
                     // the existing objects and set the new value
 //                    migration.enumerateObjects(ofType: UserInfo.className()) { oldObject, newObject in
@@ -54,14 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         Realm.Configuration.defaultConfiguration = configuration
         // Get on-disk location of the default Realm
-        do {
-            let realm = try Realm()
-            print("Realm is located at:", realm.configuration.fileURL!)
-        } catch { error
-//            try! FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
-            print(error)
-        }
-        
+        let realm = try! Realm()
+        print("Realm is located at:", realm.configuration.fileURL!)
         return true
     }
     
