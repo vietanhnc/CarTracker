@@ -17,7 +17,7 @@ class MainService{
             if dataUW.isSuccess {
                 let info = dataUW.response["info"]
                 let dvds = dataUW.response["dvds"]
-                let ui = self.saveUserInfo(info)
+                self.saveUserInfo(info)
                 let carDevices = self.saveCarDevice(dvds)
                 completion(nil,carDevices)
             }else{
@@ -29,6 +29,12 @@ class MainService{
     
     func saveCarDevice(_ dvds:JSON) -> [CarDevice]? {
         var result = [CarDevice]()
+        CarDeviceDAO.deleteCarDevice("")
+        for (_,subJson):(String, JSON) in dvds {
+            let device = CarDevice(fromJson: subJson)
+            result.append(device)
+            CarDeviceDAO.insertCarDevice(device)
+        }
         return result
     }
     
@@ -84,5 +90,34 @@ class MainService{
                 completion(errorMsg,nil);
             }
         })
+    }
+    
+    func activeDVD(_ brand:String,_ model:String,_ bks:String,_ year:String,completion: @escaping (_ errorMsg:String?) -> Void) {
+        //getPhone
+        do {
+        
+        let ui = UserInfoDAO.getCurrentUserInfo()
+        let phone = ui?.phone ?? ""
+        let qrParam = SystemParameterDAO.getSysParam("type == 'QRSCAN'")
+        let qrData = qrParam?.name ?? ""
+        guard let dataFromString = qrData.data(using: .utf8, allowLossyConversion: false) else {
+            return
+        }
+        let qrDataJSON = try JSON(data: dataFromString)
+        let imei = qrDataJSON["imei"].stringValue
+        let deviceId = qrDataJSON["deviceId"].stringValue
+        Request.shared().fetch(APIRouter.ActiveDVD(imei, deviceId, brand, model, bks, year, phone),completion: {data in
+            guard let dataUW = data else{ AlertView.show(); return }
+            completion(nil)
+            if dataUW.isSuccess {
+                completion(nil)
+            }else{
+                let errorMsg = data?.error.description ?? ""
+                completion(errorMsg);
+            }
+        })
+        } catch  {
+            return
+        }
     }
 }

@@ -82,6 +82,15 @@ class SelectBrandVC: BaseViewController,UITextFieldDelegate {
             AlertView.show("error.showAlert.enterFullInfo".localized())
             return
         }
+        mainService.activeDVD(selectedCarBrand!.name, selectedCarModel!.name, txtBKS.text!, txtYear.text!, completion: { error in
+            if error == nil{
+                self.navigationController?.pushViewController(ActiveDVDResultVC(), animated: true)
+            }else{
+                AlertView.show(error)
+            }
+        })
+        
+        
     }
     
     func setSelectBrand(_ sb:Brand){

@@ -10,13 +10,21 @@ import UIKit
 
 class ActiveDVDResultVC: UIViewController {
 
+    @IBOutlet weak var btnHome: UIButton!
+    @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDesc: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        btnHome.layer.cornerRadius = AppConstant.CORNER_RADIUS
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func btnHomeTouch(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

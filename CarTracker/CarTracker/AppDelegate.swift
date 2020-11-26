@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if oldSchemaVersion < 1 {
 
                     // if just the name of your model's property changed you can do this
-//                    migration.renameProperty(onType: NotSureItem.className(), from: "text", to: "title")
+//                    migration.renameProperty(onType: CarDevice.className(), from: "deviceDateExpire", to: "expiredGuaranteeDate")
 
                     // if you want to fill a new property with some values you have to enumerate
                     // the existing objects and set the new value
@@ -54,8 +54,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         Realm.Configuration.defaultConfiguration = configuration
         // Get on-disk location of the default Realm
-        let realm = try! Realm()
-        print("Realm is located at:", realm.configuration.fileURL!)
+        do {
+            let realm = try Realm()
+            print("Realm is located at:", realm.configuration.fileURL!)
+        } catch { error
+//            try! FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
+            print(error)
+        }
+        
         return true
     }
     
