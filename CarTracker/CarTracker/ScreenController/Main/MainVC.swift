@@ -21,13 +21,13 @@ class MainVC: BaseViewController {
     
     let mainService :MainService = MainService()
     //    var carDeviceArr :[CarDevice]? = nil
-    var carDeviceArr: PublishSubject<[CarDevice]?> = PublishSubject<[CarDevice]?>()
+//    var carDeviceArr: PublishSubject<[CarDevice]?> = PublishSubject<[CarDevice]?>()
     var dataSource:[CarDevice]? = nil
     private let disposeBag = DisposeBag()
     override func setupData() {
         mainService.fetchCarDevice(completion: { error,data in
             if(error == nil){
-                self.carDeviceArr.onNext(data)
+                self.carDeviceArrChanged(data)
             }
         })
     }
@@ -42,12 +42,12 @@ class MainVC: BaseViewController {
 //            //customize cell
 //            return cell
 //        }.disposed(by: disposeBag)
-        let paddingTop:CGFloat = self.view.frame.height*2/12
-        view1.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: paddingTop)
-        ])
-        btnBuy.translatesAutoresizingMaskIntoConstraints = false
+//        let paddingTop:CGFloat = self.view.frame.height*2/12
+//        view1.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            view1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: paddingTop)
+//        ])
+//        btnBuy.translatesAutoresizingMaskIntoConstraints = false
         
         let myString = "Hãy trang bị ngay cho xế cưng đầu DVD WebVision để tận hưởng những tính năng giải trí đỉnh cao"
         let subString = "DVD WebVision"
@@ -93,11 +93,10 @@ class MainVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //subcribe
-        carDeviceArr.asObservable().subscribe { event in
-            guard let value = event.element else{ return }
-            //            print(event)
-            self.carDeviceArrChanged(value)
-        }.disposed(by: disposeBag)
+//        carDeviceArr.asObservable().subscribe { event in
+//            guard let value = event.element else{ return }
+//            self.carDeviceArrChanged(value)
+//        }.disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -140,5 +139,9 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
         let itemHeight = collectionView.bounds.height
         let itemWidth = collectionView.bounds.width - 40
         return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 }

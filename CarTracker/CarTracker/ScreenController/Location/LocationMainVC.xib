@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Main2VCViewController" customModule="CarManagement" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JA6-cr-smz" userLabel="topbg">
+                    <rect key="frame" x="0.0" y="44" width="414" height="182.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topbg" translatesAutoresizingMaskIntoConstraints="NO" id="uyd-a2-Pce">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="182.5"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_acc" translatesAutoresizingMaskIntoConstraints="NO" id="O1c-mB-Ppn">
+                            <rect key="frame" x="0.0" y="50" width="104" height="53"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="umu-Xi-9pq">
+                            <rect key="frame" x="25" y="80" width="148" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="uyd-a2-Pce" firstAttribute="leading" secondItem="JA6-cr-smz" secondAttribute="leading" id="4P2-s0-YyB"/>
+                        <constraint firstItem="uyd-a2-Pce" firstAttribute="top" secondItem="JA6-cr-smz" secondAttribute="top" id="Gl1-dL-jNw"/>
+                        <constraint firstAttribute="bottom" secondItem="uyd-a2-Pce" secondAttribute="bottom" id="Ngo-yS-DVA"/>
+                        <constraint firstAttribute="trailing" secondItem="uyd-a2-Pce" secondAttribute="trailing" id="l2y-xK-dNU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="JA6-cr-smz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4Cd-dt-xO2"/>
+                <constraint firstItem="JA6-cr-smz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="CTf-sG-hWx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JA6-cr-smz" secondAttribute="trailing" id="i2S-c0-oGG"/>
+            </constraints>
+            <point key="canvasLocation" x="28.985507246376812" y="67.633928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_acc" width="161" height="74"/>
+        <image name="logo" width="210" height="48"/>
+        <image name="topbg" width="375" height="182.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

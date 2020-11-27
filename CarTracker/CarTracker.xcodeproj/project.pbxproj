@@ -62,8 +62,8 @@
 		56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC159B255C58D200D5C4F1 /* MainVC.xib */; };
 		56DC15A2255DA5F000D5C4F1 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15A0255DA5F000D5C4F1 /* MainTabBarVC.swift */; };
 		56DC15A3255DA5F000D5C4F1 /* MainTabBarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */; };
-		56DC15A8255DA7AC00D5C4F1 /* Main2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15A6255DA7AC00D5C4F1 /* Main2VC.swift */; };
-		56DC15A9255DA7AC00D5C4F1 /* Main2VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC15A7255DA7AC00D5C4F1 /* Main2VC.xib */; };
+		56DC15A8255DA7AC00D5C4F1 /* LocationMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15A6255DA7AC00D5C4F1 /* LocationMainVC.swift */; };
+		56DC15A9255DA7AC00D5C4F1 /* LocationMainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DC15A7255DA7AC00D5C4F1 /* LocationMainVC.xib */; };
 		56DC15C3255F8D8900D5C4F1 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC15C2255F8D8900D5C4F1 /* UIViewExt.swift */; };
 		56DC16E5255FEBBE00D5C4F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 56DC16E7255FEBBE00D5C4F1 /* Localizable.strings */; };
 		56DC172125619F8600D5C4F1 /* CarDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC172025619F8600D5C4F1 /* CarDevice.swift */; };
@@ -147,8 +147,8 @@
 		56DC159B255C58D200D5C4F1 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		56DC15A0255DA5F000D5C4F1 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTabBarVC.xib; sourceTree = "<group>"; };
-		56DC15A6255DA7AC00D5C4F1 /* Main2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main2VC.swift; sourceTree = "<group>"; };
-		56DC15A7255DA7AC00D5C4F1 /* Main2VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main2VC.xib; sourceTree = "<group>"; };
+		56DC15A6255DA7AC00D5C4F1 /* LocationMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMainVC.swift; sourceTree = "<group>"; };
+		56DC15A7255DA7AC00D5C4F1 /* LocationMainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationMainVC.xib; sourceTree = "<group>"; };
 		56DC15C2255F8D8900D5C4F1 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		56DC16E6255FEBBE00D5C4F1 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56DC16EA255FEBC300D5C4F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -191,6 +191,15 @@
 				563DAEDF256F92BC00EF3468 /* SystemParameterDAO.swift */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		563DAEEB2570B0E900EF3468 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				56DC15A6255DA7AC00D5C4F1 /* LocationMainVC.swift */,
+				56DC15A7255DA7AC00D5C4F1 /* LocationMainVC.xib */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		56583248254B266D00991FD4 /* Base */ = {
@@ -287,6 +296,7 @@
 		56D33EBB2539971A0026368C /* ScreenController */ = {
 			isa = PBXGroup;
 			children = (
+				563DAEEB2570B0E900EF3468 /* Location */,
 				56DBE46F25657CB900EF87E0 /* AddDevice */,
 				56DC1599255C58B300D5C4F1 /* Main */,
 				5658324B254E868A00991FD4 /* Activation */,
@@ -380,8 +390,6 @@
 				56DC159B255C58D200D5C4F1 /* MainVC.xib */,
 				56DC15A0255DA5F000D5C4F1 /* MainTabBarVC.swift */,
 				56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */,
-				56DC15A6255DA7AC00D5C4F1 /* Main2VC.swift */,
-				56DC15A7255DA7AC00D5C4F1 /* Main2VC.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -549,7 +557,7 @@
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
 				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
 				5659DC1D256D737F007AD33E /* SelectBrandVC.xib in Resources */,
-				56DC15A9255DA7AC00D5C4F1 /* Main2VC.xib in Resources */,
+				56DC15A9255DA7AC00D5C4F1 /* LocationMainVC.xib in Resources */,
 				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
 				5659DC25256EB9E3007AD33E /* ActiveDVDResultVC.xib in Resources */,
 				563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */,
@@ -631,7 +639,7 @@
 				56D632382557D17F00909F59 /* AlertView.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
 				563DAEAD25679ED900EF3468 /* BrandCell.swift in Sources */,
-				56DC15A8255DA7AC00D5C4F1 /* Main2VC.swift in Sources */,
+				56DC15A8255DA7AC00D5C4F1 /* LocationMainVC.swift in Sources */,
 				56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */,
 				56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */,
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,

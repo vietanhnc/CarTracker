@@ -66,6 +66,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MainVC.collectionView(_:numberOfItemsInSection:):MainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataSource">
+            </PersistentString>
+            <PersistentString
+               value = "dataSource?.count ?? 0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in MainService.fetchCarDevice(completion:):MainService.swift">
          <PersistentStrings>
             <PersistentString

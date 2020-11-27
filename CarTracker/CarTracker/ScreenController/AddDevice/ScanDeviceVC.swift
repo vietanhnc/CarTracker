@@ -25,7 +25,11 @@ class ScanDeviceVC: BaseViewController ,AVCaptureMetadataOutputObjectsDelegate{
     override func viewDidAppear(_ animated: Bool) {
         
         #if targetEnvironment(simulator)
-        let value = "{\"brand\":\"SPRD\",\"deviceId\":\"8c9f1ec58f78c95f\",\"host\":\"bsp-04\",\"imei\":\"862523112642812\",\"model\":\"sp9853i_1h10_vmm\",\"sdk\":\"27\",\"versionCode\":\"2\"}"
+//        let value = "{\"brand\":\"SPRD\",\"deviceId\":\"8c9f1ec58f78c95f\",\"host\":\"bsp-04\",\"imei\":\"862523112642812\",\"model\":\"sp9853i_1h10_vmm\",\"sdk\":\"27\",\"versionCode\":\"2\"}"
+        let value = "{\"brand\":\"SPRD\",\"deviceId\":\"81486cd970d703b0\",\"host\":\"bsp-04\",\"imei\":\"862523112640915\",\"model\":\"sp9853i_1h10_vmm\",\"sdk\":\"27\",\"versionCode\":\"2\",\"versionName\":\"1.0\"}"
+
+
+
         self.qrcode.onNext(value)
         #else
         initCamera()
