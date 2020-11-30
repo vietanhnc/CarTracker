@@ -29,6 +29,12 @@
 		5659DC25256EB9E3007AD33E /* ActiveDVDResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659DC23256EB9E3007AD33E /* ActiveDVDResultVC.xib */; };
 		5659DC3B25700C05007AD33E /* CarDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC3925700C05007AD33E /* CarDeviceCell.swift */; };
 		5659DC3C25700C05007AD33E /* CarDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659DC3A25700C05007AD33E /* CarDeviceCell.xib */; };
+		5659DC422571F215007AD33E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC412571F215007AD33E /* LocationService.swift */; };
+		5659DC4F25721236007AD33E /* CarDeviceLocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC4D25721236007AD33E /* CarDeviceLocCell.swift */; };
+		5659DC5025721236007AD33E /* CarDeviceLocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659DC4E25721236007AD33E /* CarDeviceLocCell.xib */; };
+		5659DC672573C920007AD33E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC652573C91E007AD33E /* ProfileVC.swift */; };
+		5659DC682573C920007AD33E /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659DC662573C91E007AD33E /* ProfileVC.xib */; };
+		5659DC6E2573DD1F007AD33E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC6D2573DD1F007AD33E /* ProfileModel.swift */; };
 		5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5682F5DC2566930700A56C25 /* InfoPlist.strings */; };
 		56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE0A256505D400757E2A /* SelectBrandVC.swift */; };
 		56D0FE112565408600757E2A /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE102565408600757E2A /* Brand.swift */; };
@@ -111,6 +117,12 @@
 		5659DC23256EB9E3007AD33E /* ActiveDVDResultVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveDVDResultVC.xib; sourceTree = "<group>"; };
 		5659DC3925700C05007AD33E /* CarDeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDeviceCell.swift; sourceTree = "<group>"; };
 		5659DC3A25700C05007AD33E /* CarDeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDeviceCell.xib; sourceTree = "<group>"; };
+		5659DC412571F215007AD33E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5659DC4D25721236007AD33E /* CarDeviceLocCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDeviceLocCell.swift; sourceTree = "<group>"; };
+		5659DC4E25721236007AD33E /* CarDeviceLocCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDeviceLocCell.xib; sourceTree = "<group>"; };
+		5659DC652573C91E007AD33E /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		5659DC662573C91E007AD33E /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		5659DC6D2573DD1F007AD33E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		5682F5DB2566930700A56C25 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5682F5DF2566930A00A56C25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56D0FE0A256505D400757E2A /* SelectBrandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBrandVC.swift; sourceTree = "<group>"; };
@@ -225,6 +237,16 @@
 			path = Activation;
 			sourceTree = "<group>";
 		};
+		5659DC642573C8FE007AD33E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5659DC652573C91E007AD33E /* ProfileVC.swift */,
+				5659DC662573C91E007AD33E /* ProfileVC.xib */,
+				5659DC6D2573DD1F007AD33E /* ProfileModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		56D1EA532551BCC300DB0851 /* NetworkCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +318,7 @@
 		56D33EBB2539971A0026368C /* ScreenController */ = {
 			isa = PBXGroup;
 			children = (
+				5659DC642573C8FE007AD33E /* Profile */,
 				563DAEEB2570B0E900EF3468 /* Location */,
 				56DBE46F25657CB900EF87E0 /* AddDevice */,
 				56DC1599255C58B300D5C4F1 /* Main */,
@@ -379,6 +402,8 @@
 				563DAEC0256BD9F800EF3468 /* BrandModel.xib */,
 				5659DC3925700C05007AD33E /* CarDeviceCell.swift */,
 				5659DC3A25700C05007AD33E /* CarDeviceCell.xib */,
+				5659DC4D25721236007AD33E /* CarDeviceLocCell.swift */,
+				5659DC4E25721236007AD33E /* CarDeviceLocCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -413,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				56DC17292561A13600D5C4F1 /* MainService.swift */,
+				5659DC412571F215007AD33E /* LocationService.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -482,6 +508,7 @@
 				56D33E9D2538A78E0026368C /* Frameworks */,
 				56D33E9E2538A78E0026368C /* Resources */,
 				9A1402876625B3F6C3C39DFF /* [CP] Embed Pods Frameworks */,
+				B0E4310C3D36AD6662793C70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -558,6 +585,7 @@
 				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
 				5659DC1D256D737F007AD33E /* SelectBrandVC.xib in Resources */,
 				56DC15A9255DA7AC00D5C4F1 /* LocationMainVC.xib in Resources */,
+				5659DC682573C920007AD33E /* ProfileVC.xib in Resources */,
 				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
 				5659DC25256EB9E3007AD33E /* ActiveDVDResultVC.xib in Resources */,
 				563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */,
@@ -570,6 +598,7 @@
 				56D33EAB2538A78E0026368C /* Main.storyboard in Resources */,
 				5659DC3C25700C05007AD33E /* CarDeviceCell.xib in Resources */,
 				565832472548835A00991FD4 /* WelcomeVC.xib in Resources */,
+				5659DC5025721236007AD33E /* CarDeviceLocCell.xib in Resources */,
 				56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */,
 				56DBE47D25657D3000EF87E0 /* ScanDeviceVC.xib in Resources */,
 			);
@@ -624,6 +653,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarTracker/Pods-CarTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B0E4310C3D36AD6662793C70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarTracker/Pods-CarTracker-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarTracker/Pods-CarTracker-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarTracker/Pods-CarTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -640,7 +686,9 @@
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
 				563DAEAD25679ED900EF3468 /* BrandCell.swift in Sources */,
 				56DC15A8255DA7AC00D5C4F1 /* LocationMainVC.swift in Sources */,
+				5659DC6E2573DD1F007AD33E /* ProfileModel.swift in Sources */,
 				56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */,
+				5659DC422571F215007AD33E /* LocationService.swift in Sources */,
 				56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */,
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,
 				56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */,
@@ -652,6 +700,7 @@
 				563DAEC6256CC3C100EF3468 /* CarModel.swift in Sources */,
 				5659DC3B25700C05007AD33E /* CarDeviceCell.swift in Sources */,
 				56DC15C3255F8D8900D5C4F1 /* UIViewExt.swift in Sources */,
+				5659DC4F25721236007AD33E /* CarDeviceLocCell.swift in Sources */,
 				56DC15A2255DA5F000D5C4F1 /* MainTabBarVC.swift in Sources */,
 				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
 				56D0FE112565408600757E2A /* Brand.swift in Sources */,
@@ -659,6 +708,7 @@
 				56D632312557961D00909F59 /* BaseError.swift in Sources */,
 				56DC172125619F8600D5C4F1 /* CarDevice.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
+				5659DC672573C920007AD33E /* ProfileVC.swift in Sources */,
 				563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */,
 				5659DC24256EB9E3007AD33E /* ActiveDVDResultVC.swift in Sources */,
 				563DAEE0256F92BC00EF3468 /* SystemParameterDAO.swift in Sources */,

@@ -12,6 +12,7 @@ class InfoInputVC: BaseViewController {
 
     @IBOutlet var txtName: UITextField!
     @IBOutlet var txtEmail: UITextField!
+    @IBOutlet var btnContinue: UIButton!
     
     let service :ActivationService = ActivationService()
     var currentOTP:UserInfo? = nil
@@ -20,6 +21,23 @@ class InfoInputVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func setupUI() {
+        btnContinue.backgroundColor = AppUtils.getAccentColor()
+        btnContinue.layer.cornerRadius = 20
+    }
+    
+    func validate()->Bool{
+        var result = false
+        if let name = txtName.text, let email = txtEmail.text{
+            if name == "" || email == "" {
+                
+            }else{
+                result = true
+            }
+        }
+        return result
     }
     
     override func setupData(){

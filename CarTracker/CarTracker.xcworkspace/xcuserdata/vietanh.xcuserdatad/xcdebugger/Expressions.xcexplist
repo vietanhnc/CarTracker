@@ -3,14 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "SelectBrandVC.textFieldDidEndEditing(_:reason:):SelectBrandVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "textField.layer">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "BaseViewController.setupUI():BaseViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -27,7 +19,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
+         contextName = "LocationMainVC.collectionView(_:cellForItemAt:):LocationMainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblStatus.layer.bounds">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in Request.fetch(_:completion:):Request.swift">
@@ -44,20 +41,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.carBrands">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "APIRouter.asURLRequest():APIRouter.swift">
-      </ContextState>
-      <ContextState
-         contextName = "BaseViewController.showLoading():BaseViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "MainVC.setupUI():MainVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -66,21 +49,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MainVC.collectionView(_:numberOfItemsInSection:):MainVC.swift">
+         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "APIRouter.asURLRequest():APIRouter.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "dataSource">
-            </PersistentString>
-            <PersistentString
-               value = "dataSource?.count ?? 0">
+               value = "self.carBrands">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in MainService.fetchCarDevice(completion:):MainService.swift">
+         contextName = "BaseViewController.showLoading():BaseViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MobilePhoneInputVC.btnContinueTouch(_:):MobilePhoneInputVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "info[&quot;activeDate&quot;].stringValue">
+               value = "self.navigationController?">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -93,10 +82,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in MobilePhoneInputVC.btnContinueTouch(_:):MobilePhoneInputVC.swift">
+         contextName = "LocationMainVC.scrollViewDidEndDecelerating(_:):LocationMainVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.navigationController?">
+               value = "scrollView.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentOffset.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LocationMainVC.viewDidLoad():LocationMainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UINib.init(nibName: &quot;CarDeviceLocationCell&quot;, bundle: nil)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

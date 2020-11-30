@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import Localize_Swift
 import IQKeyboardManagerSwift
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -58,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         )
+        GMSServices.provideAPIKey("AIzaSyDsjm4lVNumEv6s7bBp5oH7Y7eSLir5Sjw")
+
         Realm.Configuration.defaultConfiguration = configuration
         // Get on-disk location of the default Realm
         let realm = try! Realm()

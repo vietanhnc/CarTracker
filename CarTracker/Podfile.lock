@@ -1,5 +1,12 @@
 PODS:
   - Alamofire (5.4.0)
+  - GoogleMaps (4.0.0):
+    - GoogleMaps/Maps (= 4.0.0)
+  - GoogleMaps/Base (4.0.0)
+  - GoogleMaps/Maps (4.0.0):
+    - GoogleMaps/Base
+  - GooglePlaces (4.0.0):
+    - GoogleMaps/Base (= 4.0.0)
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
@@ -22,9 +29,12 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SwiftyJSON (5.0.0)
+  - TweeTextField (1.6.3)
 
 DEPENDENCIES:
   - Alamofire
+  - GoogleMaps (= 4.0.0)
+  - GooglePlaces (= 4.0.0)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 5.0)
   - Localize-Swift (~> 3.2)
@@ -32,10 +42,13 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftyJSON
+  - TweeTextField
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GoogleMaps
+    - GooglePlaces
     - IQKeyboardManagerSwift
     - Kingfisher
     - Localize-Swift
@@ -45,9 +58,12 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SwiftyJSON
+    - TweeTextField
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
+  GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
@@ -57,7 +73,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TweeTextField: 47bf8e7f0433364a7f7e119c45e7f278ea50eb62
 
-PODFILE CHECKSUM: ba438c02c514a923bef26d9422e7e6e8282a6b14
+PODFILE CHECKSUM: f2bad9eb2a5862d1e7c3fe4331151516dd7742be
 
 COCOAPODS: 1.10.0

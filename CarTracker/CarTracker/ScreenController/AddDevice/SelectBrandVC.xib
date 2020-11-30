@@ -227,10 +227,10 @@
     </objects>
     <designables>
         <designable name="H5I-gx-LAB">
-            <size key="intrinsicContentSize" width="118" height="34"/>
+            <size key="intrinsicContentSize" width="124" height="34"/>
         </designable>
         <designable name="lek-FD-wvP">
-            <size key="intrinsicContentSize" width="65" height="34"/>
+            <size key="intrinsicContentSize" width="71" height="34"/>
         </designable>
     </designables>
 </document>

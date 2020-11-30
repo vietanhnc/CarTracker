@@ -16,14 +16,20 @@ class MainTabBarVC: BaseTabBarController {
         let main1Nav = BaseNavigationController(rootViewController: main1)
         let main1Icon = UIImage(named: "cole3")
         main1Nav.tabBarItem = UITabBarItem(title: "service".localized(),image: main1Icon,selectedImage: nil)
-        let main2 = Main2VC()
+        
+        let main2 = LocationMainVC()
         let main2Nav = BaseNavigationController(rootViewController: main2)
         main2Nav.tabBarItem = UITabBarItem(title: "carLocation".localized(),image: UIImage(named: "location"),selectedImage: nil)
+        
+        let main3 = ProfileVC()
+        let main3Nav = BaseNavigationController(rootViewController: main3)
+        main3Nav.tabBarItem = UITabBarItem(title: "account".localized(),image: UIImage(named: "user"),selectedImage: nil)
+        
         self.tabBar.tintColor = AppUtils.getAccentColor()
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13.0)], for: .normal)
 
 
-        self.viewControllers = [main1Nav,main2Nav]
+        self.viewControllers = [main1Nav,main2Nav,main3Nav]
     }
     override func viewDidLoad() {
         super.viewDidLoad()

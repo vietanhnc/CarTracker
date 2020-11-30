@@ -20,5 +20,8 @@ pod 'SwiftyJSON'
 pod 'Localize-Swift', '~> 3.2'
 pod 'Kingfisher', '~> 5.0'
 pod 'IQKeyboardManagerSwift'
+pod 'GoogleMaps', '4.0.0'
+pod 'GooglePlaces', '4.0.0'
+pod 'TweeTextField'
 
 end

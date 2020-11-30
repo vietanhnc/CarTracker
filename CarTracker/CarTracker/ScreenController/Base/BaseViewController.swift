@@ -15,49 +15,17 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         setupData()
         setupUI()
-        
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     
     func setupData() {}
     
     func setupUI() {
-        self.setNeedsStatusBarAppearanceUpdate()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
-//        loading = UIActivityIndicatorView(style: .gray)
-//        loading!.center = self.view.center
-//        self.view.addSubview(loading!)
     }
     
     @objc func setText(){
-    }
-    
-//    func showLoading(){
-//        loading!.startAnimating()
-//    }
-//
-//    func hideLoading(){
-//        if let indicator = loading {
-//            indicator.stopAnimating()
-//        }
-//    }
-    
-//    func showAlert(_ message:String?) -> Void {
-//        let msg = (message ?? "").isEmpty ? "Có lỗi xảy ra!" : message!;
-//        let alert = UIAlertController(title: "Thông báo", message: msg, preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//    }
-    
-    func fetch(_ apiRouter:APIRouter,completion: @escaping (_ data:BaseResponse?) -> Void) {
-//        self.showLoading()
-        Request.shared().fetch(apiRouter) { (data) in
-//            self.hideLoading()
-//            if let er = error {
-//                completion(data,er)
-//            }else{
-//                self.showAlert(error?.description)
-//            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

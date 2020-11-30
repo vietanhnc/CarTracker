@@ -8,19 +8,53 @@
 
 import UIKit
 import SwiftyJSON
+import TweeTextField
 class MobilePhoneInputVC: BaseViewController {
     
-    @IBOutlet var txtPhone: UITextField!
+    @IBOutlet var txtPhone: TweeAttributedTextField!
+    @IBOutlet var btnContinue: UIButton!
     
     let service :ActivationService = ActivationService()
+    
+    override func setupUI() {
+        btnContinue.backgroundColor = AppUtils.getAccentColor()
+        btnContinue.layer.cornerRadius = 20
+    }
+    
+    @IBAction func txtPhoneChange(_ sender: Any) {
+        if !self.validatePhone() {
+            let paragraph = NSMutableParagraphStyle()
+            paragraph.alignment = .center
+            let errorInfo = NSAttributedString(string: "Số điện thoại không đúng định dạng.",
+                                               attributes: [.paragraphStyle: paragraph])
+            txtPhone.showInfo(errorInfo, animated: true)
+        }else{
+            txtPhone.showInfo("", animated: true)
+        }
+    }
+    
+    func validatePhone()->Bool{
+        var result = false
+        if let text = txtPhone.text {
+            if text == "" || text.count != 10 {
+                
+            }else{
+                result = true
+            }
+        }
+        return result
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        txtPhone.text = String(Date().millisecondsSince1970)
+        //        txtPhone.text = String(Date().millisecondsSince1970)
     }
     
     @IBAction func btnContinueTouch(_ sender: Any) {
+        if !self.validatePhone() {
+            return
+        }
         service.sendOTP(txtPhone.text!, completion: { data in
             let otpVC = OTPInputVC()
             self.navigationController?.pushViewController(otpVC, animated: false)

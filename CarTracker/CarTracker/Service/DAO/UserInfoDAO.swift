@@ -20,4 +20,15 @@ class UserInfoDAO{
         }
         return result
     }
+    
+    public static func deleteUser(){
+        do{
+            let realm = try Realm()
+            try realm.write {
+              let allUser = realm.objects(UserInfo.self)
+              realm.delete(allUser)
+            }
+        } catch{
+        }
+    }
 }

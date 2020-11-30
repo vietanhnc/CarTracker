@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 extension UIView {
-
+    
     // Using a function since `var image` might conflict with an existing variable
     // (like on `UIImageView`)
     func asImage() -> UIImage {
@@ -26,13 +26,55 @@ extension UIView {
             return UIImage(cgImage: image!.cgImage!)
         }
     }
+    
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+        layer.shadowRadius = 1
+        
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+    
+    // OUTPUT 2
+    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offSet
+        layer.shadowRadius = radius
+        
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+    func makeShadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 2
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+//        layer.shadowPath = UIBezierPath(roundedRect: layer.bounds, cornerRadius: AppConstant.CORNER_RADIUS).cgPath
+
+//        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
+    }
 }
-//extension UITextField
-//{
-//    open override func draw(_ rect: CGRect) {
-//        self.layer.masksToBounds = true
-//        self.layer.borderWidth = 1.0
-//        self.layer.borderColor = UIColor.init(hexaRGB: "#9C9C9C")!.cgColor
-//        self.layer.cornerRadius = 10.0
-//    }
-//}
+
+extension UILabel {
+    func setMargins(margin: CGFloat = 10) {
+        if let textString = self.text {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.firstLineHeadIndent = margin
+            paragraphStyle.headIndent = margin
+            paragraphStyle.tailIndent = -margin
+            let attributedString = NSMutableAttributedString(string: textString)
+            attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
+            attributedText = attributedString
+        }
+    }
+}

@@ -11,11 +11,17 @@ import RealmSwift
 class OTPInputVC: BaseViewController {
     
     @IBOutlet var txtOTP: UITextField!
+    @IBOutlet var btnContinue: UIButton!
     let service :ActivationService = ActivationService()
     var currentOTP:UserInfo? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func setupUI() {
+        btnContinue.backgroundColor = AppUtils.getAccentColor()
+        btnContinue.layer.cornerRadius = 20
     }
     
     override func setupData(){
@@ -29,7 +35,22 @@ class OTPInputVC: BaseViewController {
         }
     }
     
+    func validatePhone()->Bool{
+        var result = false
+        if let text = txtOTP.text {
+            if text == "" || text.count != 5 {
+                
+            }else{
+                result = true
+            }
+        }
+        return result
+    }
+    
     @IBAction func btnConfirmTouch(_ sender: Any) {
+        if !self.validatePhone() {
+            return
+        }
         guard let cOTPUnwraped = self.currentOTP else { return }
         service.active(cOTPUnwraped.phone, cOTPUnwraped.activeCode, completion: {data in
             if let errorMsg = data {

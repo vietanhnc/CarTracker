@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 import SwiftyJSON
-class MainService{
+class MainService {
     let service :ActivationService = ActivationService()
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
         Request.shared().fetch(APIRouter.GetInfo,completion: {data in
@@ -108,7 +108,6 @@ class MainService{
         let deviceId = qrDataJSON["deviceId"].stringValue
         Request.shared().fetch(APIRouter.ActiveDVD(imei, deviceId, brand, model, bks, year, phone),completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }
-            completion(nil)
             if dataUW.isSuccess {
                 completion(nil)
             }else{

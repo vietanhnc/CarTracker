@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import GoogleMaps
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -27,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
+//        GMSServices.provideAPIKey("AIzaSyDsjm4lVNumEv6s7bBp5oH7Y7eSLir5Sjw")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
