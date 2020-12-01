@@ -9,17 +9,21 @@
 import Foundation
 import RealmSwift
 class CarDeviceDAO{
-    public static func getCurrentUserInfo()->UserInfo?{
-        var result:UserInfo? = nil
+    public static func updateCarDevice(_ device:CarDevice){
         do{
             let realm = try Realm()
-            if let currentUI = realm.objects(UserInfo.self).first {
-                result = currentUI
+            if let dbObject = realm.objects(CarDevice.self).filter("deviceId == '\(device.deviceId)'").first {
+                try realm.write {
+                    dbObject.lat = device.lat
+                    dbObject.lng = device.lng
+                    dbObject.seq = device.seq
+                    dbObject.time = device.time
+                }
             }
         } catch{
         }
-        return result
     }
+    
     public static func insertCarDevice(_ device:CarDevice){
         do{
             let realm = try Realm()
@@ -40,4 +44,21 @@ class CarDeviceDAO{
         } catch{
         }
     }
+    public static func getCarDevice(_ query:String)->[CarDevice]?{
+        var result:[CarDevice]? = nil
+        do{
+            let realm = try Realm()
+            if query != "" {
+                let realmResults = realm.objects(CarDevice.self).filter(query)
+                result = Array(realmResults)
+            }else{
+                let realmResults = realm.objects(CarDevice.self)
+                result = Array(realmResults)
+            }
+        } catch{
+        }
+        return result
+    }
+    
+    
 }

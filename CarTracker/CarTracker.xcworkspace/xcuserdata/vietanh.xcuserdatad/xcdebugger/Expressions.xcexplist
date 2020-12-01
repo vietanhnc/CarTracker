@@ -36,7 +36,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
+         contextName = "LocationMainVC.collectionView(_:cellForItemAt:):LocationMainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblStatus.layer.bounds">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in Request.fetch(_:completion:):Request.swift">
@@ -53,6 +58,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MainVC.setupUI():MainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view1.heightAnchor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "APIRouter.asURLRequest():APIRouter.swift">
+      </ContextState>
+      <ContextState
          contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -64,21 +83,10 @@
          contextName = "BaseViewController.showLoading():BaseViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "APIRouter.asURLRequest():APIRouter.swift">
-      </ContextState>
-      <ContextState
-         contextName = "LocationMainVC.collectionView(_:cellForItemAt:):LocationMainVC.swift">
+         contextName = "closure #1 in LocationService.getCurrentLocation(completion:):LocationService.swift">
          <PersistentStrings>
             <PersistentString
-               value = "cell.lblStatus.layer.bounds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainVC.setupUI():MainVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "view1.heightAnchor">
+               value = "position[&quot;lat&quot;].stringValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

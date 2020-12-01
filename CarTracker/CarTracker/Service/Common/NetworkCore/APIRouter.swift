@@ -20,6 +20,7 @@ enum APIRouter: URLRequestConvertible{
     case GetCarBrand
     case GetCarBrandModel(_ brandId:Int)
     case ActiveDVD(_ imei:String,_ deviceId:String,_ brand:String,_ model:String,_ bks:String,_ year:String,_ phone:String)
+    case GetCurrLocation(_ imei:String,_ deviceId:String)
     
     private var path: String {
         switch self {
@@ -41,7 +42,8 @@ enum APIRouter: URLRequestConvertible{
             return "GetCarModel"
         case .ActiveDVD:
             return "ActiveDVD"
-            
+        case .GetCurrLocation:
+            return "GetCurrLocation"
         }
     }
     
@@ -80,6 +82,9 @@ enum APIRouter: URLRequestConvertible{
         switch self{
         case .GetCarBrandModel(let brandId):
             return ["brandId":brandId]
+        case .GetCurrLocation(let imei,let deviceId):
+            return ["imei":imei,"deviceId":deviceId]
+            
         default:
             return nil
         }
@@ -96,7 +101,7 @@ enum APIRouter: URLRequestConvertible{
     
     public var header:[String:String]?{
         switch self {
-        case .UpdateInfo,.login,.GetInfo,.GetCarBrand,.ActiveDVD:
+        case .UpdateInfo,.login,.GetInfo,.GetCarBrand,.ActiveDVD,.GetCurrLocation:
             return ["accesstoken":self.getAccessToken()]
         default:
             return nil

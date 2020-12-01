@@ -16,10 +16,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="235" height="103"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="succIcon" translatesAutoresizingMaskIntoConstraints="NO" id="stc-tq-3ha">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="stc-tq-3ha">
                         <rect key="frame" x="10" y="11.5" width="80" height="80"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="stc-tq-3ha" secondAttribute="height" multiplier="1:1" id="KYq-g4-peh"/>
+                            <constraint firstAttribute="width" secondItem="stc-tq-3ha" secondAttribute="height" multiplier="1:1" id="Mkj-DP-OY8"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyZ-Rp-Euf">
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dang Dung" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiC-T2-AHW">
-                                <rect key="frame" x="37" y="31" width="70" height="20"/>
+                                <rect key="frame" x="37.5" y="31.5" width="70" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="7qF-cl-daw"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Cdy-Vv-hra"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYK-ZR-kb2">
-                                <rect key="frame" x="30" y="75" width="77" height="20"/>
+                                <rect key="frame" x="30.5" y="75" width="77" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="D1S-CP-Fb7"/>
                                 </constraints>
@@ -93,12 +93,14 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="stc-tq-3ha" secondAttribute="bottom" constant="11.5" id="2Dc-O1-VVj"/>
                 <constraint firstAttribute="trailing" secondItem="TyZ-Rp-Euf" secondAttribute="trailing" id="4sx-uf-Jap"/>
                 <constraint firstItem="stc-tq-3ha" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Gc5-ta-muC"/>
                 <constraint firstItem="TyZ-Rp-Euf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Iuv-PN-ORC"/>
                 <constraint firstItem="stc-tq-3ha" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Sjz-hb-qBG"/>
                 <constraint firstAttribute="bottom" secondItem="TyZ-Rp-Euf" secondAttribute="bottom" id="Udp-2n-1mp"/>
                 <constraint firstItem="TyZ-Rp-Euf" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.5" id="XII-sZ-R95"/>
+                <constraint firstItem="stc-tq-3ha" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11.5" id="lTJ-uT-ekH"/>
             </constraints>
             <size key="customSize" width="235" height="103"/>
             <connections>
@@ -113,6 +115,5 @@
     </objects>
     <resources>
         <image name="flag" width="9" height="12"/>
-        <image name="succIcon" width="80" height="80"/>
     </resources>
 </document>

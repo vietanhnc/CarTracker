@@ -14,6 +14,43 @@ class LocationService{
     
     var dataSource:[CarDevice]? = nil
     var selectedDevice:CarDevice? = nil
+    
+    func isIndexSelected(_ index:Int) -> Bool {
+        let result = false
+        if let dataSourceUW = self.dataSource, let selectedDeviceUW = self.selectedDevice {
+            for (i,item) in dataSourceUW.enumerated() {
+                if selectedDeviceUW.deviceId == item.deviceId  && index == i{
+                    return true
+                }
+            }
+        }
+        return result
+    }
+    
+    func getCurrentLocation(completion: @escaping (_ errorMsg:String?,_ carDevices:CarDevice?) -> Void) {
+        guard let selectedDeviceUW = self.selectedDevice else {return}
+        Request.shared().fetch(APIRouter.GetCurrLocation(selectedDeviceUW.imei, selectedDeviceUW.deviceId),completion: {data in
+            guard let dataUW = data else{ AlertView.show(); return }
+            if dataUW.isSuccess {
+                let position = dataUW.response["postion"]
+                var carDeviceMuted = selectedDeviceUW.clone()
+                carDeviceMuted.lat = position["lat"].stringValue
+                carDeviceMuted.lng = position["lng"].stringValue
+                carDeviceMuted.seq = position["seq"].intValue
+                carDeviceMuted.time = position["time"].intValue
+                CarDeviceDAO.updateCarDevice(carDeviceMuted)
+                for (index,temp) in self.dataSource!.enumerated() {
+                    if temp.deviceId == selectedDeviceUW.deviceId {
+                        self.dataSource![index] = selectedDeviceUW
+                    }
+                }
+                completion(nil,selectedDeviceUW)
+            }else{
+                completion("error",nil)
+            }
+        })
+    }
+    
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
         Request.shared().fetch(APIRouter.GetInfo,completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }
@@ -39,6 +76,17 @@ class LocationService{
         }
     }
     
+    func getSelectedLocation()->(lat: Double, long: Double, title:String){
+//        21.028511,_ long:Double = 105.804817
+        let _lat = Double(self.selectedDevice?.lat ?? "21.028511" )
+        let _long = Double(self.selectedDevice?.lng ?? "105.804817" )
+        var _title = ""
+        if self.selectedDevice != nil && self.selectedDevice!.time != 0 {
+            _title = AppUtils.formatDateTime(self.selectedDevice!.time, "dd-MM-yyyy HH:mm:ss")
+        }
+        return (_lat!,_long!,_title)
+    }
+    
     func saveCarDevice(_ dvds:JSON) -> [CarDevice]? {
         var result:[CarDevice]? = nil
         CarDeviceDAO.deleteCarDevice("")
@@ -51,7 +99,8 @@ class LocationService{
             CarDeviceDAO.insertCarDevice(device)
         }
         if result != nil {
-            selectedDevice = result![0]
+//            selectedDevice = result![0]
+            self.setSetlectedDevice(0)
         }
         return result
     }

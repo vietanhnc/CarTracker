@@ -29,6 +29,7 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         service.fetchCarDevice(completion: { error,data in
             if(error == nil){
                 self.carDeviceArrChanged()
+                self.selectedCarChange(0)
             }
         })
     }
@@ -53,9 +54,6 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         btnHistory.layer.cornerRadius = AppConstant.CORNER_RADIUS
         btnHistory.layer.borderWidth = CGFloat(1)
         btnHistory.layer.borderColor = AppUtils.getSecondaryColor().cgColor
-        //        btnHistory.tintColor = AppUtils.getSecondaryColor()
-        //        btnHistory.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        //        btnHistory.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
         let spacing:CGFloat = 10; // the amount of spacing to appear between image and title
         btnHistory.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: spacing);
         btnHistory.titleEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0);
@@ -76,6 +74,18 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         }
     }
     
+    func selectedCarChange(_ index:Int){
+        if service.isIndexSelected(index) {
+            return
+        }
+        service.setSetlectedDevice(index)
+        self.service.getCurrentLocation(completion: { error,data in
+            if(error == nil){
+                self.changeMapCurrentLocation()
+            }
+        })
+    }
+    
     func carDeviceArrChanged(){
         guard let carDeviceUW = getData() else{
             showCollView(false);return
@@ -85,22 +95,28 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         }else{
             showCollView(true)
         }
-        
         self.carousel.reloadData()
     }
     
-    func setupMapview(){
-        let lat = 21.028511
-        let long = 105.804817
+    func changeMapCurrentLocation() {
+        let result = service.getSelectedLocation()
+        setupMapview(result.lat, result.long,result.title)
+    }
+    
+    func setupMapview(_ lat:Double = 21.028511,_ long:Double = 105.804817,_ title:String = ""){
+//        let lat = 21.028511
+//        let long = 105.804817
         let mapFrame = CGRect(x: 0, y: 0, width: mapViewContainer.layer.bounds.width, height: mapViewContainer.layer.bounds.height)
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         let mainMap = GMSMapView.map(withFrame: mapFrame, camera: camera)
         //        mainMap.isMyLocationEnabled = true
-        
         //        mapView.delegate = self
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, long)
         marker.map = mainMap
+        if !title.isEmpty{
+            marker.title = title
+        }
         mainMap.layer.cornerRadius = AppConstant.CORNER_RADIUS
         mapViewContainer.addSubview(mainMap)
         mapViewContainer.layer.cornerRadius = AppConstant.CORNER_RADIUS
@@ -145,10 +161,12 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource,U
         //        let bound = cell.lblStatus.layer.bounds
         //        cell.lblStatus.layer.bounds = CGRect(x: bound.origin.x, y: bound.origin.y, width: bound.width+20, height: bound.height)
         //        cell.lblDistance.setMargins(margin: 10)
-        cell.lblStatus.text = "Đang dừng"
+        cell.lblStatus.text = item.isMoving ? "Di chuyển" : "Đang dừng"
         cell.lblStatus.backgroundColor = AppUtils.getAccentColor()
         cell.lblStatus.layer.cornerRadius = AppConstant.CORNER_RADIUS
         cell.lblDistance.text = "100m"
+        let url = URL(string: item.image)
+        cell.imgIcon?.kf.setImage(with: url)
         cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
         cell.backgroundColor = UIColor.init(hexaRGB: "#F0F0F0")
         return cell
@@ -172,10 +190,8 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource,U
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
 //        print("index:\(currentIndex)")
-        service.setSetlectedDevice(currentIndex)
         self.carousel.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
-        
-        
+        self.selectedCarChange(currentIndex)
     }
     
 }

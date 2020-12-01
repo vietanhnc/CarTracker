@@ -14,6 +14,17 @@ import typealias CommonCrypto.CC_LONG
 
 class AppUtils{
     
+    
+    public static func formatDateTime(_ timestamp:Int,_ pattern:String)->String{
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = pattern //Specify your format that you want
+        let strDate = dateFormatter.string(from: date)
+        return strDate
+    }
+    
     public static func getAccentColor()->UIColor{
 //        #D62450
         return UIColor(red: CGFloat(0xD6) / 255.0, green: CGFloat(0x24) / 255.0, blue: CGFloat(0x50) / 255.0, alpha: 1);
