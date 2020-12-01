@@ -20,25 +20,38 @@ class WelcomeVC: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        var nextView:UIViewController = MobilePhoneInputVC()
+//        var nextView:UIViewController = MobilePhoneInputVC()
         do {
             let realm = try Realm()
             let currentUser = realm.objects(UserInfo.self).first
             if currentUser != nil {
-                if currentUser?.phone == nil || currentUser!.phone.isEmpty {
-                    self.push(MobilePhoneInputVC())
-                }else if currentUser?.activeCode == nil || currentUser!.activeCode.isEmpty{
-                    self.push(OTPInputVC())
-                }else if currentUser?.name == nil || currentUser!.name.isEmpty{
-                    self.push(InfoInputVC())
-                }else{
-                    //login
+                if currentUser?.accessToken != nil {
                     service.login(currentUser!.phone, currentUser!.activeCode, completion: { error in
                         if error == nil{
                             self.push(MainTabBarVC())
+                        }else{
+                            self.push(MobilePhoneInputVC())
                         }
                     })
+                } else if currentUser?.name == nil || currentUser!.name.isEmpty {
+                    self.push(InfoInputVC())
+                }else{
+                    self.push(MobilePhoneInputVC())
                 }
+//                if currentUser?.phone == nil || currentUser!.phone.isEmpty {
+//                    self.push(MobilePhoneInputVC())
+//                }else if currentUser?.activeCode == nil || currentUser!.activeCode.isEmpty{
+//                    self.push(OTPInputVC())
+//                }else if currentUser?.name == nil || currentUser!.name.isEmpty{
+//                    self.push(InfoInputVC())
+//                }else{
+//                    //login
+//                    service.login(currentUser!.phone, currentUser!.activeCode, completion: { error in
+//                        if error == nil{
+//                            self.push(MainTabBarVC())
+//                        }
+//                    })
+//                }
             }else{
                 self.push(MobilePhoneInputVC())
             }

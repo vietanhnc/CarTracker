@@ -38,7 +38,7 @@ class OTPInputVC: BaseViewController {
     func validatePhone()->Bool{
         var result = false
         if let text = txtOTP.text {
-            if text == "" || text.count != 5 {
+            if text == "" || text.count != 6 {
                 
             }else{
                 result = true
