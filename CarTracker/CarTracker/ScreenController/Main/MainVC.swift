@@ -61,8 +61,9 @@ class MainVC: BaseViewController {
         btnActive.layer.cornerRadius = AppConstant.CORNER_RADIUS
         btnActive.layer.borderWidth = 1
         btnActive.layer.borderColor = AppUtils.getSecondaryColor().cgColor
-        
+        btnActive.backgroundColor = UIColor.white
         btnBuy.layer.cornerRadius = AppConstant.CORNER_RADIUS
+        
         self.view.layoutIfNeeded()
     }
     
@@ -131,6 +132,8 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
         cell.lblIMEI.text = item.imei
         cell.lblExpire.text = item.expiredGuaranteeDate
         cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
+        let url = URL(string: item.image)
+        cell.imgCarImage?.kf.setImage(with: url)
         cell.backgroundColor = UIColor.init(hexaRGB: "#F7F7F7")
         return cell
     }
@@ -143,5 +146,11 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
+//        print("index:\(currentIndex)")
+        self.carousel1.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
 }

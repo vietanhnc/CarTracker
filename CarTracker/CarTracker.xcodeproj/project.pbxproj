@@ -35,6 +35,10 @@
 		5659DC672573C920007AD33E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC652573C91E007AD33E /* ProfileVC.swift */; };
 		5659DC682573C920007AD33E /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5659DC662573C91E007AD33E /* ProfileVC.xib */; };
 		5659DC6E2573DD1F007AD33E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5659DC6D2573DD1F007AD33E /* ProfileModel.swift */; };
+		565C8A1825778F4200FCC370 /* CarDeviceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C8A1625778F4200FCC370 /* CarDeviceDetailVC.swift */; };
+		565C8A1925778F4200FCC370 /* CarDeviceDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565C8A1725778F4200FCC370 /* CarDeviceDetailVC.xib */; };
+		565C8A1E2577B8EC00FCC370 /* HistorySelectDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C8A1C2577B8EC00FCC370 /* HistorySelectDateVC.swift */; };
+		565C8A1F2577B8EC00FCC370 /* HistorySelectDateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 565C8A1D2577B8EC00FCC370 /* HistorySelectDateVC.xib */; };
 		5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5682F5DC2566930700A56C25 /* InfoPlist.strings */; };
 		56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE0A256505D400757E2A /* SelectBrandVC.swift */; };
 		56D0FE112565408600757E2A /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D0FE102565408600757E2A /* Brand.swift */; };
@@ -123,6 +127,10 @@
 		5659DC652573C91E007AD33E /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		5659DC662573C91E007AD33E /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		5659DC6D2573DD1F007AD33E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		565C8A1625778F4200FCC370 /* CarDeviceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDeviceDetailVC.swift; sourceTree = "<group>"; };
+		565C8A1725778F4200FCC370 /* CarDeviceDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDeviceDetailVC.xib; sourceTree = "<group>"; };
+		565C8A1C2577B8EC00FCC370 /* HistorySelectDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySelectDateVC.swift; sourceTree = "<group>"; };
+		565C8A1D2577B8EC00FCC370 /* HistorySelectDateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistorySelectDateVC.xib; sourceTree = "<group>"; };
 		5682F5DB2566930700A56C25 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5682F5DF2566930A00A56C25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		56D0FE0A256505D400757E2A /* SelectBrandVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBrandVC.swift; sourceTree = "<group>"; };
@@ -210,6 +218,8 @@
 			children = (
 				56DC15A6255DA7AC00D5C4F1 /* LocationMainVC.swift */,
 				56DC15A7255DA7AC00D5C4F1 /* LocationMainVC.xib */,
+				565C8A1C2577B8EC00FCC370 /* HistorySelectDateVC.swift */,
+				565C8A1D2577B8EC00FCC370 /* HistorySelectDateVC.xib */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -415,6 +425,8 @@
 				56DC159B255C58D200D5C4F1 /* MainVC.xib */,
 				56DC15A0255DA5F000D5C4F1 /* MainTabBarVC.swift */,
 				56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */,
+				565C8A1625778F4200FCC370 /* CarDeviceDetailVC.swift */,
+				565C8A1725778F4200FCC370 /* CarDeviceDetailVC.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -582,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
+				565C8A1F2577B8EC00FCC370 /* HistorySelectDateVC.xib in Resources */,
 				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
 				5659DC1D256D737F007AD33E /* SelectBrandVC.xib in Resources */,
 				56DC15A9255DA7AC00D5C4F1 /* LocationMainVC.xib in Resources */,
@@ -593,6 +606,7 @@
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
 				563DAEC2256BD9F800EF3468 /* BrandModel.xib in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
+				565C8A1925778F4200FCC370 /* CarDeviceDetailVC.xib in Resources */,
 				56DC15A3255DA5F000D5C4F1 /* MainTabBarVC.xib in Resources */,
 				56DC16E5255FEBBE00D5C4F1 /* Localizable.strings in Resources */,
 				56D33EAB2538A78E0026368C /* Main.storyboard in Resources */,
@@ -681,6 +695,7 @@
 				563DAEE4256FC12700EF3468 /* CarDeviceDAO.swift in Sources */,
 				56D1EA5B25530CF100DB0851 /* APIRouter.swift in Sources */,
 				56DC172A2561A13600D5C4F1 /* MainService.swift in Sources */,
+				565C8A1825778F4200FCC370 /* CarDeviceDetailVC.swift in Sources */,
 				563DAEDA256F90D000EF3468 /* UserInfoDAO.swift in Sources */,
 				56D632382557D17F00909F59 /* AlertView.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,
@@ -711,6 +726,7 @@
 				5659DC672573C920007AD33E /* ProfileVC.swift in Sources */,
 				563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */,
 				5659DC24256EB9E3007AD33E /* ActiveDVDResultVC.swift in Sources */,
+				565C8A1E2577B8EC00FCC370 /* HistorySelectDateVC.swift in Sources */,
 				563DAEE0256F92BC00EF3468 /* SystemParameterDAO.swift in Sources */,
 				5659DC0B256D70BC007AD33E /* CMLabel.swift in Sources */,
 				56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */,
