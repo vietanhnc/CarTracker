@@ -133,6 +133,9 @@
                     <state key="normal" title="Lịch sử di chuyển" image="clock">
                         <color key="titleColor" systemColor="systemPurpleColor"/>
                     </state>
+                    <connections>
+                        <action selector="btnHistory:" destination="-1" eventType="touchUpInside" id="gJ2-Nv-ioR"/>
+                    </connections>
                 </button>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-B6-un2">
                     <rect key="frame" x="20" y="355" width="374" height="371"/>

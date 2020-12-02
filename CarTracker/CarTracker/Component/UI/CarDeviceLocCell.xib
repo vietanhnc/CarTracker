@@ -33,6 +33,7 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dang Dung" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiC-T2-AHW">
                                 <rect key="frame" x="37.5" y="31.5" width="70" height="20"/>
+                                <color key="backgroundColor" red="0.23529411764705882" green="0.55686274509803924" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="7qF-cl-daw"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Cdy-Vv-hra"/>
@@ -42,16 +43,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYK-ZR-kb2">
-                                <rect key="frame" x="30.5" y="75" width="77" height="20"/>
+                                <rect key="frame" x="40.5" y="75" width="67" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="D1S-CP-Fb7"/>
                                 </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Xem chi tiết">
+                                        <fragment content="Chỉ đường">
                                             <attributes>
                                                 <color key="NSColor" red="0.87843137250000003" green="0.23529411759999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" metaFont="system" size="14"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
                                         </fragment>
@@ -61,13 +63,13 @@
                                     <action selector="btnDetailTouch:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QPs-JK-Ks4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8H-hm-uum">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8H-hm-uum">
                                 <rect key="frame" x="71.5" y="53" width="36" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-Jn-3NQ">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-Jn-3NQ">
                                 <rect key="frame" x="54" y="55" width="12.5" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="n1t-Jn-3NQ" secondAttribute="height" multiplier="1:1" id="Fpn-k1-1tB"/>

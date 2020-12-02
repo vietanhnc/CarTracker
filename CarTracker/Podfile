@@ -23,5 +23,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'GoogleMaps', '4.0.0'
 pod 'GooglePlaces', '4.0.0'
 pod 'TweeTextField'
-
+pod 'DatePickerDialog'
+pod 'SwiftDate'
 end

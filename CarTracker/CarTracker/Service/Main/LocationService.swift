@@ -82,7 +82,7 @@ class LocationService{
         let _long = Double(self.selectedDevice?.lng ?? "105.804817" )
         var _title = ""
         if self.selectedDevice != nil && self.selectedDevice!.time != 0 {
-            _title = AppUtils.formatDateTime(self.selectedDevice!.time, "dd-MM-yyyy HH:mm:ss")
+            _title = DateUtils.formatDateTime(self.selectedDevice!.time, "dd-MM-yyyy HH:mm:ss")
         }
         return (_lat!,_long!,_title)
     }

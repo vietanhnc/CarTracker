@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistorySelectDateVC" customModule="CarManagement" customModuleProvider="target">
             <connections>
+                <outlet property="txtEndDate" destination="pXj-RL-c8O" id="X2Q-JN-4Oi"/>
+                <outlet property="txtStartDate" destination="AiO-2M-sKg" id="7qd-C8-qWa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,17 +21,116 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3ow-Rd-yXH">
-                    <rect key="frame" x="0.0" y="574" width="414" height="162"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                </datePicker>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck2-e9-AuT" userLabel="startDate">
+                    <rect key="frame" x="20" y="20" width="374" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn ngày" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoX-tD-ZVy">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="nth-mV-wLv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-2M-sKg">
+                            <rect key="frame" x="0.0" y="30" width="374" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="yqw-Y5-QmC"/>
+                            </constraints>
+                            <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            <connections>
+                                <action selector="txtStartDate:" destination="-1" eventType="touchDown" id="AZC-zW-2i6"/>
+                            </connections>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="KGH-dH-XEK">
+                            <rect key="frame" x="338" y="47" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="KGH-dH-XEK" secondAttribute="height" multiplier="1:1" id="UIg-Jm-haK"/>
+                                <constraint firstAttribute="height" constant="16" id="cU1-xY-wBp"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="AiO-2M-sKg" secondAttribute="trailing" id="42u-z0-QfO"/>
+                        <constraint firstItem="KGH-dH-XEK" firstAttribute="centerY" secondItem="AiO-2M-sKg" secondAttribute="centerY" id="5xA-zp-TUt"/>
+                        <constraint firstItem="QoX-tD-ZVy" firstAttribute="top" secondItem="ck2-e9-AuT" secondAttribute="top" id="7iW-6H-uI6"/>
+                        <constraint firstItem="AiO-2M-sKg" firstAttribute="top" secondItem="QoX-tD-ZVy" secondAttribute="bottom" constant="10" id="F2L-pD-ffd"/>
+                        <constraint firstAttribute="height" constant="80" id="F6s-VX-fPb"/>
+                        <constraint firstItem="AiO-2M-sKg" firstAttribute="leading" secondItem="QoX-tD-ZVy" secondAttribute="leading" id="L4S-no-Hvp"/>
+                        <constraint firstItem="QoX-tD-ZVy" firstAttribute="leading" secondItem="ck2-e9-AuT" secondAttribute="leading" id="Mek-6B-tUH"/>
+                        <constraint firstAttribute="trailing" secondItem="QoX-tD-ZVy" secondAttribute="trailing" constant="20" symbolic="YES" id="OMI-Tf-SwH"/>
+                        <constraint firstAttribute="trailing" secondItem="KGH-dH-XEK" secondAttribute="trailing" constant="20" id="OS9-VF-yL7"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inf-CN-GUX" userLabel="endDate">
+                    <rect key="frame" x="20" y="110" width="374" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đến ngày" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV0-33-hsG">
+                            <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="63v-IL-jyM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXj-RL-c8O">
+                            <rect key="frame" x="0.0" y="30" width="374" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="YGg-xA-gkY"/>
+                            </constraints>
+                            <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            <connections>
+                                <action selector="txtEndDateTouch:" destination="-1" eventType="touchDown" id="0RI-6H-a3R"/>
+                                <action selector="txtEndDateTouchUpInside:" destination="-1" eventType="touchUpInside" id="A1u-bj-ao7"/>
+                            </connections>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="3lV-80-1C8">
+                            <rect key="frame" x="338" y="47" width="16" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="JsK-0f-fws"/>
+                                <constraint firstAttribute="width" secondItem="3lV-80-1C8" secondAttribute="height" multiplier="1:1" id="TWN-vz-T48"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3lV-80-1C8" firstAttribute="centerY" secondItem="pXj-RL-c8O" secondAttribute="centerY" id="6QC-do-N1b"/>
+                        <constraint firstItem="fV0-33-hsG" firstAttribute="top" secondItem="Inf-CN-GUX" secondAttribute="top" id="Dvn-zm-Fd2"/>
+                        <constraint firstItem="pXj-RL-c8O" firstAttribute="leading" secondItem="fV0-33-hsG" secondAttribute="leading" id="E1F-aU-1Z2"/>
+                        <constraint firstItem="fV0-33-hsG" firstAttribute="leading" secondItem="Inf-CN-GUX" secondAttribute="leading" id="Gmy-bi-7tk"/>
+                        <constraint firstItem="pXj-RL-c8O" firstAttribute="top" secondItem="fV0-33-hsG" secondAttribute="bottom" constant="10" id="JXV-Gw-is9"/>
+                        <constraint firstAttribute="height" constant="80" id="Lw9-aD-yK4"/>
+                        <constraint firstAttribute="trailing" secondItem="pXj-RL-c8O" secondAttribute="trailing" id="UTB-AY-TcK"/>
+                        <constraint firstAttribute="trailing" secondItem="3lV-80-1C8" secondAttribute="trailing" constant="20" id="vN2-De-jXL"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Inf-CN-GUX" secondAttribute="trailing" constant="20" id="3Kz-Bq-nFa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ck2-e9-AuT" secondAttribute="trailing" constant="20" id="97I-7n-oni"/>
+                <constraint firstItem="Inf-CN-GUX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LKk-Nc-k1P"/>
+                <constraint firstItem="ck2-e9-AuT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Sqr-b7-Eci"/>
+                <constraint firstItem="ck2-e9-AuT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eQM-kk-fAs"/>
+                <constraint firstItem="Inf-CN-GUX" firstAttribute="top" secondItem="ck2-e9-AuT" secondAttribute="bottom" constant="10" id="pJf-KX-8r4"/>
+            </constraints>
             <point key="canvasLocation" x="138" y="90"/>
         </view>
     </objects>
     <resources>
+        <image name="calendar" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

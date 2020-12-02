@@ -21,7 +21,14 @@ class BaseViewController: UIViewController {
     func setupData() {}
     
     func setupUI() {
-        
+        //set back button text to ""
+        self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+
         NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
     }
     

@@ -25,6 +25,12 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         return service.dataSource
     }
     
+    @IBAction func btnHistory(_ sender: Any) {
+        if let selected = service.selectedDevice {
+            self.navigationController?.pushViewController(HistorySelectDateVC(carDevice: selected), animated: true)
+        }
+    }
+    
     override func setupData() {
         service.fetchCarDevice(completion: { error,data in
             if(error == nil){
@@ -117,6 +123,7 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         if !title.isEmpty{
             marker.title = title
         }
+        mainMap.selectedMarker = marker
         mainMap.layer.cornerRadius = AppConstant.CORNER_RADIUS
         mapViewContainer.addSubview(mainMap)
         mapViewContainer.layer.cornerRadius = AppConstant.CORNER_RADIUS
@@ -161,8 +168,14 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource,U
         //        let bound = cell.lblStatus.layer.bounds
         //        cell.lblStatus.layer.bounds = CGRect(x: bound.origin.x, y: bound.origin.y, width: bound.width+20, height: bound.height)
         //        cell.lblDistance.setMargins(margin: 10)
-        cell.lblStatus.text = item.isMoving ? "Di chuyển" : "Đang dừng"
-        cell.lblStatus.backgroundColor = AppUtils.getAccentColor()
+        if item.isMoving {
+            cell.lblStatus.text = "Di chuyển"
+            cell.lblStatus.backgroundColor = UIColor.init(red: 60, green: 142, blue: 224, alpha: 1)
+        }else{
+            cell.lblStatus.text = "Đang dừng"
+            cell.lblStatus.backgroundColor = AppUtils.getAccentColor()
+        }
+        
         cell.lblStatus.layer.cornerRadius = AppConstant.CORNER_RADIUS
         cell.lblDistance.text = "100m"
         let url = URL(string: item.image)

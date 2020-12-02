@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.0)
+  - DatePickerDialog (4.0)
   - GoogleMaps (4.0.0):
     - GoogleMaps/Maps (= 4.0.0)
   - GoogleMaps/Base (4.0.0)
@@ -28,11 +29,13 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SwiftDate (6.3.1)
   - SwiftyJSON (5.0.0)
   - TweeTextField (1.6.3)
 
 DEPENDENCIES:
   - Alamofire
+  - DatePickerDialog
   - GoogleMaps (= 4.0.0)
   - GooglePlaces (= 4.0.0)
   - IQKeyboardManagerSwift
@@ -41,12 +44,14 @@ DEPENDENCIES:
   - RealmSwift
   - RxCocoa
   - RxSwift
+  - SwiftDate
   - SwiftyJSON
   - TweeTextField
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DatePickerDialog
     - GoogleMaps
     - GooglePlaces
     - IQKeyboardManagerSwift
@@ -57,11 +62,13 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SwiftDate
     - SwiftyJSON
     - TweeTextField
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  DatePickerDialog: ccff2f91ff7a018057a4d72fa5ad6de49c8cb0cd
   GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
   GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
@@ -72,9 +79,10 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TweeTextField: 47bf8e7f0433364a7f7e119c45e7f278ea50eb62
 
-PODFILE CHECKSUM: f2bad9eb2a5862d1e7c3fe4331151516dd7742be
+PODFILE CHECKSUM: a3b02bdfe1fd45a1342e07be6bc589d71bb26d7a
 
 COCOAPODS: 1.10.0
