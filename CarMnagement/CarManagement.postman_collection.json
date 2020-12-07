@@ -1240,6 +1240,94 @@
 					"body": "{\"activeCode\":\"3UII1G6WBI\",\"rest\":\"999\",\"statusCode\":\"201\",\"errorCode\":\"\",\"code\":\"1\",\"description\":\"\"}"
 				}
 			]
+		},
+		{
+			"name": "getLocationHistory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imei\":\"862523112642812\",\r\n    \"deviceId\":\"8c9f1ec58f78c95f\",\r\n    \"startTime\":\"1606120313\",\r\n    \"endTime\":\"1606120323\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}GetLocationHistory",
+					"host": [
+						"{{baseUrl}}GetLocationHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDvdDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}GetDvdList",
+					"host": [
+						"{{baseUrl}}GetDvdList"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetDvdDetails",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}GetDvdList",
+							"host": [
+								"{{baseUrl}}GetDvdList"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "1580"
+						}
+					],
+					"cookie": [],
+					"body": "{\"datas\":[{\"name\":\"X8\",\"description\":\"Màn hình Android DVD ô tô Webvision X8\",\"image\":\"https://webvision.vn/wp-content/uploads/2020/08/man_hinh_o_to_x6-600x338.png\",\"price\":\"15,500,000₫\",\"priceSaleOff\":\"12,890,000₫\"},{\"name\":\"X6\",\"description\":\"Màn hình Android DVD ô tô Webvision X6\",\"image\":\"https://webvision.vn/wp-content/uploads/2020/08/webvison-x6-600x338.png\",\"price\":\"12,500,000₫\",\"priceSaleOff\":\"9,890,000₫\"},{\"name\":\"DVD Mazda 2\",\"description\":\"Màn hình DVD Webvision Mazda 2 hai hệ điều hành\",\"image\":\"https://webvision.vn/wp-content/uploads/2020/07/3-600x394.png\",\"price\":\"17,500,000₫\",\"priceSaleOff\":\"15,990,000₫\"},{\"name\":\"DVD Mazda 3\",\"description\":\"Màn hình DVD Webvision Mazda 3 hai hệ điều hành\",\"image\":\"https://webvision.vn/wp-content/uploads/2020/08/1.png\",\"price\":\"17,500,000₫\",\"priceSaleOff\":\"15,990,000₫\"},{\"name\":\"DVD Mazda 6\",\"description\":\"Màn hình DVD Webvision Mazda 6 hai hệ điều hành\",\"image\":\"https://webvision.vn/wp-content/uploads/2020/09/mazda6-600x600.png\",\"price\":\"17,500,000₫\",\"priceSaleOff\":\"15,990,000₫\"},{\"name\":\"DVD Mazda CX5\",\"description\":\"Màn hình DVD Webvision Mazda CX5 hai hệ điều hành\",\"image\":\"https://webvision.vn/wp-content/uploads/2020/07/1-600x600.png\",\"price\":\"17,500,000₫\",\"priceSaleOff\":\"15,990,000₫\"},{\"name\":\"DVD Mazda CX8\",\"description\":\"Màn hình DVD Webvision Mazda CX8 hai hệ điều hành\",\"image\":\"https://webvision.vn/wp-content/uploads/2020/09/cx8-600x600.png\",\"price\":\"17,500,000₫\",\"priceSaleOff\":\"15,990,000₫\"}],\"code\":\"1\",\"description\":\"\"}"
+				}
+			]
 		}
 	],
 	"protocolProfileBehavior": {}

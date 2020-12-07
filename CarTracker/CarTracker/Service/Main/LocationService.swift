@@ -27,6 +27,26 @@ class LocationService{
         return result
     }
     
+    func getGetLocationHistory(_ startTime:String,_ endTime:String, completion: @escaping (_ errorMsg:String?,_ locationHistory:String?) -> Void) {
+        guard let selectedDeviceUW = self.selectedDevice else {return}
+        
+        
+        Request.shared().fetch(APIRouter.GetLocationHistory(selectedDeviceUW.imei, selectedDeviceUW.deviceId,startTime,endTime),completion: {data in
+            guard let dataUW = data else{ AlertView.show(); return }
+            if dataUW.isSuccess {
+                let history = dataUW.response["data"]
+                for (index,subJson):(String, JSON) in history {
+                    let splits = subJson.components(separatedBy: ";")
+                }
+
+                completion(nil,"")
+            }else{
+                AlertView.show("Không tìm thấy thông tin!");
+                completion("Không tìm thấy thông tin!",nil)
+            }
+        })
+    }
+    
     func getCurrentLocation(completion: @escaping (_ errorMsg:String?,_ carDevices:CarDevice?) -> Void) {
         guard let selectedDeviceUW = self.selectedDevice else {return}
         Request.shared().fetch(APIRouter.GetCurrLocation(selectedDeviceUW.imei, selectedDeviceUW.deviceId),completion: {data in

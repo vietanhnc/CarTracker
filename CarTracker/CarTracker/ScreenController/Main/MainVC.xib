@@ -52,7 +52,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7C-mI-hLx">
-                    <rect key="frame" x="0.0" y="120" width="414" height="210"/>
+                    <rect key="frame" x="0.0" y="120" width="414" height="200"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRP-1b-IXk" userLabel="default">
                             <rect key="frame" x="20" y="0.0" width="374" height="130"/>
@@ -91,15 +91,15 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8Y-r7-3kr">
-                            <rect key="frame" x="0.0" y="140" width="414" height="60"/>
+                            <rect key="frame" x="0.0" y="140" width="414" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hl-Zx-A8U">
-                                    <rect key="frame" x="20" y="10" width="177" height="40"/>
+                                    <rect key="frame" x="20" y="7.6666666666666856" width="177" height="35"/>
                                     <color key="backgroundColor" red="0.87843137250000003" green="0.23529411759999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="NZF-ps-ogK"/>
+                                        <constraint firstAttribute="height" constant="35" id="NZF-ps-ogK"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                     <state key="normal" title="Mua thiết bị mới">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -108,12 +108,12 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy0-F8-dTE">
-                                    <rect key="frame" x="217" y="10" width="177" height="40"/>
+                                    <rect key="frame" x="217" y="7.6666666666666856" width="177" height="35"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="dfi-3U-lvM"/>
+                                        <constraint firstAttribute="height" constant="35" id="dfi-3U-lvM"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                     <state key="normal" title="Kích hoạt">
                                         <color key="titleColor" red="0.31372549019607843" green="0.15686274509803921" blue="0.37647058823529411" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                     </state>
@@ -125,7 +125,7 @@
                             <constraints>
                                 <constraint firstItem="sy0-F8-dTE" firstAttribute="centerY" secondItem="l8Y-r7-3kr" secondAttribute="centerY" id="2aq-L7-6Ra"/>
                                 <constraint firstAttribute="trailing" secondItem="sy0-F8-dTE" secondAttribute="trailing" constant="20" id="9r8-HE-tSx"/>
-                                <constraint firstAttribute="height" constant="60" id="Qp1-YW-rgW"/>
+                                <constraint firstAttribute="height" constant="50" id="Qp1-YW-rgW"/>
                                 <constraint firstItem="2Hl-Zx-A8U" firstAttribute="centerY" secondItem="l8Y-r7-3kr" secondAttribute="centerY" id="YdD-vd-lny"/>
                                 <constraint firstItem="sy0-F8-dTE" firstAttribute="width" secondItem="l8Y-r7-3kr" secondAttribute="width" multiplier="0.5" constant="-30" id="fKO-KH-0hM"/>
                                 <constraint firstItem="2Hl-Zx-A8U" firstAttribute="leading" secondItem="l8Y-r7-3kr" secondAttribute="leading" constant="20" id="gxr-Md-wrk"/>
@@ -144,7 +144,7 @@
                         <constraint firstItem="l8Y-r7-3kr" firstAttribute="top" secondItem="jRP-1b-IXk" secondAttribute="bottom" constant="10" id="mfY-nm-mI2"/>
                         <constraint firstAttribute="trailing" secondItem="l8Y-r7-3kr" secondAttribute="trailing" id="nck-gW-4X7"/>
                         <constraint firstItem="NF3-Ws-8K1" firstAttribute="top" secondItem="f7C-mI-hLx" secondAttribute="top" id="rRO-Em-khq"/>
-                        <constraint firstAttribute="height" constant="210" id="ryh-vm-GJZ"/>
+                        <constraint firstAttribute="height" constant="200" id="ryh-vm-GJZ"/>
                     </constraints>
                 </view>
             </subviews>

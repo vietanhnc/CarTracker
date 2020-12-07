@@ -61,6 +61,7 @@
 		56D632382557D17F00909F59 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632372557D17F00909F59 /* AlertView.swift */; };
 		56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6323A25596E6D00909F59 /* DateExtension.swift */; };
 		56D6FEFB2578009B00834C23 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FEFA2578009B00834C23 /* DateUtils.swift */; };
+		56D6FF11257C757300834C23 /* LocationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF10257C757300834C23 /* LocationHistory.swift */; };
 		56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */; };
 		56DBE47D25657D3000EF87E0 /* ScanDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */; };
 		56DBE4B325682D1400EF87E0 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE4B225682D1400EF87E0 /* UIColorExt.swift */; };
@@ -157,6 +158,7 @@
 		56D632372557D17F00909F59 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		56D6323A25596E6D00909F59 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		56D6FEFA2578009B00834C23 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		56D6FF10257C757300834C23 /* LocationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHistory.swift; sourceTree = "<group>"; };
 		56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDeviceVC.swift; sourceTree = "<group>"; };
 		56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanDeviceVC.xib; sourceTree = "<group>"; };
 		56DBE4B225682D1400EF87E0 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				56DC172025619F8600D5C4F1 /* CarDevice.swift */,
 				56D0FE102565408600757E2A /* Brand.swift */,
 				563DAEC5256CC3C100EF3468 /* CarModel.swift */,
+				56D6FF10257C757300834C23 /* LocationHistory.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				563DAEAD25679ED900EF3468 /* BrandCell.swift in Sources */,
 				56DC15A8255DA7AC00D5C4F1 /* LocationMainVC.swift in Sources */,
 				5659DC6E2573DD1F007AD33E /* ProfileModel.swift in Sources */,
+				56D6FF11257C757300834C23 /* LocationHistory.swift in Sources */,
 				56DC159C255C58D200D5C4F1 /* MainVC.swift in Sources */,
 				5659DC422571F215007AD33E /* LocationService.swift in Sources */,
 				56D0FE0C256505D400757E2A /* SelectBrandVC.swift in Sources */,

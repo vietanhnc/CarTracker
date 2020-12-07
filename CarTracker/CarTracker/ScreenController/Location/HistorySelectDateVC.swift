@@ -14,6 +14,7 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
     
     @IBOutlet var txtStartDate: UITextField!
     @IBOutlet var txtEndDate: UITextField!
+    @IBOutlet var btnSearch: UIButton!
     var selectedDevice:CarDevice
 
     init(carDevice: CarDevice) {
@@ -30,15 +31,19 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
         self.title = "Lịch sử di chuyển"
         txtStartDate.delegate = self
         txtEndDate.delegate = self
+        
+        // setup Date
+        let currentDateTime = Date()
+        let minDate = currentDateTime.addingTimeInterval(-7*24*60*60)
+        txtStartDate.text = currentDateTime.toFormat("dd/MM/yyyy hh:ss")
+        txtEndDate.text = minDate.toFormat("dd/MM/yyyy hh:ss")
+        btnSearch.layer.cornerRadius = AppConstant.CORNER_RADIUS
+        btnSearch.layer.backgroundColor = AppUtils.getAccentColor().cgColor
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // setup Date
-        let currentDateTime = Date()
-        let minDate = currentDateTime.addingTimeInterval(-7*24*60*60)
-        txtStartDate.text = DateUtils.formatDate(Date())
-        txtEndDate.text = DateUtils.formatDate(minDate)
         // Do any additional setup after loading the view.
     }
 
@@ -49,32 +54,27 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
     @IBAction func txtEndDateTouch(_ sender: Any) {
         datePickerTapped(self.txtEndDate)
     }
-    //    @IBAction func txtEndDateTouchUpInside(_ sender: Any) {
-//        datePickerTapped(self.txtEndDate)
-//    }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         // show UIDatePicker
         return false
     }
 
+    @IBAction func btnSearchTouch(_ sender: Any) {
+        
+    }
+    
     func datePickerTapped(_ sender:UITextField) {
         var maxDate = Date()
         if sender == self.txtEndDate {
             let startDateStr = txtStartDate.text!.toDate("dd/MM/yyyy")
             maxDate = Date(timeIntervalSince1970: startDateStr!.timeIntervalSince1970)
-//            startDateStr!.timeIntervalSince1970
-//            maxDate.timeIntervalSince1970
-//            Date(milliseconds: startDateStr!.timeIntervalSince1970)
         }
         let minDate = maxDate.addingTimeInterval(-30*24*60*60)
 
-        DatePickerDialog(locale: Locale(identifier: "vi_VN")).show("Chọn ngày",doneButtonTitle: "OK", cancelButtonTitle: "Hủy", minimumDate: minDate, maximumDate: maxDate, datePickerMode: .date) { date in
+        DatePickerDialog(locale: Locale(identifier: "vi_VN")).show("Chọn ngày",doneButtonTitle: "OK", cancelButtonTitle: "Hủy", minimumDate: minDate, maximumDate: maxDate, datePickerMode: .dateAndTime) { date in
             if let dt = date {
-//                let formatter = DateFormatter()
-//                formatter.dateFormat = "dd/MM/yyyy"
-//                sender.text = formatter.string(from: dt)
-                sender.text = DateUtils.formatDate(dt)
+                sender.text = dt.toFormat("dd/MM/yyyy hh:ss")
             }
         }
     }

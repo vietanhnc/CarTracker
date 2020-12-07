@@ -32,7 +32,7 @@ class MainService {
         CarDeviceDAO.deleteCarDevice("")
         for (_,subJson):(String, JSON) in dvds {
             let device = CarDevice(fromJson: subJson)
-            result.append(device)
+            result.append(device.clone())
             CarDeviceDAO.insertCarDevice(device)
         }
         return result

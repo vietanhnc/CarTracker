@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistorySelectDateVC" customModule="CarManagement" customModuleProvider="target">
             <connections>
+                <outlet property="btnSearch" destination="eu1-z6-DrD" id="p5Y-aE-5Tg"/>
                 <outlet property="txtEndDate" destination="pXj-RL-c8O" id="X2Q-JN-4Oi"/>
                 <outlet property="txtStartDate" destination="AiO-2M-sKg" id="7qd-C8-qWa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -115,13 +116,29 @@
                         <constraint firstAttribute="trailing" secondItem="3lV-80-1C8" secondAttribute="trailing" constant="20" id="vN2-De-jXL"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu1-z6-DrD">
+                    <rect key="frame" x="20" y="210" width="374" height="35"/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.23529411759999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="IyF-Un-JWT"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnSearchTouch:" destination="-1" eventType="touchUpInside" id="Cah-MB-BuB"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eu1-z6-DrD" secondAttribute="trailing" constant="20" id="2B3-uo-DIm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Inf-CN-GUX" secondAttribute="trailing" constant="20" id="3Kz-Bq-nFa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ck2-e9-AuT" secondAttribute="trailing" constant="20" id="97I-7n-oni"/>
+                <constraint firstItem="eu1-z6-DrD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FNr-qR-EX8"/>
                 <constraint firstItem="Inf-CN-GUX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LKk-Nc-k1P"/>
+                <constraint firstItem="eu1-z6-DrD" firstAttribute="top" secondItem="Inf-CN-GUX" secondAttribute="bottom" constant="20" id="MC8-88-2N1"/>
                 <constraint firstItem="ck2-e9-AuT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Sqr-b7-Eci"/>
                 <constraint firstItem="ck2-e9-AuT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eQM-kk-fAs"/>
                 <constraint firstItem="Inf-CN-GUX" firstAttribute="top" secondItem="ck2-e9-AuT" secondAttribute="bottom" constant="10" id="pJf-KX-8r4"/>
