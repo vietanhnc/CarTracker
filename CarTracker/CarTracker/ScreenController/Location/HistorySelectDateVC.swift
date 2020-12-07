@@ -16,7 +16,8 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
     @IBOutlet var txtEndDate: UITextField!
     @IBOutlet var btnSearch: UIButton!
     var selectedDevice:CarDevice
-
+    let locationService = LocationService()
+    
     init(carDevice: CarDevice) {
         self.selectedDevice = carDevice
         super.init(nibName: nil, bundle: nil)
@@ -34,11 +35,17 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
         
         // setup Date
         let currentDateTime = Date()
-        let minDate = currentDateTime.addingTimeInterval(-7*24*60*60)
-        txtStartDate.text = currentDateTime.toFormat("dd/MM/yyyy hh:ss")
-        txtEndDate.text = minDate.toFormat("dd/MM/yyyy hh:ss")
+        let minDate = currentDateTime.addingTimeInterval(-30*24*60*60)
+        txtStartDate.text = minDate.toFormat("dd/MM/yyyy HH:mm")
+        txtEndDate.text = currentDateTime.toFormat("dd/MM/yyyy HH:mm")
         btnSearch.layer.cornerRadius = AppConstant.CORNER_RADIUS
         btnSearch.layer.backgroundColor = AppUtils.getAccentColor().cgColor
+    }
+    
+    override func setupData() {
+        locationService.selectedDevice = self.selectedDevice
+        let vietnamRegion = Region(calendar: Calendars.gregorian, zone: Zones.asiaHoChiMinh, locale: Locales.vietnamese)
+        SwiftDate.defaultRegion = vietnamRegion
 
     }
     
@@ -61,20 +68,33 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
     }
 
     @IBAction func btnSearchTouch(_ sender: Any) {
-        
+        if let startDate = txtStartDate.text, let endDate = txtEndDate.text {
+            let date1 = startDate.toDate("dd/MM/yyyy HH:mm")
+            let date2 = endDate.toDate("dd/MM/yyyy HH:mm")
+            let lessDateFmt = date1?.toFormat("yyyyMMddHH")
+            let greaterDateFmt = date2?.toFormat("yyyyMMddHH")
+            guard let lessDateFmtUW = lessDateFmt, let greaterDateFmtUW = greaterDateFmt else { return }
+            locationService.getGetLocationHistory(lessDateFmtUW, greaterDateFmtUW, completion: {
+                error,data in
+    
+            })
+        }
     }
     
     func datePickerTapped(_ sender:UITextField) {
         var maxDate = Date()
-        if sender == self.txtEndDate {
-            let startDateStr = txtStartDate.text!.toDate("dd/MM/yyyy")
-            maxDate = Date(timeIntervalSince1970: startDateStr!.timeIntervalSince1970)
-        }
         let minDate = maxDate.addingTimeInterval(-30*24*60*60)
-
-        DatePickerDialog(locale: Locale(identifier: "vi_VN")).show("Chọn ngày",doneButtonTitle: "OK", cancelButtonTitle: "Hủy", minimumDate: minDate, maximumDate: maxDate, datePickerMode: .dateAndTime) { date in
+        var defaultSwiftDate = txtEndDate.text!.toDate("dd/MM/yyyy HH:mm")
+        if sender == self.txtStartDate {
+            let endDateStr = txtEndDate.text!.toDate("dd/MM/yyyy HH:mm")
+            maxDate = Date(timeIntervalSince1970: endDateStr!.timeIntervalSince1970)
+            defaultSwiftDate = txtStartDate.text!.toDate("dd/MM/yyyy HH:mm")
+        }
+        let defaultDate = Date(timeIntervalSince1970: defaultSwiftDate!.timeIntervalSince1970)
+        DatePickerDialog(locale: Locale(identifier: "vi_VN")).show("Chọn ngày",doneButtonTitle: "OK", cancelButtonTitle: "Hủy",defaultDate: defaultDate, minimumDate: minDate, maximumDate: maxDate, datePickerMode: .dateAndTime) { date in
             if let dt = date {
-                sender.text = dt.toFormat("dd/MM/yyyy hh:ss")
+                let dateFormated = dt.toFormat("dd/MM/yyyy HH:mm",locale: Locales.vietnamese)
+                sender.text = dateFormated
             }
         }
     }

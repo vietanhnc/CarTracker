@@ -3,19 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "OTPInputVC.validatePhone():OTPInputVC.swift">
+         contextName = "closure #1 in HistorySelectDateVC.datePickerTapped(_:):HistorySelectDateVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "text.count != 5">
-            </PersistentString>
-            <PersistentString
-               value = "text == &quot;&quot; || text.count != 5">
-            </PersistentString>
-            <PersistentString
-               value = "text == &quot;&quot; ">
-            </PersistentString>
-            <PersistentString
-               value = "text.count">
+               value = "dt.toFormat(&quot;dd/MM/yyyy hh:ss&quot;)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,18 +19,32 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in SelectBrandVC.viewDidLoad():SelectBrandVC.swift">
+         contextName = "BaseViewController.showLoading():BaseViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LocationMainVC.setupMapview(_:_:_:):LocationMainVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SelectBrandVC.collectionView(_:cellForItemAt:):SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.brandCollectionView">
+               value = "collectionView as? CarBrandColView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LocationMainVC.collectionView(_:cellForItemAt:):LocationMainVC.swift">
+         contextName = "LocationService.getGetLocationHistory(_:_:completion:):LocationService.swift">
          <PersistentStrings>
             <PersistentString
-               value = "cell.lblStatus.layer.bounds">
+               value = "self.selectedDevice">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SelectBrandVC.viewDidLoad():SelectBrandVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.brandCollectionView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -58,18 +63,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MainVC.setupUI():MainVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "view1.heightAnchor">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "APIRouter.asURLRequest():APIRouter.swift">
       </ContextState>
       <ContextState
          contextName = "OTPInputVC.setupData():OTPInputVC.swift">
       </ContextState>
       <ContextState
-         contextName = "APIRouter.asURLRequest():APIRouter.swift">
+         contextName = "HistorySelectDateVC.setupUI():HistorySelectDateVC.swift">
       </ContextState>
       <ContextState
          contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
@@ -80,9 +80,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BaseViewController.showLoading():BaseViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in LocationService.getCurrentLocation(completion:):LocationService.swift">
          <PersistentStrings>
             <PersistentString
@@ -91,26 +88,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HistorySelectDateVC.datePickerTapped(_:):HistorySelectDateVC.swift">
+         contextName = "MainVC.setupUI():MainVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.txtEndDate">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in MobilePhoneInputVC.btnContinueTouch(_:):MobilePhoneInputVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationController?">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SelectBrandVC.collectionView(_:cellForItemAt:):SelectBrandVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "collectionView as? CarBrandColView">
+               value = "view1.heightAnchor">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -130,6 +111,47 @@
          <PersistentStrings>
             <PersistentString
                value = "UINib.init(nibName: &quot;CarDeviceLocationCell&quot;, bundle: nil)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistorySelectDateVC.datePickerTapped(_:):HistorySelectDateVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.txtEndDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OTPInputVC.validatePhone():OTPInputVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "text.count != 5">
+            </PersistentString>
+            <PersistentString
+               value = "text == &quot;&quot; || text.count != 5">
+            </PersistentString>
+            <PersistentString
+               value = "text == &quot;&quot; ">
+            </PersistentString>
+            <PersistentString
+               value = "text.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LocationMainVC.collectionView(_:cellForItemAt:):LocationMainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblStatus.layer.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MobilePhoneInputVC.btnContinueTouch(_:):MobilePhoneInputVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController?">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

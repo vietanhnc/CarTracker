@@ -122,7 +122,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="IyF-Un-JWT"/>
                     </constraints>
-                    <state key="normal" title="Button">
+                    <state key="normal" title="Tìm kiếm">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

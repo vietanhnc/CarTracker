@@ -27,19 +27,29 @@ class LocationService{
         return result
     }
     
-    func getGetLocationHistory(_ startTime:String,_ endTime:String, completion: @escaping (_ errorMsg:String?,_ locationHistory:String?) -> Void) {
+    func getGetLocationHistory(_ startTime:String,_ endTime:String, completion: @escaping (_ errorMsg:String?,_ locationHistory:[LocationHistory]?) -> Void) {
         guard let selectedDeviceUW = self.selectedDevice else {return}
-        
-        
         Request.shared().fetch(APIRouter.GetLocationHistory(selectedDeviceUW.imei, selectedDeviceUW.deviceId,startTime,endTime),completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }
             if dataUW.isSuccess {
-                let history = dataUW.response["data"]
-                for (index,subJson):(String, JSON) in history {
-                    let splits = subJson.components(separatedBy: ";")
+                let historyJSON = dataUW.response["data"]
+                var history:[LocationHistory]? = nil
+                for (_,subJson):(String, JSON) in historyJSON {
+                    let splits = subJson.stringValue.components(separatedBy: ":")
+                    let obj = LocationHistory()
+                    obj.deviceId = selectedDeviceUW.deviceId
+                    obj.imei = selectedDeviceUW.imei
+                    obj.sequence = Int(splits[0])!
+                    obj.lat = Double(splits[1])!
+                    obj.long = Double(splits[2])!
+                    obj.time = Int(splits[3])!
+                    if history == nil {
+                        history = [LocationHistory]()
+                    }
+                    history!.append(obj)
                 }
 
-                completion(nil,"")
+                completion(nil,history)
             }else{
                 AlertView.show("Không tìm thấy thông tin!");
                 completion("Không tìm thấy thông tin!",nil)

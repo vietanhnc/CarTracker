@@ -16,7 +16,7 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
     @IBOutlet var carousel: UICollectionView!
     @IBOutlet var notifyView: UIView!
     @IBOutlet var btnHistory: UIButton!
-    @IBOutlet var mapViewContainer: UIView!
+    @IBOutlet var mapView: GMSMapView!
     
     var mainMap:GMSMapView! = GMSMapView()
     var service:LocationService = LocationService()
@@ -88,6 +88,8 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         self.service.getCurrentLocation(completion: { error,data in
             if(error == nil){
                 self.changeMapCurrentLocation()
+            }else{
+                self.mapView.clear()
             }
         })
     }
@@ -112,22 +114,23 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
     func setupMapview(_ lat:Double = 21.028511,_ long:Double = 105.804817,_ title:String = ""){
 //        let lat = 21.028511
 //        let long = 105.804817
-        let mapFrame = CGRect(x: 0, y: 0, width: mapViewContainer.layer.bounds.width, height: mapViewContainer.layer.bounds.height)
+//        let mapFrame = CGRect(x: 0, y: 0, width: mapViewContainer.layer.bounds.width, height: mapViewContainer.layer.bounds.height)
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
-        let mainMap = GMSMapView.map(withFrame: mapFrame, camera: camera)
+        mapView.animate(to: camera)
+        mapView.clear()
+//        let mainMap = GMSMapView.map(withFrame: mapFrame, camera: camera)
         //        mainMap.isMyLocationEnabled = true
         //        mapView.delegate = self
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(lat, long)
-        marker.map = mainMap
+        
         if !title.isEmpty{
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(lat, long)
+            marker.map = mapView
             marker.title = title
+            mapView.selectedMarker = marker
         }
-        mainMap.selectedMarker = marker
-        mainMap.layer.cornerRadius = AppConstant.CORNER_RADIUS
-        mapViewContainer.addSubview(mainMap)
-        mapViewContainer.layer.cornerRadius = AppConstant.CORNER_RADIUS
-        mapViewContainer.makeShadow()
+        mapView.layer.cornerRadius = AppConstant.CORNER_RADIUS
+        mapView.makeShadow()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

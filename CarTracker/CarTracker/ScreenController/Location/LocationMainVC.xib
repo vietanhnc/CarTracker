@@ -15,7 +15,7 @@
                 <outlet property="caroselVie" destination="aBc-qu-rYS" id="tqa-Cx-K7q"/>
                 <outlet property="carousel" destination="1ik-ew-0gq" id="7VN-0Y-jJg"/>
                 <outlet property="lblNoData" destination="70l-v9-ZWh" id="bCi-Kx-69p"/>
-                <outlet property="mapViewContainer" destination="cgS-B6-un2" id="1Wy-qw-sbf"/>
+                <outlet property="mapView" destination="cgS-B6-un2" id="Gqg-dU-Zqz"/>
                 <outlet property="notifyView" destination="Bqa-1f-gzs" id="Z8w-Gu-2kl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewNoData" destination="EVI-u9-lA2" id="G2c-GS-Idh"/>
@@ -137,7 +137,7 @@
                         <action selector="btnHistory:" destination="-1" eventType="touchUpInside" id="gJ2-Nv-ioR"/>
                     </connections>
                 </button>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-B6-un2">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-B6-un2" customClass="GMSMapView">
                     <rect key="frame" x="20" y="355" width="374" height="371"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
