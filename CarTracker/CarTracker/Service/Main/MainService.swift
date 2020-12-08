@@ -11,6 +11,25 @@ import RealmSwift
 import SwiftyJSON
 class MainService {
     let service :ActivationService = ActivationService()
+    
+    func fetchDVDList(completion: @escaping (_ errorMsg:String?,_ dvdList:[DVDInfo]?) -> Void) {
+        Request.shared().fetch(APIRouter.GetDvdList,completion: {data in
+            guard let dataUW = data else{ AlertView.show(); return }
+            if dataUW.isSuccess {
+                let dvdsJSON = dataUW.response["datas"]
+                var dvdInfoList = [DVDInfo]()
+                for (_,subJson):(String, JSON) in dvdsJSON {
+                    let dvd = DVDInfo(fromJson: subJson)
+                    dvdInfoList.append(dvd.clone())
+                }
+                completion(nil,dvdInfoList)
+            }else{
+                let errorMsg = data?.error.description ?? ""
+                completion(errorMsg,nil);
+            }
+        })
+    }
+    
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
         Request.shared().fetch(APIRouter.GetInfo,completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }
@@ -38,12 +57,12 @@ class MainService {
         return result
     }
     
-    func saveUserInfo(_ info:JSON)->UserInfo{
-        var result = UserInfo()
+    func saveUserInfo(_ info:JSON){
+//        var result = UserInfo()
         do{
             let realm = try Realm()
             if let currentOTP = realm.objects(UserInfo.self).first {
-                result = currentOTP
+//                result = currentOTP
                 try realm.write {
                     currentOTP.activeDate = info["activeDate"].stringValue
                     currentOTP.name = info["name"].stringValue
@@ -53,7 +72,7 @@ class MainService {
             }
         } catch{
         }
-        return result
+//        return result
     }
     
     func fetchGetCarBrand(completion: @escaping (_ errorMsg:String?,_ brands:[Brand]?) -> Void) {

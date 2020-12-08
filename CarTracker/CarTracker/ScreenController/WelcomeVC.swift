@@ -26,7 +26,8 @@ class WelcomeVC: BaseViewController {
             let currentUser = realm.objects(UserInfo.self).first
             if currentUser != nil {
                 if currentUser?.accessToken != nil {
-                    service.login(currentUser!.phone, currentUser!.activeCode, completion: { error in
+//                    currentUser!.activeCode
+                    service.login(currentUser!.phone, "123456", completion: { error in
                         if error == nil{
                             self.push(MainTabBarVC())
                         }else{

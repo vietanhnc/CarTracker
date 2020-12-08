@@ -52,7 +52,7 @@ class OTPInputVC: BaseViewController {
             return
         }
         guard let cOTPUnwraped = self.currentOTP else { return }
-        service.active(cOTPUnwraped.phone, cOTPUnwraped.activeCode, completion: {data in
+        service.active(cOTPUnwraped.phone, txtOTP.text!, completion: {data in
             if let errorMsg = data {
                 AlertView.show(errorMsg)
             }else{

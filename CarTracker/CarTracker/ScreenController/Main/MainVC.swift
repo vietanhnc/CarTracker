@@ -18,16 +18,24 @@ class MainVC: BaseViewController {
     @IBOutlet var carousel1: UICollectionView!
     @IBOutlet var btnBuy: UIButton!
     @IBOutlet var btnActive: UIButton!
+    @IBOutlet var carousel2: UICollectionView!
     
     let mainService :MainService = MainService()
     //    var carDeviceArr :[CarDevice]? = nil
-//    var carDeviceArr: PublishSubject<[CarDevice]?> = PublishSubject<[CarDevice]?>()
+    //    var carDeviceArr: PublishSubject<[CarDevice]?> = PublishSubject<[CarDevice]?>()
     var dataSource:[CarDevice]? = nil
+    var dvdList:[DVDInfo]? = nil
     private let disposeBag = DisposeBag()
     override func setupData() {
         mainService.fetchCarDevice(completion: { error,data in
             if(error == nil){
                 self.carDeviceArrChanged(data)
+            }
+        })
+        mainService.fetchDVDList(completion: { error,data in
+            if(error == nil){
+                self.dvdList = data
+                self.carousel2.reloadData()
             }
         })
     }
@@ -37,17 +45,12 @@ class MainVC: BaseViewController {
         carousel1.dataSource = self
         carousel1.delegate = self
         carousel1.register(UINib.init(nibName: "CarDeviceCell", bundle: nil), forCellWithReuseIdentifier: "CarDeviceCell")
-//        carDeviceArr.asObservable().bind(to: self.carousel1.rx.items) { (collectionView, row, element ) in
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarDeviceCell", for: IndexPath(row : row, section : 0))
-//            //customize cell
-//            return cell
-//        }.disposed(by: disposeBag)
-//        let paddingTop:CGFloat = self.view.frame.height*2/12
-//        view1.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            view1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: paddingTop)
-//        ])
-//        btnBuy.translatesAutoresizingMaskIntoConstraints = false
+        carousel1.tag = 1
+        
+        carousel2.dataSource = self
+        carousel2.delegate = self
+        carousel2.register(UINib.init(nibName: "DVDInfoCell", bundle: nil), forCellWithReuseIdentifier: "DVDInfoCell")
+        carousel2.tag = 2
         
         let myString = "Hãy trang bị ngay cho xế cưng đầu DVD WebVision để tận hưởng những tính năng giải trí đỉnh cao"
         let subString = "DVD WebVision"
@@ -94,10 +97,10 @@ class MainVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //subcribe
-//        carDeviceArr.asObservable().subscribe { event in
-//            guard let value = event.element else{ return }
-//            self.carDeviceArrChanged(value)
-//        }.disposed(by: disposeBag)
+        //        carDeviceArr.asObservable().subscribe { event in
+        //            guard let value = event.element else{ return }
+        //            self.carDeviceArrChanged(value)
+        //        }.disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -121,21 +124,57 @@ class MainVC: BaseViewController {
 }
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource?.count ?? 0
+        let tag = collectionView.tag
+        if tag == 1 {
+            return dataSource?.count ?? 0
+        }else{
+            return dvdList?.count ?? 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let carDeviceUW = dataSource!
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarDeviceCell", for: indexPath) as! CarDeviceCell
-        let item = carDeviceUW[indexPath.row]
-        cell.lblBKS.text = item.bks
-        cell.lblIMEI.text = item.imei
-        cell.lblExpire.text = item.expiredGuaranteeDate
-        cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
-        let url = URL(string: item.image)
-        cell.imgCarImage?.kf.setImage(with: url)
-        cell.backgroundColor = UIColor.init(hexaRGB: "#F7F7F7")
-        return cell
+        let tag = collectionView.tag
+        if tag == 1 {
+            let carDeviceUW = dataSource!
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarDeviceCell", for: indexPath) as! CarDeviceCell
+            let item = carDeviceUW[indexPath.row]
+            cell.lblBKS.text = item.bks
+            cell.lblIMEI.text = item.imei
+            cell.lblExpire.text = item.expiredGuaranteeDate
+            cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
+            let url = URL(string: item.image)
+            cell.imgCarImage?.kf.setImage(with: url)
+            cell.backgroundColor = UIColor.init(hexaRGB: "#E8E8E8")
+            return cell
+        }else{
+            let dvdListUW = dvdList!
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DVDInfoCell", for: indexPath) as! DVDInfoCell
+            let item = dvdListUW[indexPath.row]
+            cell.lblTitle.text = item.name
+            cell.lblDesc.text = item.desc
+            cell.lblPrice.text = item.price
+            cell.btnDetail.setTitle("Đăng ký ngay", for: .normal)
+            cell.btnDetail.layer.cornerRadius = AppConstant.CORNER_RADIUS
+            cell.btnDetail.layer.borderWidth = 1
+//            cell.btnDetail.layer.borderColor = UIColor.init(red: 112, green: 112, blue: 112, alpha: 1).cgColor
+            cell.btnDetail.layer.borderColor = UIColor.black.cgColor
+            let fromStr = "mainVC.carousel2.fromPrice".localized()
+            let myString = fromStr+item.price
+            let subString = item.price
+            var myMutableString = NSMutableAttributedString()
+            myMutableString = NSMutableAttributedString(string: myString, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)])
+            myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(myString, subString),length:subString.count))
+            myMutableString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 17), range: NSRange(location:AppUtils.getSubtringIndex(myString, subString),length:subString.count))
+            cell.lblPrice.attributedText = myMutableString
+            cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
+            let url = URL(string: item.image)
+            cell.imgImage?.kf.setImage(with: url)
+            
+            cell.backgroundColor = UIColor.init(hexaRGB: "#FFFFFF")
+            return cell
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -150,7 +189,10 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
-//        print("index:\(currentIndex)")
-        self.carousel1.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        //        print("index:\(currentIndex)")
+        let tag = scrollView.tag
+        if tag == 1 {
+            self.carousel1.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        }
     }
 }

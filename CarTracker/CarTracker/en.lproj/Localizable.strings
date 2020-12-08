@@ -16,3 +16,4 @@
 "selectCar.title" = "Kích hoạt thiết bị";
 "continue" = "Tiếp tục";
 "error.showAlert.enterFullInfo" = "Vui lòng nhập đầy đủ thông tin";
+"mainVC.carousel2.fromPrice" = "Chỉ từ ";

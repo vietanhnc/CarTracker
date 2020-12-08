@@ -22,6 +22,7 @@ enum APIRouter: URLRequestConvertible{
     case ActiveDVD(_ imei:String,_ deviceId:String,_ brand:String,_ model:String,_ bks:String,_ year:String,_ phone:String)
     case GetCurrLocation(_ imei:String,_ deviceId:String)
     case GetLocationHistory(_ imei:String,_ deviceId:String,_ startTime:String,_ endTime:String)
+    case GetDvdList
     
     private var path: String {
         switch self {
@@ -47,6 +48,8 @@ enum APIRouter: URLRequestConvertible{
             return "GetCurrLocation"
         case .GetLocationHistory:
             return "GetLocationHistory"
+        case .GetDvdList:
+            return "GetDvdList"
         }
     }
     

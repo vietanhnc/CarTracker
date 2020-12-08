@@ -15,6 +15,7 @@
                 <outlet property="btnActive" destination="sy0-F8-dTE" id="Ffd-9W-mlZ"/>
                 <outlet property="btnBuy" destination="2Hl-Zx-A8U" id="d7a-Nj-EGg"/>
                 <outlet property="carousel1" destination="NF3-Ws-8K1" id="nEH-Ul-Ixg"/>
+                <outlet property="carousel2" destination="G9X-LE-Q45" id="xzO-7J-geq"/>
                 <outlet property="imgNoData" destination="RiX-xx-NhA" id="wcy-e6-EB4"/>
                 <outlet property="lblNoData" destination="Q2N-5E-iDn" id="AOU-ac-kbk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -147,14 +148,40 @@
                         <constraint firstAttribute="height" constant="200" id="ryh-vm-GJZ"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n20-aT-Jk4" userLabel="dvdListView">
+                    <rect key="frame" x="0.0" y="320" width="414" height="396"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="G9X-LE-Q45">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="396"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7YM-1b-sEN">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="G9X-LE-Q45" secondAttribute="bottom" id="1bU-so-LEE"/>
+                        <constraint firstItem="G9X-LE-Q45" firstAttribute="top" secondItem="n20-aT-Jk4" secondAttribute="top" id="4ic-vP-rka"/>
+                        <constraint firstItem="G9X-LE-Q45" firstAttribute="leading" secondItem="n20-aT-Jk4" secondAttribute="leading" id="Fv3-Zl-3V4"/>
+                        <constraint firstAttribute="trailing" secondItem="G9X-LE-Q45" secondAttribute="trailing" id="ind-om-aGg"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="P7S-Ho-Tep" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0Wp-5i-OcF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n20-aT-Jk4" secondAttribute="trailing" id="2rQ-fo-acv"/>
                 <constraint firstItem="P7S-Ho-Tep" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4Rh-n7-0K5"/>
+                <constraint firstItem="n20-aT-Jk4" firstAttribute="top" secondItem="f7C-mI-hLx" secondAttribute="bottom" id="8rl-HQ-sNj"/>
                 <constraint firstItem="f7C-mI-hLx" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="coC-MH-YXE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="n20-aT-Jk4" secondAttribute="bottom" constant="20" id="d6F-b0-rew"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P7S-Ho-Tep" secondAttribute="trailing" id="hAe-VC-dSk"/>
+                <constraint firstItem="n20-aT-Jk4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tHb-lh-NUB"/>
                 <constraint firstItem="f7C-mI-hLx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="uZf-36-ZsC"/>
                 <constraint firstItem="f7C-mI-hLx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xLx-ly-3eO"/>
             </constraints>
