@@ -12,6 +12,24 @@ import SwiftyJSON
 class MainService {
     let service :ActivationService = ActivationService()
     
+    func fetchAgentList(completion: @escaping (_ errorMsg:String?,_ agentList:[Agent]?) -> Void) {
+        Request.shared().fetch(APIRouter.getAgent,completion: {data in
+            guard let dataUW = data else{ AlertView.show(); return }
+            if dataUW.isSuccess {
+                let dataJSON = dataUW.response["datas"]
+                var result = [Agent]()
+                for (_,subJson):(String, JSON) in dataJSON {
+                    let tempObj = Agent(fromJson: subJson)
+                    result.append(tempObj.clone())
+                }
+                completion(nil,result)
+            }else{
+                let errorMsg = data?.error.description ?? ""
+                completion(errorMsg,nil);
+            }
+        })
+    }
+    
     func fetchDVDList(completion: @escaping (_ errorMsg:String?,_ dvdList:[DVDInfo]?) -> Void) {
         Request.shared().fetch(APIRouter.GetDvdList,completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }

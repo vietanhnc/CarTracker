@@ -72,6 +72,9 @@
          contextName = "HistorySelectDateVC.setupUI():HistorySelectDateVC.swift">
       </ContextState>
       <ContextState
+         contextName = "MainVC.collectionView(_:numberOfItemsInSection:):MainVC.swift">
+      </ContextState>
+      <ContextState
          contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -123,6 +126,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MainVC.scrollViewWillEndDragging(_:withVelocity:targetContentOffset:):MainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentOffset.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "OTPInputVC.validatePhone():OTPInputVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -152,6 +163,17 @@
          <PersistentStrings>
             <PersistentString
                value = "self.navigationController?">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainVC.scrollViewDidEndDecelerating(_:):MainVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "oldContentOffsetX">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentOffset.x">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

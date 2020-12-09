@@ -41,6 +41,7 @@ class DVDInfo : Object{
         result.priceSaleOff = self.priceSaleOff
         result.name = self.name
         result.image = self.image
+        result.isSelect = self.isSelect
         return result
     }
 }

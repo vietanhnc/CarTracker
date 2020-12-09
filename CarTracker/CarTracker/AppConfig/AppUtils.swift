@@ -53,7 +53,6 @@ class AppUtils{
         let str = string
         if let range: Range<String.Index> = str.range(of: subString) {
             let index: Int = str.distance(from: str.startIndex, to: range.lowerBound)
-            print(index)
             return index
         }
         else {

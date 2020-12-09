@@ -119,8 +119,18 @@ class MainVC: BaseViewController {
     }
     
     @IBAction func btnBuyTouch(_ sender: Any) {
+        
+        self.navigationController?.pushViewController(ListAgentVC(), animated: true)
     }
     
+    @objc func connected(sender: UIButton){
+        self.navigationController?.pushViewController(ListAgentVC(), animated: true)
+    }
+    
+    var oldContentOffsetX:CGFloat = 0
+    private var indexOfCellBeforeDragging = 0
+    
+
 }
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -146,6 +156,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
             let url = URL(string: item.image)
             cell.imgCarImage?.kf.setImage(with: url)
             cell.backgroundColor = UIColor.init(hexaRGB: "#E8E8E8")
+            print("cell.bounds.width",cell.bounds.width)
             return cell
         }else{
             let dvdListUW = dvdList!
@@ -157,8 +168,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
             cell.btnDetail.setTitle("Đăng ký ngay", for: .normal)
             cell.btnDetail.layer.cornerRadius = AppConstant.CORNER_RADIUS
             cell.btnDetail.layer.borderWidth = 1
-//            cell.btnDetail.layer.borderColor = UIColor.init(red: 112, green: 112, blue: 112, alpha: 1).cgColor
-            cell.btnDetail.layer.borderColor = UIColor.black.cgColor
+            cell.btnDetail.layer.borderColor = UIColor.init(hexaRGB: "#707070")?.cgColor
             let fromStr = "mainVC.carousel2.fromPrice".localized()
             let myString = fromStr+item.price
             let subString = item.price
@@ -172,6 +182,9 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
             cell.imgImage?.kf.setImage(with: url)
             
             cell.backgroundColor = UIColor.init(hexaRGB: "#FFFFFF")
+            
+            cell.btnDetail.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
+
             return cell
         }
         
@@ -192,7 +205,86 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
         //        print("index:\(currentIndex)")
         let tag = scrollView.tag
         if tag == 1 {
-            self.carousel1.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+//            self.carousel1.scrollToItem(at:  IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated:true)
+//            guard let dataSourceUW = self.dataSource else {return}
+//            if dataSourceUW[currentIndex].isSelect != true {
+                self.carousel1.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+                setDatasouce1Selected(currentIndex)
+//            }
+        }else{
+            self.carousel2.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+            setDatasouce2Selected(currentIndex)
         }
+    }
+    
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        let pageWidth = 345// The width your page should have (plus a possible margin)
+//        let proportionalOffset = carousel1.contentOffset.x / CGFloat(pageWidth)
+//        indexOfCellBeforeDragging = Int(round(proportionalOffset))
+//
+//    }
+//
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        // Stop scrolling
+//        targetContentOffset.pointee = scrollView.contentOffset
+//
+//        // Calculate conditions
+//        let pageWidth = 345// The width your page should have (plus a possible margin)
+//        let collectionViewItemCount = 3// The number of items in this section
+//        let proportionalOffset = carousel1.contentOffset.x / CGFloat(pageWidth)
+//        let indexOfMajorCell = Int(round(proportionalOffset))
+//        let swipeVelocityThreshold: CGFloat = 0.5
+//        let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < collectionViewItemCount && velocity.x > swipeVelocityThreshold
+//        let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
+//        let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
+//        let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
+//
+//        if didUseSwipeToSkipCell {
+//            // Animate so that swipe is just continued
+//            let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
+//            let toValue = CGFloat(pageWidth) * CGFloat(snapToIndex)
+//            UIView.animate(
+//                withDuration: 0.3,
+//                delay: 0,
+//                usingSpringWithDamping: 1,
+//                initialSpringVelocity: velocity.x,
+//                options: .allowUserInteraction,
+//                animations: {
+//                    scrollView.contentOffset = CGPoint(x: toValue, y: 0)
+//                    scrollView.layoutIfNeeded()
+//                },
+//                completion: nil
+//            )
+//        } else {
+//            // Pop back (against velocity)
+//            let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
+//            carousel1.scrollToItem(at: indexPath, at: .left, animated: true)
+//        }
+//    }
+    
+
+    
+    func setDatasouce1Selected(_ index:Int){
+        guard let dataSourceUW = self.dataSource else {return}
+        for (i,item) in dataSourceUW.enumerated() {
+            if index == i {
+                item.isSelect = true
+            }else{
+                item.isSelect = false
+            }
+        }
+        self.dataSource = dataSourceUW
+    }
+    
+    func setDatasouce2Selected(_ index:Int){
+        guard let dataSourceUW = self.dvdList else {return}
+        for (i,item) in dataSourceUW.enumerated() {
+            if index == i {
+                item.isSelect = true
+            }else{
+                item.isSelect = false
+            }
+        }
+        self.dvdList = dataSourceUW
     }
 }

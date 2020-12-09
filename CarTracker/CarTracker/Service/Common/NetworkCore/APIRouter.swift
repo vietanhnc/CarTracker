@@ -23,6 +23,7 @@ enum APIRouter: URLRequestConvertible{
     case GetCurrLocation(_ imei:String,_ deviceId:String)
     case GetLocationHistory(_ imei:String,_ deviceId:String,_ startTime:String,_ endTime:String)
     case GetDvdList
+    case getAgent
     
     private var path: String {
         switch self {
@@ -50,6 +51,9 @@ enum APIRouter: URLRequestConvertible{
             return "GetLocationHistory"
         case .GetDvdList:
             return "GetDvdList"
+        case .getAgent:
+            return "getAgent"
+            
         }
     }
     

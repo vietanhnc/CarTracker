@@ -27,6 +27,7 @@ class CarDevice: Object {
     @objc dynamic var lng = ""
     @objc dynamic var seq:Int = 0
     @objc dynamic var time:Int = 0
+    var isSelect:Bool = false
     
     func clone()->CarDevice {
         let result = CarDevice()
@@ -44,6 +45,7 @@ class CarDevice: Object {
         result.lng = self.lng
         result.seq = self.seq
         result.time = self.time
+        result.isSelect = self.isSelect
         return result
     }
     

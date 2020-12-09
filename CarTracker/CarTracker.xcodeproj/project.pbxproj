@@ -65,6 +65,11 @@
 		56D6FF15257FDF8A00834C23 /* DVDInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF14257FDF8A00834C23 /* DVDInfo.swift */; };
 		56D6FF1A257FE55600834C23 /* DVDInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF18257FE55600834C23 /* DVDInfoCell.swift */; };
 		56D6FF1B257FE55600834C23 /* DVDInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D6FF19257FE55600834C23 /* DVDInfoCell.xib */; };
+		56D6FF2025813D7100834C23 /* ListAgentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF1E25813D7100834C23 /* ListAgentVC.swift */; };
+		56D6FF2125813D7100834C23 /* ListAgentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D6FF1F25813D7100834C23 /* ListAgentVC.xib */; };
+		56D6FF262581412F00834C23 /* AgentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF242581412F00834C23 /* AgentCell.swift */; };
+		56D6FF272581412F00834C23 /* AgentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D6FF252581412F00834C23 /* AgentCell.xib */; };
+		56D6FF2B2581438D00834C23 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF2A2581438D00834C23 /* Agent.swift */; };
 		56DBE47C25657D3000EF87E0 /* ScanDeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */; };
 		56DBE47D25657D3000EF87E0 /* ScanDeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */; };
 		56DBE4B325682D1400EF87E0 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DBE4B225682D1400EF87E0 /* UIColorExt.swift */; };
@@ -165,6 +170,11 @@
 		56D6FF14257FDF8A00834C23 /* DVDInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDInfo.swift; sourceTree = "<group>"; };
 		56D6FF18257FE55600834C23 /* DVDInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDInfoCell.swift; sourceTree = "<group>"; };
 		56D6FF19257FE55600834C23 /* DVDInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DVDInfoCell.xib; sourceTree = "<group>"; };
+		56D6FF1E25813D7100834C23 /* ListAgentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAgentVC.swift; sourceTree = "<group>"; };
+		56D6FF1F25813D7100834C23 /* ListAgentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListAgentVC.xib; sourceTree = "<group>"; };
+		56D6FF242581412F00834C23 /* AgentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCell.swift; sourceTree = "<group>"; };
+		56D6FF252581412F00834C23 /* AgentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgentCell.xib; sourceTree = "<group>"; };
+		56D6FF2A2581438D00834C23 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		56DBE47A25657D3000EF87E0 /* ScanDeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDeviceVC.swift; sourceTree = "<group>"; };
 		56DBE47B25657D3000EF87E0 /* ScanDeviceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanDeviceVC.xib; sourceTree = "<group>"; };
 		56DBE4B225682D1400EF87E0 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
@@ -376,6 +386,7 @@
 				56D0FE102565408600757E2A /* Brand.swift */,
 				563DAEC5256CC3C100EF3468 /* CarModel.swift */,
 				56D6FF10257C757300834C23 /* LocationHistory.swift */,
+				56D6FF2A2581438D00834C23 /* Agent.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -429,6 +440,8 @@
 				5659DC4E25721236007AD33E /* CarDeviceLocCell.xib */,
 				56D6FF18257FE55600834C23 /* DVDInfoCell.swift */,
 				56D6FF19257FE55600834C23 /* DVDInfoCell.xib */,
+				56D6FF242581412F00834C23 /* AgentCell.swift */,
+				56D6FF252581412F00834C23 /* AgentCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -442,6 +455,8 @@
 				56DC15A1255DA5F000D5C4F1 /* MainTabBarVC.xib */,
 				565C8A1625778F4200FCC370 /* CarDeviceDetailVC.swift */,
 				565C8A1725778F4200FCC370 /* CarDeviceDetailVC.xib */,
+				56D6FF1E25813D7100834C23 /* ListAgentVC.swift */,
+				56D6FF1F25813D7100834C23 /* ListAgentVC.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -611,6 +626,7 @@
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
 				565C8A1F2577B8EC00FCC370 /* HistorySelectDateVC.xib in Resources */,
 				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
+				56D6FF272581412F00834C23 /* AgentCell.xib in Resources */,
 				5659DC1D256D737F007AD33E /* SelectBrandVC.xib in Resources */,
 				56DC15A9255DA7AC00D5C4F1 /* LocationMainVC.xib in Resources */,
 				5659DC682573C920007AD33E /* ProfileVC.xib in Resources */,
@@ -620,6 +636,7 @@
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
 				563DAEC2256BD9F800EF3468 /* BrandModel.xib in Resources */,
+				56D6FF2125813D7100834C23 /* ListAgentVC.xib in Resources */,
 				56D33EAD2538A7910026368C /* Assets.xcassets in Resources */,
 				565C8A1925778F4200FCC370 /* CarDeviceDetailVC.xib in Resources */,
 				56DC15A3255DA5F000D5C4F1 /* MainTabBarVC.xib in Resources */,
@@ -709,6 +726,7 @@
 			files = (
 				56D6FF1A257FE55600834C23 /* DVDInfoCell.swift in Sources */,
 				56583253254E8FAA00991FD4 /* BaseNavigationController.swift in Sources */,
+				56D6FF2025813D7100834C23 /* ListAgentVC.swift in Sources */,
 				563DAEE4256FC12700EF3468 /* CarDeviceDAO.swift in Sources */,
 				56D6FF15257FDF8A00834C23 /* DVDInfo.swift in Sources */,
 				56D1EA5B25530CF100DB0851 /* APIRouter.swift in Sources */,
@@ -727,6 +745,7 @@
 				56D33EA82538A78E0026368C /* ViewController.swift in Sources */,
 				56D33EA42538A78E0026368C /* AppDelegate.swift in Sources */,
 				56DC15692559A95D00D5C4F1 /* SystemParameter.swift in Sources */,
+				56D6FF2B2581438D00834C23 /* Agent.swift in Sources */,
 				56D632332557C27000909F59 /* BaseResponse.swift in Sources */,
 				56DC1596255C4FB700D5C4F1 /* UserInfo.swift in Sources */,
 				56D33EBD25399D100026368C /* MapViewController.swift in Sources */,
@@ -745,6 +764,7 @@
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
 				5659DC672573C920007AD33E /* ProfileVC.swift in Sources */,
 				563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */,
+				56D6FF262581412F00834C23 /* AgentCell.swift in Sources */,
 				5659DC24256EB9E3007AD33E /* ActiveDVDResultVC.swift in Sources */,
 				565C8A1E2577B8EC00FCC370 /* HistorySelectDateVC.swift in Sources */,
 				563DAEE0256F92BC00EF3468 /* SystemParameterDAO.swift in Sources */,
