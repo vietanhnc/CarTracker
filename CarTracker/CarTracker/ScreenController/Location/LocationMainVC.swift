@@ -8,8 +8,10 @@
 
 import UIKit
 import GoogleMaps
+import SPPermissions
+import CoreLocation
 
-class LocationMainVC: BaseViewController, GMSMapViewDelegate {
+class LocationMainVC: BaseViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet var viewNoData: UIView!
     @IBOutlet var lblNoData: UILabel!
     @IBOutlet var caroselVie: UIView!
@@ -18,24 +20,19 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
     @IBOutlet var btnHistory: UIButton!
     @IBOutlet var mapView: GMSMapView!
     
-    var mainMap:GMSMapView! = GMSMapView()
+    private var locationManager:CLLocationManager = CLLocationManager()
+    private var indexOfCellBeforeDragging = 0
+    //    var mainMap:GMSMapView! = GMSMapView()
     var service:LocationService = LocationService()
-    
-    func getData()->[CarDevice]?{
-        return service.dataSource
-    }
-    
-    @IBAction func btnHistory(_ sender: Any) {
-        if let selected = service.selectedDevice {
-            self.navigationController?.pushViewController(HistorySelectDateVC(carDevice: selected), animated: true)
-        }
-    }
+    var deviceLocation:CLLocation? = nil
     
     override func setupData() {
+        self.requestPermission()
         service.fetchCarDevice(completion: { error,data in
             if(error == nil){
                 self.carDeviceArrChanged()
                 self.selectedCarChange(0)
+                self.mqttSetup()
             }
         })
     }
@@ -63,11 +60,58 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
         let spacing:CGFloat = 10; // the amount of spacing to appear between image and title
         btnHistory.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: spacing);
         btnHistory.titleEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0);
-        
-        
         btnHistory.setTitleColor(AppUtils.getSecondaryColor(), for: .normal)
         btnHistory.makeShadow()
-        
+    }
+    
+    func mqttSetup(){
+        let manager = MQTTManager.shared()
+        manager.setDelegate(delegate: self)
+        manager.connect()
+    }
+    
+    func setupLocationmanager(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func requestPermission(){
+        let isAllowed = SPPermission.isAllowed(SPPermissionType.locationWhenInUse)
+        let isDenied = SPPermission.isDenied(SPPermissionType.locationWhenInUse)
+        if isAllowed {
+            self.setupLocationmanager()
+        } else if isDenied {
+            AlertView.show("Ứng dụng không được cấp quyền truy cập vị trí. Vui lòng thiết lập lại trong phần Cài đặt của điện thoại.")
+        } else {
+            SPPermission.request(SPPermissionType.locationWhenInUse) {
+                self.setupLocationmanager()
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            //            latLngLabel.text = "Lat : \(location.coordinate.latitude) \nLng : \(location.coordinate.longitude)"
+            print(location.coordinate.latitude,location.coordinate.longitude)
+            self.deviceLocation = location
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("\(error.localizedDescription)")
+    }
+    
+    
+    func getData()->[CarDevice]?{
+        return service.dataSource
+    }
+    
+    @IBAction func btnHistory(_ sender: Any) {
+        if let selected = service.selectedDevice {
+            self.navigationController?.pushViewController(HistorySelectDateVC(carDevice: selected), animated: true)
+        }
     }
     
     func showCollView(_ collViewShow:Bool){
@@ -85,13 +129,16 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
             return
         }
         service.setSetlectedDevice(index)
-        self.service.getCurrentLocation(completion: { error,data in
-            if(error == nil){
-                self.changeMapCurrentLocation()
-            }else{
-                self.mapView.clear()
-            }
+        service.takeALook(completion: {
         })
+        changeMapCurrentLocation()
+        //        self.service.getCurrentLocation(completion: { error,data in
+        //            if(error == nil){
+        //                self.changeMapCurrentLocation()
+        //            }else{
+        //                self.mapView.clear()
+        //            }
+        //        })
     }
     
     func carDeviceArrChanged(){
@@ -104,6 +151,7 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
             showCollView(true)
         }
         self.carousel.reloadData()
+        
     }
     
     func changeMapCurrentLocation() {
@@ -112,16 +160,9 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
     }
     
     func setupMapview(_ lat:Double = 21.028511,_ long:Double = 105.804817,_ title:String = ""){
-//        let lat = 21.028511
-//        let long = 105.804817
-//        let mapFrame = CGRect(x: 0, y: 0, width: mapViewContainer.layer.bounds.width, height: mapViewContainer.layer.bounds.height)
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
         mapView.animate(to: camera)
         mapView.clear()
-//        let mainMap = GMSMapView.map(withFrame: mapFrame, camera: camera)
-        //        mainMap.isMyLocationEnabled = true
-        //        mapView.delegate = self
-        
         if !title.isEmpty{
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2DMake(lat, long)
@@ -146,16 +187,10 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         self.setupMapview()
     }
-    /*
-     // MARK: - Navigation
-     
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    func getCellWidth() -> CGFloat{
+        return self.carousel.layer.bounds.width - 40 + 10;
+    }
     
 }
 extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -179,8 +214,22 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource,U
             cell.lblStatus.backgroundColor = AppUtils.getAccentColor()
         }
         
+        if let loc1 = deviceLocation {
+            let loc2 = CLLocation.init(latitude: CLLocationDegrees.init(item.lat) ?? 0, longitude: CLLocationDegrees.init(item.lng) ?? 0)
+            let distance:CLLocationDistance = loc1.distance(from: loc2)
+            
+            let formatter = NumberFormatter()
+            formatter.locale = Locale.init(identifier: "en_US")
+            formatter.numberStyle = .decimal
+            formatter.allowsFloats = false
+            let distanceInt = Int(distance)
+            let distanceFormated = formatter.string(from: NSNumber(value: distanceInt))
+            cell.lblDistance.text = "\(distanceFormated ?? "0")m"
+        }else{
+            cell.lblDistance.text = "~"
+        }
+        
         cell.lblStatus.layer.cornerRadius = AppConstant.CORNER_RADIUS
-        cell.lblDistance.text = "100m"
         let url = URL(string: item.image)
         cell.imgIcon?.kf.setImage(with: url)
         cell.layer.cornerRadius = AppConstant.CORNER_RADIUS
@@ -199,15 +248,61 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource,U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let selectedIndex = indexPath.row
-//        print(selectedIndex)
+        //        let selectedIndex = indexPath.row
+        //        print(selectedIndex)
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
-//        print("index:\(currentIndex)")
-        self.carousel.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
-        self.selectedCarChange(currentIndex)
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        let currentIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
+//        //        print("index:\(currentIndex)")
+//        //            self.carousel.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+//        self.selectedCarChange(currentIndex)
+//    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        let pageWidth = self.getCellWidth()// The width your page should have (plus a possible margin)
+        let proportionalOffset:CGFloat = carousel.contentOffset.x / CGFloat(pageWidth)
+        indexOfCellBeforeDragging = Int(round(proportionalOffset))
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // Stop scrolling
+        targetContentOffset.pointee = scrollView.contentOffset
+        
+        // Calculate conditions
+        let pageWidth = self.getCellWidth()// The width your page should have (plus a possible margin)
+        let collectionViewItemCount = self.getData()?.count ?? 0// The number of items in this section
+        let proportionalOffset = carousel.contentOffset.x / CGFloat(pageWidth)
+        let indexOfMajorCell = Int(round(proportionalOffset))
+        let swipeVelocityThreshold: CGFloat = 0.5
+        let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < collectionViewItemCount && velocity.x > swipeVelocityThreshold
+        let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
+        let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
+        let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
+        
+        if didUseSwipeToSkipCell {
+            // Animate so that swipe is just continued
+            let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
+            let toValue = CGFloat(pageWidth) * CGFloat(snapToIndex)
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0,
+                usingSpringWithDamping: 1,
+                initialSpringVelocity: velocity.x,
+                options: .allowUserInteraction,
+                animations: {
+                    scrollView.contentOffset = CGPoint(x: toValue, y: 0)
+                    scrollView.layoutIfNeeded()
+                },
+                completion: nil
+            )
+            self.selectedCarChange(snapToIndex)
+        } else {
+            // Pop back (against velocity)
+            let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
+            carousel.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.selectedCarChange(indexPath.row)
+        }
     }
     
 }

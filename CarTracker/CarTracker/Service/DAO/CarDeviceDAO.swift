@@ -12,7 +12,7 @@ class CarDeviceDAO{
     public static func updateCarDevice(_ device:CarDevice){
         do{
             let realm = try Realm()
-            if let dbObject = realm.objects(CarDevice.self).filter("deviceId == '\(device.deviceId)'").first {
+            if let dbObject = realm.objects(CarDevice.self).filter("deviceId == '\(device.deviceId)' and imei == '\(device.imei)' ").first {
                 try realm.write {
                     dbObject.lat = device.lat
                     dbObject.lng = device.lng

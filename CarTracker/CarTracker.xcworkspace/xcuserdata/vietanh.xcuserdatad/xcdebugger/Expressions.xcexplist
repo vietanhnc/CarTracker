@@ -22,15 +22,15 @@
          contextName = "BaseViewController.showLoading():BaseViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "LocationMainVC.setupMapview(_:_:_:):LocationMainVC.swift">
-      </ContextState>
-      <ContextState
          contextName = "SelectBrandVC.collectionView(_:cellForItemAt:):SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
                value = "collectionView as? CarBrandColView">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LocationMainVC.setupMapview(_:_:_:):LocationMainVC.swift">
       </ContextState>
       <ContextState
          contextName = "LocationService.getGetLocationHistory(_:_:completion:):LocationService.swift">
@@ -63,16 +63,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "APIRouter.asURLRequest():APIRouter.swift">
-      </ContextState>
-      <ContextState
-         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
-      </ContextState>
-      <ContextState
          contextName = "HistorySelectDateVC.setupUI():HistorySelectDateVC.swift">
       </ContextState>
       <ContextState
+         contextName = "APIRouter.asURLRequest():APIRouter.swift">
+      </ContextState>
+      <ContextState
          contextName = "MainVC.collectionView(_:numberOfItemsInSection:):MainVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "OTPInputVC.setupData():OTPInputVC.swift">
       </ContextState>
       <ContextState
          contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">
@@ -118,18 +118,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HistorySelectDateVC.datePickerTapped(_:):HistorySelectDateVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.txtEndDate">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "MainVC.scrollViewWillEndDragging(_:withVelocity:targetContentOffset:):MainVC.swift">
          <PersistentStrings>
             <PersistentString
                value = "scrollView.contentOffset.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistorySelectDateVC.datePickerTapped(_:):HistorySelectDateVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.txtEndDate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -156,6 +156,9 @@
             <PersistentString
                value = "cell.lblStatus.layer.bounds">
             </PersistentString>
+            <PersistentString
+               value = "formatter.string(from: NSNumber(value: distance ))">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -170,10 +173,10 @@
          contextName = "MainVC.scrollViewDidEndDecelerating(_:):MainVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "oldContentOffsetX">
+               value = "scrollView.contentOffset.x">
             </PersistentString>
             <PersistentString
-               value = "scrollView.contentOffset.x">
+               value = "oldContentOffsetX">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

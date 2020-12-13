@@ -24,6 +24,7 @@ enum APIRouter: URLRequestConvertible{
     case GetLocationHistory(_ imei:String,_ deviceId:String,_ startTime:String,_ endTime:String)
     case GetDvdList
     case getAgent
+    case TakeALook(_ imei:String,_ deviceId:String)
     
     private var path: String {
         switch self {
@@ -53,13 +54,14 @@ enum APIRouter: URLRequestConvertible{
             return "GetDvdList"
         case .getAgent:
             return "getAgent"
-            
+        case .TakeALook:
+            return "TakeALook"
         }
     }
     
     private var method: HTTPMethod{
         switch self {
-        case .sendOTP,.active,.reSendOTP,.UpdateInfo,.login,.ActiveDVD,.GetLocationHistory:
+        case .sendOTP,.active,.reSendOTP,.UpdateInfo,.login,.ActiveDVD,.GetLocationHistory,.TakeALook:
             return .post
         default:
             return .get
@@ -81,6 +83,8 @@ enum APIRouter: URLRequestConvertible{
             return ["imei":imei,"deviceId":deviceId,"brand":brand,"model":model,"bks":bks,"year":year,"phone":phone]
         case .GetLocationHistory(let imei,let deviceId,let startTime,let endTime):
             return ["imei":imei,"deviceId":deviceId,"startTime":startTime,"endTime":endTime]
+        case .TakeALook(let imei,let deviceId):
+            return ["imei":imei,"deviceId":deviceId]
         default:
             return nil
         }
@@ -113,7 +117,7 @@ enum APIRouter: URLRequestConvertible{
     
     public var header:[String:String]?{
         switch self {
-        case .UpdateInfo,.login,.GetInfo,.GetCarBrand,.ActiveDVD,.GetCurrLocation,.GetLocationHistory:
+        case .UpdateInfo,.login,.GetInfo,.GetCarBrand,.ActiveDVD,.GetCurrLocation,.GetLocationHistory,.TakeALook:
             return ["accesstoken":self.getAccessToken()]
         default:
             return nil

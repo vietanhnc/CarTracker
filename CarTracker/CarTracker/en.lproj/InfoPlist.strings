@@ -6,3 +6,4 @@
   Copyright © 2020 MSB. All rights reserved.
 */
 "NSCameraUsageDescription" = "Uses the camera for scanning QR-Code of DVD";
+"NSLocationWhenInUseUsageDescription" = "Use device location for caculate distance to your cars ";

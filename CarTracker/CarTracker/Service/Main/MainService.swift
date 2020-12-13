@@ -48,50 +48,50 @@ class MainService {
         })
     }
     
-    func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
-        Request.shared().fetch(APIRouter.GetInfo,completion: {data in
-            guard let dataUW = data else{ AlertView.show(); return }
-            if dataUW.isSuccess {
-                let info = dataUW.response["info"]
-                let dvds = dataUW.response["dvds"]
-                self.saveUserInfo(info)
-                let carDevices = self.saveCarDevice(dvds)
-                completion(nil,carDevices)
-            }else{
-                let errorMsg = data?.error.description ?? ""
-                completion(errorMsg,nil);
-            }
-        })
-    }
-    
-    func saveCarDevice(_ dvds:JSON) -> [CarDevice]? {
-        var result = [CarDevice]()
-        CarDeviceDAO.deleteCarDevice("")
-        for (_,subJson):(String, JSON) in dvds {
-            let device = CarDevice(fromJson: subJson)
-            result.append(device.clone())
-            CarDeviceDAO.insertCarDevice(device)
-        }
-        return result
-    }
-    
-    func saveUserInfo(_ info:JSON){
-//        var result = UserInfo()
-        do{
-            let realm = try Realm()
-            if let currentOTP = realm.objects(UserInfo.self).first {
-//                result = currentOTP
-                try realm.write {
-                    currentOTP.activeDate = info["activeDate"].stringValue
-                    currentOTP.name = info["name"].stringValue
-                    currentOTP.phone = info["phone"].stringValue
-                    currentOTP.email = info["email"].stringValue
-                }
-            }
-        } catch{
-        }
+//    func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
+//        Request.shared().fetch(APIRouter.GetInfo,completion: {data in
+//            guard let dataUW = data else{ AlertView.show(); return }
+//            if dataUW.isSuccess {
+//                let info = dataUW.response["info"]
+//                let dvds = dataUW.response["dvds"]
+//                self.saveUserInfo(info)
+//                let carDevices = self.saveCarDevice(dvds)
+//                completion(nil,carDevices)
+//            }else{
+//                let errorMsg = data?.error.description ?? ""
+//                completion(errorMsg,nil);
+//            }
+//        })
+//    }
+//    
+//    func saveCarDevice(_ dvds:JSON) -> [CarDevice]? {
+//        var result = [CarDevice]()
+//        CarDeviceDAO.deleteCarDevice("")
+//        for (_,subJson):(String, JSON) in dvds {
+//            let device = CarDevice(fromJson: subJson)
+//            result.append(device.clone())
+//            CarDeviceDAO.insertCarDevice(device)
+//        }
 //        return result
-    }
+//    }
+//    
+//    func saveUserInfo(_ info:JSON){
+////        var result = UserInfo()
+//        do{
+//            let realm = try Realm()
+//            if let currentOTP = realm.objects(UserInfo.self).first {
+////                result = currentOTP
+//                try realm.write {
+//                    currentOTP.activeDate = info["activeDate"].stringValue
+//                    currentOTP.name = info["name"].stringValue
+//                    currentOTP.phone = info["phone"].stringValue
+//                    currentOTP.email = info["email"].stringValue
+//                }
+//            }
+//        } catch{
+//        }
+////        return result
+//    }
     
     func fetchGetCarBrand(completion: @escaping (_ errorMsg:String?,_ brands:[Brand]?) -> Void) {
         Request.shared().fetch(APIRouter.GetCarBrand,completion: {data in

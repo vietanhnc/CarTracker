@@ -15,11 +15,33 @@ class LocationService{
     var dataSource:[CarDevice]? = nil
     var selectedDevice:CarDevice? = nil
     
+    func reloadDataFromDB(){
+        var currentIndex = 0
+//        var currentDevice:CarDevice? = nil
+        
+        if let dataSourceUW = self.dataSource, let selectedDeviceUW = self.selectedDevice {
+            for (i,item) in dataSourceUW.enumerated() {
+                if selectedDeviceUW.deviceId == item.deviceId && selectedDeviceUW.imei == item.imei {
+                    currentIndex = i
+//                    currentDevice = item
+                }
+            }
+        }
+        
+        let newDataSource:[CarDevice]? = CarDeviceDAO.getCarDevice("")
+        if let newDataSourceUW = newDataSource, newDataSourceUW.count - 1 > currentIndex {
+            selectedDevice = newDataSourceUW[currentIndex]
+        }else{
+            selectedDevice = nil
+        }
+        dataSource = newDataSource
+    }
+    
     func isIndexSelected(_ index:Int) -> Bool {
         let result = false
         if let dataSourceUW = self.dataSource, let selectedDeviceUW = self.selectedDevice {
             for (i,item) in dataSourceUW.enumerated() {
-                if selectedDeviceUW.deviceId == item.deviceId  && index == i{
+                if selectedDeviceUW.deviceId == item.deviceId && selectedDeviceUW.imei == item.imei && index == i{
                     return true
                 }
             }
@@ -81,6 +103,13 @@ class LocationService{
         })
     }
     
+    func takeALook(completion: @escaping () -> Void) {
+        guard let selectedDeviceUW = selectedDevice else {return}
+        Request.shared().fetch(APIRouter.TakeALook(selectedDeviceUW.imei, selectedDeviceUW.deviceId),completion: {_ in
+            
+        })
+    }
+    
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
         Request.shared().fetch(APIRouter.GetInfo,completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }
@@ -125,6 +154,7 @@ class LocationService{
                 result = [CarDevice]()
             }
             let device = CarDevice(fromJson: subJson)
+            
             result?.append(device)
             CarDeviceDAO.insertCarDevice(device)
         }
@@ -146,6 +176,7 @@ class LocationService{
                     currentOTP.name = info["name"].stringValue
                     currentOTP.phone = info["phone"].stringValue
                     currentOTP.email = info["email"].stringValue
+                    currentOTP.mqttSubTopic = info["mqttSubTopic"].stringValue
                 }
             }
         } catch{

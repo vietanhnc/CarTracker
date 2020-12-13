@@ -67,5 +67,17 @@ class CarDevice: Object {
         
         isMoving = json["isMoving"].boolValue
         image = json["image"].stringValue
+        
+        lat = "0"
+        lng = "0"
+        seq = 0
+        time = 0
+        let location = json["location"].dictionary
+        if let locationUW = location {
+            lat = locationUW["lat"]?.stringValue ?? "0"
+            lng = locationUW["lng"]?.stringValue ?? "0"
+            seq = locationUW["seq"]?.intValue ?? 0
+            time = locationUW["time"]?.intValue ?? 0
+        }
     }
 }

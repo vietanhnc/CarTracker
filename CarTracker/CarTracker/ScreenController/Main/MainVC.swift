@@ -21,13 +21,14 @@ class MainVC: BaseViewController {
     @IBOutlet var carousel2: UICollectionView!
     
     let mainService :MainService = MainService()
+    let locationService:LocationService = LocationService()
     //    var carDeviceArr :[CarDevice]? = nil
     //    var carDeviceArr: PublishSubject<[CarDevice]?> = PublishSubject<[CarDevice]?>()
     var dataSource:[CarDevice]? = nil
     var dvdList:[DVDInfo]? = nil
     private let disposeBag = DisposeBag()
     override func setupData() {
-        mainService.fetchCarDevice(completion: { error,data in
+        locationService.fetchCarDevice(completion: { error,data in
             if(error == nil){
                 self.carDeviceArrChanged(data)
             }
@@ -130,7 +131,9 @@ class MainVC: BaseViewController {
     var oldContentOffsetX:CGFloat = 0
     private var indexOfCellBeforeDragging = 0
     
-
+    func getCellWidth() -> CGFloat{
+        return self.carousel1.layer.bounds.width - 40 + 10;
+    }
 }
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -208,61 +211,84 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
 //            self.carousel1.scrollToItem(at:  IndexPath(item: currentIndex, section: 0), at: .centeredHorizontally, animated:true)
 //            guard let dataSourceUW = self.dataSource else {return}
 //            if dataSourceUW[currentIndex].isSelect != true {
-                self.carousel1.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+//                self.carousel1.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
                 setDatasouce1Selected(currentIndex)
 //            }
         }else{
-            self.carousel2.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+//            self.carousel2.selectItem(at: IndexPath(item: currentIndex, section: 0), animated: true, scrollPosition: .centeredHorizontally)
             setDatasouce2Selected(currentIndex)
         }
     }
     
-//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//        let pageWidth = 345// The width your page should have (plus a possible margin)
-//        let proportionalOffset = carousel1.contentOffset.x / CGFloat(pageWidth)
-//        indexOfCellBeforeDragging = Int(round(proportionalOffset))
-//
-//    }
-//
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        // Stop scrolling
-//        targetContentOffset.pointee = scrollView.contentOffset
-//
-//        // Calculate conditions
-//        let pageWidth = 345// The width your page should have (plus a possible margin)
-//        let collectionViewItemCount = 3// The number of items in this section
-//        let proportionalOffset = carousel1.contentOffset.x / CGFloat(pageWidth)
-//        let indexOfMajorCell = Int(round(proportionalOffset))
-//        let swipeVelocityThreshold: CGFloat = 0.5
-//        let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < collectionViewItemCount && velocity.x > swipeVelocityThreshold
-//        let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
-//        let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
-//        let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
-//
-//        if didUseSwipeToSkipCell {
-//            // Animate so that swipe is just continued
-//            let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
-//            let toValue = CGFloat(pageWidth) * CGFloat(snapToIndex)
-//            UIView.animate(
-//                withDuration: 0.3,
-//                delay: 0,
-//                usingSpringWithDamping: 1,
-//                initialSpringVelocity: velocity.x,
-//                options: .allowUserInteraction,
-//                animations: {
-//                    scrollView.contentOffset = CGPoint(x: toValue, y: 0)
-//                    scrollView.layoutIfNeeded()
-//                },
-//                completion: nil
-//            )
-//        } else {
-//            // Pop back (against velocity)
-//            let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
-//            carousel1.scrollToItem(at: indexPath, at: .left, animated: true)
-//        }
-//    }
-    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        let pageWidth = self.getCellWidth()// The width your page should have (plus a possible margin)
+        var proportionalOffset:CGFloat = 0
+        let tag = scrollView.tag
+        if tag == 1 {
+            proportionalOffset = carousel1.contentOffset.x / CGFloat(pageWidth)
+        }else{
+            proportionalOffset = carousel2.contentOffset.x / CGFloat(pageWidth)
+        }
+        indexOfCellBeforeDragging = Int(round(proportionalOffset))
 
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // Stop scrolling
+        targetContentOffset.pointee = scrollView.contentOffset
+
+        // Calculate conditions
+        let pageWidth = self.getCellWidth()// The width your page should have (plus a possible margin)
+        var collectionViewItemCount = 0// The number of items in this section
+        var proportionalOffset:CGFloat = 0
+        if scrollView.tag == 1 {
+            proportionalOffset = carousel1.contentOffset.x / CGFloat(pageWidth)
+            collectionViewItemCount = dataSource?.count ?? 0
+        }else{
+            proportionalOffset = carousel2.contentOffset.x / CGFloat(pageWidth)
+            collectionViewItemCount = dvdList?.count ?? 0
+        }
+        let indexOfMajorCell = Int(round(proportionalOffset))
+        let swipeVelocityThreshold: CGFloat = 0.5
+        let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < collectionViewItemCount && velocity.x > swipeVelocityThreshold
+        let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
+        let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
+        let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
+
+        if didUseSwipeToSkipCell {
+            // Animate so that swipe is just continued
+            let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
+            let toValue = CGFloat(pageWidth) * CGFloat(snapToIndex)
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0,
+                usingSpringWithDamping: 1,
+                initialSpringVelocity: velocity.x,
+                options: .allowUserInteraction,
+                animations: {
+                    scrollView.contentOffset = CGPoint(x: toValue, y: 0)
+                    scrollView.layoutIfNeeded()
+                },
+                completion: nil
+            )
+            if scrollView.tag == 1 {
+                setDatasouce1Selected(snapToIndex)
+            }else{
+                setDatasouce2Selected(snapToIndex)
+            }
+        } else {
+            // Pop back (against velocity)
+            let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
+            if scrollView.tag == 1 {
+                carousel1.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                setDatasouce1Selected(indexPath.row)
+            }else{
+                carousel2.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                setDatasouce2Selected(indexPath.row)
+            }
+            
+        }
+    }
     
     func setDatasouce1Selected(_ index:Int){
         guard let dataSourceUW = self.dataSource else {return}

@@ -7,7 +7,7 @@ target 'CarTracker' do
 
   # Pods for CarTracker
 #pod 'SwiftIconFont'
-#pod 'CocoaMQTT'
+pod 'CocoaMQTT'
 pod "RxSwift"
 pod "RxCocoa"
 pod 'RealmSwift'
@@ -25,4 +25,5 @@ pod 'GooglePlaces', '4.0.0'
 pod 'TweeTextField'
 pod 'DatePickerDialog'
 pod 'SwiftDate'
+pod 'SPPermissions/Location'
 end

@@ -1518,6 +1518,81 @@
 					"body": "{\"datas\":[{\"name\":\"Chi nhánh HN 1\",\"address\":\"Số 33 Ngõ 121 Thái Hà – Trung Liệt – Đống Đa – Hà Nội.\",\"phone\":[\"0934000000\",\"0834000000\"]},{\"name\":\"Chi nhánh HN 2\",\"address\":\"Số 7 Vũ Đức Thận – Việt Hưng – Long Biên – Hà Nội.\",\"phone\":[\"0818003838\"]},{\"name\":\"Chi nhánh HCM\",\"address\":\"Số 232/17 Cao Thắng – Phường 12 – Quận 10.\",\"phone\":[\"(028)22444666\",\"(028)22444888\"]},{\"name\":\"Chi nhánh Thái Nguyên\",\"address\":\"Số 579 Phan Đình Phùng – (Đối diện Đông Á Plaza), TP. Thái Nguyên.\",\"phone\":[\"0777365365\",\"0966006007\"]}],\"code\":\"1\",\"description\":\"\"}"
 				}
 			]
+		},
+		{
+			"name": "DVDUpdateFcmToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deviceId\":\"\",\r\n    \"fcm\":\"01111111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}DvdUpdateFcmToken",
+					"host": [
+						"{{baseUrl}}DvdUpdateFcmToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dvdActiveByStaff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"activationCode\":\"3UII1G6WBI\",\r\n    \"appName\":\"acar\",\r\n    \"brand\":\"samsung\",\r\n    \"deviceId\":\"b1322d4636c36e08\",\r\n    \"model\":\"SM-T515\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}activate",
+					"host": [
+						"{{baseUrl}}activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TakeALook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imei\":\"352538105405602\",\r\n    \"deviceId\":\"ba5ac6a339e96d36\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}TakeALook",
+					"host": [
+						"{{baseUrl}}TakeALook"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

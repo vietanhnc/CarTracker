@@ -6,3 +6,4 @@
   Copyright © 2020 MSB. All rights reserved.
 */
 "NSCameraUsageDescription" = "Ứng dụng sử dụng máy ảnh để quét mã QR trên thiết bị DVD";
+"NSLocationWhenInUseUsageDescription" = "Ứng dụng sử dụng vị trí của bạn để hiển thị vị trí xe, tính khoảng cách ...";
