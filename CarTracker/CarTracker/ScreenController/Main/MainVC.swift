@@ -19,6 +19,7 @@ class MainVC: BaseViewController {
     @IBOutlet var btnBuy: UIButton!
     @IBOutlet var btnActive: UIButton!
     @IBOutlet var carousel2: UICollectionView!
+    @IBOutlet var scrollView: UIScrollView!
     
     let mainService :MainService = MainService()
     let locationService:LocationService = LocationService()
@@ -42,7 +43,9 @@ class MainVC: BaseViewController {
     }
     
     override func setupUI() {
-        
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
+        }
         carousel1.dataSource = self
         carousel1.delegate = self
         carousel1.register(UINib.init(nibName: "CarDeviceCell", bundle: nil), forCellWithReuseIdentifier: "CarDeviceCell")

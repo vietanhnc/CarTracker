@@ -61,6 +61,8 @@
 		56D632382557D17F00909F59 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D632372557D17F00909F59 /* AlertView.swift */; };
 		56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6323A25596E6D00909F59 /* DateExtension.swift */; };
 		56D6C42B2585BD6F000F49B7 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6C42A2585BD6F000F49B7 /* MQTTManager.swift */; };
+		56D6C4302587CA25000F49B7 /* HistoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6C42E2587CA25000F49B7 /* HistoryDetailVC.swift */; };
+		56D6C4312587CA25000F49B7 /* HistoryDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D6C42F2587CA25000F49B7 /* HistoryDetailVC.xib */; };
 		56D6FEFB2578009B00834C23 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FEFA2578009B00834C23 /* DateUtils.swift */; };
 		56D6FF11257C757300834C23 /* LocationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF10257C757300834C23 /* LocationHistory.swift */; };
 		56D6FF15257FDF8A00834C23 /* DVDInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D6FF14257FDF8A00834C23 /* DVDInfo.swift */; };
@@ -168,6 +170,8 @@
 		56D632372557D17F00909F59 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		56D6323A25596E6D00909F59 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		56D6C42A2585BD6F000F49B7 /* MQTTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
+		56D6C42E2587CA25000F49B7 /* HistoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailVC.swift; sourceTree = "<group>"; };
+		56D6C42F2587CA25000F49B7 /* HistoryDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailVC.xib; sourceTree = "<group>"; };
 		56D6FEFA2578009B00834C23 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		56D6FF10257C757300834C23 /* LocationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHistory.swift; sourceTree = "<group>"; };
 		56D6FF14257FDF8A00834C23 /* DVDInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDInfo.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 				56D6FFB32585104F00834C23 /* LocationMainVCMQTTDelegate.swift */,
 				565C8A1C2577B8EC00FCC370 /* HistorySelectDateVC.swift */,
 				565C8A1D2577B8EC00FCC370 /* HistorySelectDateVC.xib */,
+				56D6C42E2587CA25000F49B7 /* HistoryDetailVC.swift */,
+				56D6C42F2587CA25000F49B7 /* HistoryDetailVC.xib */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D6C4312587CA25000F49B7 /* HistoryDetailVC.xib in Resources */,
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
 				565C8A1F2577B8EC00FCC370 /* HistorySelectDateVC.xib in Resources */,
 				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
@@ -738,6 +745,7 @@
 				56D1EA5B25530CF100DB0851 /* APIRouter.swift in Sources */,
 				56DC172A2561A13600D5C4F1 /* MainService.swift in Sources */,
 				565C8A1825778F4200FCC370 /* CarDeviceDetailVC.swift in Sources */,
+				56D6C4302587CA25000F49B7 /* HistoryDetailVC.swift in Sources */,
 				563DAEDA256F90D000EF3468 /* UserInfoDAO.swift in Sources */,
 				56D632382557D17F00909F59 /* AlertView.swift in Sources */,
 				56D33EB82538B3EB0026368C /* TabBarViewController.swift in Sources */,

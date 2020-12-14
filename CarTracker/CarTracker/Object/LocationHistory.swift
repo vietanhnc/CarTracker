@@ -18,7 +18,7 @@ class LocationHistory : Object{
     @objc dynamic var sequence:Int = 0
     @objc dynamic var imei = ""
     @objc dynamic var deviceId = ""
-    
+    @objc dynamic var velo = ""
     override init() {
         super.init()
     }
@@ -34,6 +34,7 @@ class LocationHistory : Object{
         result.deviceId = self.deviceId
         result.imei = self.imei
         result.time = self.time
+        result.velo = self.velo
         return result
     }
 }

@@ -76,7 +76,16 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
             guard let lessDateFmtUW = lessDateFmt, let greaterDateFmtUW = greaterDateFmt else { return }
             locationService.getGetLocationHistory(lessDateFmtUW, greaterDateFmtUW, completion: {
                 error,data in
-    
+                if error != nil {
+                    AlertView.show("Không tìm thấy thông tin!");
+                    return
+                }
+                if data!.count == 0  {
+                    AlertView.show("Không tìm thấy thông tin!");
+                    return
+                }
+                let nextView = HistoryDetailVC(carDevice: self.selectedDevice, locHisArr: data!)
+                self.navigationController?.pushViewController(nextView, animated: true)
             })
         }
     }

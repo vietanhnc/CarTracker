@@ -82,7 +82,7 @@ enum APIRouter: URLRequestConvertible{
         case .ActiveDVD(let imei,let deviceId,let brand,let model,let bks,let year,let phone):
             return ["imei":imei,"deviceId":deviceId,"brand":brand,"model":model,"bks":bks,"year":year,"phone":phone]
         case .GetLocationHistory(let imei,let deviceId,let startTime,let endTime):
-            return ["imei":imei,"deviceId":deviceId,"startTime":startTime,"endTime":endTime]
+            return ["imei":imei,"deviceId":deviceId,"startTime":startTime,"endTime":endTime,"brief":"true"]
         case .TakeALook(let imei,let deviceId):
             return ["imei":imei,"deviceId":deviceId]
         default:

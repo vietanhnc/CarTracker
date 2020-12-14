@@ -61,16 +61,16 @@ class LocationService{
                     let obj = LocationHistory()
                     obj.deviceId = selectedDeviceUW.deviceId
                     obj.imei = selectedDeviceUW.imei
-                    obj.sequence = Int(splits[0])!
-                    obj.lat = Double(splits[1])!
-                    obj.long = Double(splits[2])!
-                    obj.time = Int(splits[3])!
+//                    obj.sequence = Int(splits[0])!
+                    obj.lat = Double(splits[0])!
+                    obj.long = Double(splits[1])!
+                    obj.time = Int(splits[2])!
+                    obj.velo = splits[3]
                     if history == nil {
                         history = [LocationHistory]()
                     }
                     history!.append(obj)
                 }
-
                 completion(nil,history)
             }else{
                 AlertView.show("Không tìm thấy thông tin!");

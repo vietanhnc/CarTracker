@@ -19,6 +19,7 @@ class CarDevice: Object {
     @objc dynamic var imei = ""
     @objc dynamic var activeDate = ""
     @objc dynamic var expiredGuaranteeDate = ""
+    @objc dynamic var year = ""
     
     @objc dynamic var isMoving = false
     @objc dynamic var image = ""
@@ -27,6 +28,7 @@ class CarDevice: Object {
     @objc dynamic var lng = ""
     @objc dynamic var seq:Int = 0
     @objc dynamic var time:Int = 0
+    
     var isSelect:Bool = false
     
     func clone()->CarDevice {
@@ -46,6 +48,7 @@ class CarDevice: Object {
         result.seq = self.seq
         result.time = self.time
         result.isSelect = self.isSelect
+        result.year = self.year
         return result
     }
     
@@ -64,6 +67,7 @@ class CarDevice: Object {
         phone = json["phone"].stringValue
         model = json["model"].stringValue
         brand = json["brand"].stringValue
+        year = json["year"].stringValue
         
         isMoving = json["isMoving"].boolValue
         image = json["image"].stringValue

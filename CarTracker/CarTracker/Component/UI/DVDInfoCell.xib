@@ -11,13 +11,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DVDInfoCell" id="gTV-IL-0wX" customClass="DVDInfoCell" customModule="CarManagement" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="275"/>
+            <rect key="frame" x="0.0" y="0.0" width="250" height="257"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="250" height="275"/>
+                <rect key="frame" x="0.0" y="0.0" width="250" height="257"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uE6-Uq-WBK">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uE6-Uq-WBK">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -58,6 +58,7 @@ người và tài sản cho bên thứ ba</string>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="250" height="257"/>
             <connections>
                 <outlet property="btnDetail" destination="ahE-7y-K0f" id="C3a-b9-Z6N"/>
                 <outlet property="imgImage" destination="uE6-Uq-WBK" id="20a-sJ-fop"/>
@@ -65,7 +66,7 @@ người và tài sản cho bên thứ ba</string>
                 <outlet property="lblPrice" destination="Sae-UY-tAC" id="g88-eS-rwY"/>
                 <outlet property="lblTitle" destination="Oyf-lk-34t" id="pwK-ZM-XRg"/>
             </connections>
-            <point key="canvasLocation" x="140.57971014492756" y="85.379464285714278"/>
+            <point key="canvasLocation" x="140.57971014492756" y="79.352678571428569"/>
         </collectionViewCell>
     </objects>
 </document>
