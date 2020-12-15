@@ -57,6 +57,8 @@ class MainVC: BaseViewController {
     override func setupUI() {
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
+        }else {
+            automaticallyAdjustsScrollViewInsets = false
         }
         carousel1.dataSource = self
         carousel1.delegate = self

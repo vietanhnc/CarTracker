@@ -19,6 +19,7 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate, CLLocationManagerD
     @IBOutlet var notifyView: UIView!
     @IBOutlet var btnHistory: UIButton!
     @IBOutlet var mapView: GMSMapView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var locationManager:CLLocationManager = CLLocationManager()
     private var indexOfCellBeforeDragging = 0
@@ -33,12 +34,23 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate, CLLocationManagerD
                 self.carDeviceArrChanged()
                 self.selectedCarChange(0)
                 self.mqttSetup()
+                self.scrollView.refreshControl?.endRefreshing()
             }
         })
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setupUI() {
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
+        }else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
+        
+        scrollView.refreshControl = UIRefreshControl()
+        scrollView.refreshControl?.addTarget(self, action:
+                                           #selector(handleRefreshControl),
+                                           for: .valueChanged)
+
+        
         let myString = "Hãy trang bị ngay cho xế cưng đầu DVD WebVision để tận hưởng những tính năng giải trí đỉnh cao"
         let subString = "DVD WebVision"
         var myMutableString = NSMutableAttributedString()
@@ -62,6 +74,14 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate, CLLocationManagerD
         btnHistory.titleEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0);
         btnHistory.setTitleColor(AppUtils.getSecondaryColor(), for: .normal)
         btnHistory.makeShadow()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    @objc func handleRefreshControl() {
+        self.setupData()
     }
     
     func mqttSetup(){

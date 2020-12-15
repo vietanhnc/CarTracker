@@ -155,8 +155,8 @@ class LocationService{
             }
             let device = CarDevice(fromJson: subJson)
             
-            result?.append(device)
             CarDeviceDAO.insertCarDevice(device)
+            result?.append(device.clone())
         }
         if result != nil {
 //            selectedDevice = result![0]
