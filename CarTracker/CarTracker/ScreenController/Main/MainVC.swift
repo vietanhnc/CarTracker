@@ -27,19 +27,31 @@ class MainVC: BaseViewController {
     //    var carDeviceArr: PublishSubject<[CarDevice]?> = PublishSubject<[CarDevice]?>()
     var dataSource:[CarDevice]? = nil
     var dvdList:[DVDInfo]? = nil
+    var numberRequestCompleted = 0
     private let disposeBag = DisposeBag()
     override func setupData() {
         locationService.fetchCarDevice(completion: { error,data in
             if(error == nil){
                 self.carDeviceArrChanged(data)
+                self.numberRequestCompleted = 1
             }
+            self.handleServiceCallCompletion()
         })
         mainService.fetchDVDList(completion: { error,data in
             if(error == nil){
                 self.dvdList = data
                 self.carousel2.reloadData()
+                self.numberRequestCompleted = 2
             }
+            self.handleServiceCallCompletion()
         })
+    }
+    
+    private func handleServiceCallCompletion() {
+        if numberRequestCompleted == 2 {
+            numberRequestCompleted = 0
+            self.scrollView.refreshControl?.endRefreshing()
+        }
     }
     
     override func setupUI() {
@@ -71,8 +83,22 @@ class MainVC: BaseViewController {
         btnActive.backgroundColor = UIColor.white
         btnBuy.layer.cornerRadius = AppConstant.CORNER_RADIUS
         
+        scrollView.refreshControl = UIRefreshControl()
+        scrollView.refreshControl?.addTarget(self, action:
+                                           #selector(handleRefreshControl),
+                                           for: .valueChanged)
         self.view.layoutIfNeeded()
     }
+    
+    @objc func handleRefreshControl() {
+       // Update your content…
+        self.setupData()
+       // Dismiss the refresh control.
+//       DispatchQueue.main.async {
+//          self.scrollView.refreshControl?.endRefreshing()
+//       }
+    }
+
     
     func showCollView(_ collViewShow:Bool){
         if collViewShow {

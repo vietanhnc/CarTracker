@@ -46,8 +46,6 @@ class HistoryDetailVC: BaseViewController {
         let url = URL(string: selectedDevice.image)
         imgCarLogo?.kf.setImage(with: url)
         
-        
-        
         //setup mapView
         mapView.clear()
         for (index,locHis) in locationHisArr.enumerated() {
