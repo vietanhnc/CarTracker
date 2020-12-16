@@ -29,6 +29,7 @@ class HistorySelectDateVC: BaseViewController,UITextFieldDelegate {
     }
     
     override func setupUI() {
+        super.setupUI()
         self.title = "Lịch sử di chuyển"
         txtStartDate.delegate = self
         txtEndDate.delegate = self

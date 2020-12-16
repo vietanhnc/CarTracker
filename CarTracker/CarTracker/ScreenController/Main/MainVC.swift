@@ -218,7 +218,13 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
             cell.backgroundColor = UIColor.init(hexaRGB: "#FFFFFF")
             
             cell.btnDetail.addTarget(self, action: #selector(connected(sender:)), for: .touchUpInside)
-
+            cell.layer.masksToBounds = false
+            cell.layer.shadowColor = UIColor.lightGray.cgColor
+            cell.layer.shadowOpacity = 0.1
+            cell.layer.shadowRadius = 1
+            cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+            cell.layer.shouldRasterize = true
+            cell.layer.rasterizationScale = UIScreen.main.scale
             return cell
         }
         

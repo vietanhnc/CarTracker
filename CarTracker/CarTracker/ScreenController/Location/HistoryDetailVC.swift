@@ -33,6 +33,7 @@ class HistoryDetailVC: BaseViewController {
     }
     
     override func setupUI() {
+        super.setupUI()
         self.title = "Lịch sử di chuyển"
         viewDeviceInfo.layer.cornerRadius = AppConstant.CORNER_RADIUS
         viewDeviceInfo.makeShadow()

@@ -23,6 +23,7 @@ class ListAgentVC: BaseViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     override func setupUI() {
+        super.setupUI()
         self.title = "Mua thiết bị mới"
         tblMain.dataSource = self
         tblMain.delegate = self
