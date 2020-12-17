@@ -14,6 +14,7 @@
                 <outlet property="btnHistory" destination="dHy-qf-kMg" id="VcN-hZ-lYC"/>
                 <outlet property="caroselVie" destination="aBc-qu-rYS" id="tqa-Cx-K7q"/>
                 <outlet property="carousel" destination="1ik-ew-0gq" id="7VN-0Y-jJg"/>
+                <outlet property="lblAppName" destination="Mor-5E-ZwD" id="Xkx-yD-ghM"/>
                 <outlet property="lblNoData" destination="70l-v9-ZWh" id="bCi-Kx-69p"/>
                 <outlet property="mapView" destination="cgS-B6-un2" id="Gqg-dU-Zqz"/>
                 <outlet property="notifyView" destination="Bqa-1f-gzs" id="Z8w-Gu-2kl"/>
@@ -45,10 +46,13 @@
                                             <rect key="frame" x="0.0" y="50" width="104" height="53"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="umu-Xi-9pq">
-                                            <rect key="frame" x="25" y="80" width="148" height="34"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WEBVISION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mor-5E-ZwD">
+                                            <rect key="frame" x="31" y="83" width="200" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -197,7 +201,6 @@
         <image name="carPlaceHolder" width="355" height="139"/>
         <image name="clock" width="12" height="12"/>
         <image name="ic_acc" width="160.66667175292969" height="74"/>
-        <image name="logo" width="210" height="48"/>
         <image name="topbg" width="375" height="182.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

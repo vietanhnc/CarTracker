@@ -20,6 +20,7 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate, CLLocationManagerD
     @IBOutlet var btnHistory: UIButton!
     @IBOutlet var mapView: GMSMapView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var lblAppName: UILabel!
     
     private var locationManager:CLLocationManager = CLLocationManager()
     private var indexOfCellBeforeDragging = 0
@@ -49,7 +50,14 @@ class LocationMainVC: BaseViewController, GMSMapViewDelegate, CLLocationManagerD
         scrollView.refreshControl?.addTarget(self, action:
                                            #selector(handleRefreshControl),
                                            for: .valueChanged)
-
+        let appName = "WEBVISION"
+        let appName2 = "WEB"
+        var appNameAttr = NSMutableAttributedString()
+        appNameAttr = NSMutableAttributedString(string: appName, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30, weight: .heavy)])
+        appNameAttr.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(appName, appName2),length:appName2.count))
+        
+        // set label Attribute
+        lblAppName.attributedText = appNameAttr
         
         let myString = "Hãy trang bị ngay cho xế cưng đầu DVD WebVision để tận hưởng những tính năng giải trí đỉnh cao"
         let subString = "DVD WebVision"

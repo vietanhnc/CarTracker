@@ -20,6 +20,7 @@ class MainVC: BaseViewController {
     @IBOutlet var btnActive: UIButton!
     @IBOutlet var carousel2: UICollectionView!
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var lblAppName: UILabel!
     
     let mainService :MainService = MainService()
     let locationService:LocationService = LocationService()
@@ -60,6 +61,17 @@ class MainVC: BaseViewController {
         }else {
             automaticallyAdjustsScrollViewInsets = false
         }
+        
+        let appName = "WEBVISION"
+        let appName2 = "WEB"
+        var appNameAttr = NSMutableAttributedString()
+        appNameAttr = NSMutableAttributedString(string: appName, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30, weight: .heavy)])
+        appNameAttr.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(appName, appName2),length:appName2.count))
+        
+        // set label Attribute
+        lblAppName.attributedText = appNameAttr
+
+        
         carousel1.dataSource = self
         carousel1.delegate = self
         carousel1.register(UINib.init(nibName: "CarDeviceCell", bundle: nil), forCellWithReuseIdentifier: "CarDeviceCell")

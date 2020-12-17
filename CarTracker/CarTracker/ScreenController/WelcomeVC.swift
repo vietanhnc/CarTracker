@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
+
 class WelcomeVC: BaseViewController {
     let service :ActivationService = ActivationService()
     
@@ -16,7 +18,9 @@ class WelcomeVC: BaseViewController {
         // Do any additional setup after loading the view.
         self.setNeedsStatusBarAppearanceUpdate()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, err) in
+            print("granted: (\(granted)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

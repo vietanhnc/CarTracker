@@ -8,6 +8,8 @@
 
 import Foundation
 import CocoaMQTT
+import UserNotifications
+
 extension LocationMainVC:CocoaMQTTDelegate{
     func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
         print("didConnectAck")
@@ -35,6 +37,8 @@ extension LocationMainVC:CocoaMQTTDelegate{
         let lvl0Arr = msgStr.components(separatedBy: "#")
         //        212333459606868,f92b1e8fa4d5fc14,21.0135815:105.8038809
         if lvl0Arr.count < 3 { return }
+        let isNoti = lvl0Arr[0]
+        let notiMessage = lvl0Arr[1]
         let lvl02 = lvl0Arr[2]
         let lvl02Arr = lvl02.components(separatedBy: ",")
         if lvl02Arr.count < 3 { return }
@@ -57,6 +61,18 @@ extension LocationMainVC:CocoaMQTTDelegate{
         service.reloadDataFromDB()
         self.carDeviceArrChanged()
         changeMapCurrentLocation()
+        if "1" == isNoti {
+            let center = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = "WEBVISION"
+            content.body = notiMessage
+            content.sound = UNNotificationSound.default
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+            let request = UNNotificationRequest(identifier: "MQTTNoti", content: content, trigger: trigger)
+            center.add(request, withCompletionHandler: { error in
+                print(error)
+            })
+        }
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopic topics: [String]) {
