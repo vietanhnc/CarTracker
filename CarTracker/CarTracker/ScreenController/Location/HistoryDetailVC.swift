@@ -10,12 +10,13 @@ import UIKit
 import GoogleMaps
 import SwiftDate
 class HistoryDetailVC: BaseViewController {
-
+    
     @IBOutlet var viewDeviceInfo: UIView!
     @IBOutlet var mapView: GMSMapView!
     @IBOutlet var imgCarLogo: UIImageView!
     @IBOutlet var lblBKS: UILabel!
     @IBOutlet var lblCarBrand: UILabel!
+    @IBOutlet var btnPlay: UIButton!
     
     var selectedDevice:CarDevice
     var locationHisArr:[LocationHistory]
@@ -25,7 +26,7 @@ class HistoryDetailVC: BaseViewController {
         self.locationHisArr = locHisArr
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     public required init?(coder aDecoder: NSCoder) {
         selectedDevice = CarDevice()
         locationHisArr = [LocationHistory]()
@@ -49,31 +50,8 @@ class HistoryDetailVC: BaseViewController {
         
         //setup mapView
         mapView.clear()
+        
         let path = GMSMutablePath()
-        
-        
-        // for animation
-        if locationHisArr.count > 1 {
-            let markerMoving = GMSMarker()
-            
-            let firstLoc = locationHisArr[0]
-            markerMoving.position = CLLocationCoordinate2DMake(firstLoc.lat, firstLoc.long)
-            let date = Date(timeIntervalSince1970: Double(firstLoc.time))
-            markerMoving.title = date.toFormat("dd/MM/yyyy HH:mm",locale: Locales.vietnamese)
-            markerMoving.snippet = firstLoc.velo
-            markerMoving.map = mapView
-//            for (index,locHis) in locationHisArr.enumerated() {
-//
-//            }
-            let lastLoc = locationHisArr[locationHisArr.count-1]
-            CATransaction.begin()
-            CATransaction.setAnimationDuration(2.0)
-            markerMoving.position = CLLocationCoordinate2DMake(lastLoc.lat, lastLoc.long)
-            CATransaction.commit()
-
-        }
-        
-        
         for (index,locHis) in locationHisArr.enumerated() {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2DMake(locHis.lat, locHis.long)
@@ -85,9 +63,8 @@ class HistoryDetailVC: BaseViewController {
             }
             
             path.add(CLLocationCoordinate2D(latitude: locHis.lat, longitude: locHis.long))
-            
             if index == locationHisArr.count-1 {
-//                mapView.selectedMarker = marker
+                //                mapView.selectedMarker = marker
                 let camera = GMSCameraPosition.camera(withLatitude: locHis.lat, longitude: locHis.long, zoom: 15.0)
                 mapView.animate(to: camera)
             }
@@ -107,5 +84,51 @@ class HistoryDetailVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    var runIndex = 0
+    var markerMoving = GMSMarker()
+    var isRuning = false
+    func runFromLocToLoc(){
+        if runIndex == self.locationHisArr.count - 1 {
+            mapView.selectedMarker = nil
+            isRuning = false
+            return
+        }
+        
+        let fromLoc = self.locationHisArr[runIndex]
+        let toLoc = self.locationHisArr[runIndex+1]
+        
+        markerMoving.position = CLLocationCoordinate2DMake(fromLoc.lat, fromLoc.long)
+        let date = Date(timeIntervalSince1970: Double(fromLoc.time))
+        markerMoving.title = date.toFormat("dd/MM/yyyy HH:mm",locale: Locales.vietnamese)
+        markerMoving.snippet = fromLoc.velo
+        markerMoving.map = self.mapView
+        mapView.selectedMarker = markerMoving
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(1.0)
+        CATransaction.setCompletionBlock({
+            self.runIndex += 1
+            self.runFromLocToLoc()
+        })
+        markerMoving.position = CLLocationCoordinate2DMake(toLoc.lat, toLoc.long)
+        
+        CATransaction.commit()
+    }
+    
+    func startAnimation(){
+        if self.locationHisArr.count > 1 {
+            if self.isRuning {
+                return
+            }
+            isRuning = true
+            runIndex = 0
+            
+            markerMoving = GMSMarker()
+            self.runFromLocToLoc()
+        }
+    }
+    
+    @IBAction func btnPlayTouch(_ sender: Any) {
+        self.startAnimation()
+    }
 }

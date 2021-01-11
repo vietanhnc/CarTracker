@@ -41,6 +41,28 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HistoryDetailVC.runFromLocToLoc():HistoryDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.locationHisArr[runIndex+1]">
+            </PersistentString>
+            <PersistentString
+               value = "runIndex">
+            </PersistentString>
+            <PersistentString
+               value = "self.locationHisArr.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HistoryDetailVC.setupUI():HistoryDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "locationHisArr.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in SelectBrandVC.viewDidLoad():SelectBrandVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -59,14 +81,6 @@
             </PersistentString>
             <PersistentString
                value = "response.result">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HistoryDetailVC.setupUI():HistoryDetailVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "locationHisArr.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -181,10 +195,10 @@
          contextName = "MainVC.scrollViewDidEndDecelerating(_:):MainVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "scrollView.contentOffset.x">
+               value = "oldContentOffsetX">
             </PersistentString>
             <PersistentString
-               value = "oldContentOffsetX">
+               value = "scrollView.contentOffset.x">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
