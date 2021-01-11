@@ -49,20 +49,56 @@ class HistoryDetailVC: BaseViewController {
         
         //setup mapView
         mapView.clear()
+        let path = GMSMutablePath()
+        
+        
+        // for animation
+        if locationHisArr.count > 1 {
+            let markerMoving = GMSMarker()
+            
+            let firstLoc = locationHisArr[0]
+            markerMoving.position = CLLocationCoordinate2DMake(firstLoc.lat, firstLoc.long)
+            let date = Date(timeIntervalSince1970: Double(firstLoc.time))
+            markerMoving.title = date.toFormat("dd/MM/yyyy HH:mm",locale: Locales.vietnamese)
+            markerMoving.snippet = firstLoc.velo
+            markerMoving.map = mapView
+//            for (index,locHis) in locationHisArr.enumerated() {
+//
+//            }
+            let lastLoc = locationHisArr[locationHisArr.count-1]
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(2.0)
+            markerMoving.position = CLLocationCoordinate2DMake(lastLoc.lat, lastLoc.long)
+            CATransaction.commit()
+
+        }
+        
+        
         for (index,locHis) in locationHisArr.enumerated() {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2DMake(locHis.lat, locHis.long)
             let date = Date(timeIntervalSince1970: Double(locHis.time))
             marker.title = date.toFormat("dd/MM/yyyy HH:mm",locale: Locales.vietnamese)
             marker.snippet = locHis.velo
-            marker.map = mapView
+            if index == 0 || index == locationHisArr.count-1 {
+                marker.map = mapView
+            }
+            
+            path.add(CLLocationCoordinate2D(latitude: locHis.lat, longitude: locHis.long))
+            
             if index == locationHisArr.count-1 {
-                mapView.selectedMarker = marker
+//                mapView.selectedMarker = marker
                 let camera = GMSCameraPosition.camera(withLatitude: locHis.lat, longitude: locHis.long, zoom: 15.0)
                 mapView.animate(to: camera)
             }
         }
+        let polyline = GMSPolyline(path: path)
+        polyline.strokeWidth = 5
+        polyline.strokeColor = UIColor.init(hexaRGB: "#694F74")!
+        polyline.map = mapView
     }
+    
+    
     
     override func setupData() {
         

@@ -202,7 +202,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollect
             let url = URL(string: item.image)
             cell.imgCarImage?.kf.setImage(with: url)
             cell.backgroundColor = UIColor.init(hexaRGB: "#E8E8E8")
-            print("cell.bounds.width",cell.bounds.width)
+//            print("cell.bounds.width",cell.bounds.width)
             return cell
         }else{
             let dvdListUW = dvdList!
