@@ -30,6 +30,7 @@ class CarDevice: Object {
     @objc dynamic var time:Int = 0
     
     var isSelect:Bool = false
+    @objc dynamic var status = ""
     
     func clone()->CarDevice {
         let result = CarDevice()
@@ -49,6 +50,7 @@ class CarDevice: Object {
         result.time = self.time
         result.isSelect = self.isSelect
         result.year = self.year
+        result.status = self.status
         return result
     }
     

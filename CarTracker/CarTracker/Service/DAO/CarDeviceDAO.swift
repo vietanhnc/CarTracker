@@ -18,11 +18,26 @@ class CarDeviceDAO{
                     dbObject.lng = device.lng
                     dbObject.seq = device.seq
                     dbObject.time = device.time
+                    
+                    dbObject.brand = device.brand
+                    dbObject.model = device.model
+                    dbObject.bks = device.bks
+                    dbObject.phone = device.phone
+                    dbObject.deviceId = device.deviceId
+                    dbObject.imei = device.imei
+                    dbObject.activeDate = device.activeDate
+                    dbObject.expiredGuaranteeDate = device.expiredGuaranteeDate
+                    dbObject.isMoving = device.isMoving
+                    dbObject.image = device.image
+                    dbObject.isSelect = device.isSelect
+                    dbObject.year = device.year
+                    dbObject.status = device.status
                 }
             }
         } catch{
         }
     }
+    
     
     public static func insertCarDevice(_ device:CarDevice){
         do{

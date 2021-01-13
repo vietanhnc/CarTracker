@@ -148,6 +148,36 @@ class LocationService{
     
     func saveCarDevice(_ dvds:JSON) -> [CarDevice]? {
         var result:[CarDevice]? = nil
+        for (_,subJson):(String, JSON) in dvds {
+            if result == nil {
+                result = [CarDevice]()
+            }
+            let device = CarDevice(fromJson: subJson)
+            // lay trong db ra xem co chua
+            let queryResult = CarDeviceDAO.getCarDevice("deviceId == '\(device.deviceId)' AND imei == '\(device.imei)'")
+            if queryResult == nil {
+                // chua co thi insert
+                device.status = "ACTV"
+                CarDeviceDAO.insertCarDevice(device)
+            }else{
+                // co roi thi cap nhat info thoi, giu nguyen trang thai
+                var oldStatus = queryResult![0].status
+                if oldStatus.isEmpty {
+                    oldStatus = "ACTV"
+                }
+                device.status = oldStatus
+                CarDeviceDAO.updateCarDevice(device)
+            }
+            result?.append(device.clone())
+        }
+        if result != nil {
+            self.setSetlectedDevice(0)
+        }
+        return result
+    }
+    
+    func saveCarDeviceBK(_ dvds:JSON) -> [CarDevice]? {
+        var result:[CarDevice]? = nil
         CarDeviceDAO.deleteCarDevice("")
         for (_,subJson):(String, JSON) in dvds {
             if result == nil {
