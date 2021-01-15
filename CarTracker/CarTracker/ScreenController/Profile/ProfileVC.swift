@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ProfileVC: BaseViewController {
-
+class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{//
+    
     @IBOutlet var lblName: UILabel!
     @IBOutlet var lblPhone: UILabel!
     @IBOutlet var btnLogout: UIButton!
+    @IBOutlet var tblCarDevice: UITableView!
+    @IBOutlet var viewTableContainer: UIView!
     var profileModel:ProfileModel = ProfileModel()
     
     override func setupUI() {
@@ -26,6 +28,13 @@ class ProfileVC: BaseViewController {
         btnLogout.layer.borderColor = AppUtils.getSecondaryColor().cgColor
         btnLogout.layer.cornerRadius = AppConstant.CORNER_RADIUS
         btnLogout.setTitleColor(AppUtils.getSecondaryColor(), for: .normal)
+        
+        tblCarDevice.dataSource = self
+        tblCarDevice.delegate = self
+        tblCarDevice.register(UINib(nibName: "CarDeviceSettingCell", bundle: nil), forCellReuseIdentifier: "CarDeviceSettingCell")
+        
+//        viewTableContainer.layer.cornerRadius = AppConstant.CORNER_RADIUS
+//        viewTableContainer.makeShadow()
     }
     
     override func setupData() {
@@ -58,5 +67,25 @@ class ProfileVC: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profileModel.carDevices?.count ?? 0
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = profileModel.carDevices![indexPath.row]
+        //            let cell = tableView.dequeueReusableCell(withIdentifier: "AgentCell") as! AgentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CarDeviceSettingCell", for: indexPath) as! CarDeviceSettingCell
+        cell.lblName?.text = item.bks + " " + item.model
+        cell.swiStatus?.isOn = item.status == "ACTV" ? true : false
+        cell.addBottomBorderWithColor(color: UIColor.init(hexaRGB: "#F1F1F2")!, width: 1)
+//        if indexPath.row == 0 {
+//            cell.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
+//        }
+//        if indexPath.row == profileModel.carDevices!.count-1 {
+//            cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10.0)
+//        }
+        return cell
+    }
+    
 }

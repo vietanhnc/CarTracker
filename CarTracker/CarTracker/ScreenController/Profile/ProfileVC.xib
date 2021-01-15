@@ -14,7 +14,9 @@
                 <outlet property="btnLogout" destination="VSO-x0-rp2" id="9sj-yk-6Jz"/>
                 <outlet property="lblName" destination="pRU-vi-A6R" id="IdM-P6-jTP"/>
                 <outlet property="lblPhone" destination="52O-w0-ro3" id="EOy-Eu-8xf"/>
+                <outlet property="tblCarDevice" destination="jcu-1Y-Xi8" id="2mP-n5-LRr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTableContainer" destination="Gsd-04-2QI" id="1kQ-aO-Gcb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -81,36 +83,42 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="180" id="3A8-f5-NrR"/>
                         <constraint firstItem="npo-EA-VWn" firstAttribute="centerX" secondItem="020-UC-gmH" secondAttribute="centerX" id="GPg-yV-OiL"/>
                         <constraint firstItem="npo-EA-VWn" firstAttribute="top" secondItem="020-UC-gmH" secondAttribute="top" id="yNU-6i-knr"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URF-ae-ysJ">
-                    <rect key="frame" x="0.0" y="328" width="414" height="408"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-04-2QI" userLabel="carDeviceView">
+                    <rect key="frame" x="16" y="320" width="382" height="416"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpL-Vo-J5K" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="408"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jcu-1Y-Xi8">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="416"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
                     </subviews>
-                </scrollView>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="jcu-1Y-Xi8" secondAttribute="bottom" id="7Q8-91-gGy"/>
+                        <constraint firstAttribute="trailing" secondItem="jcu-1Y-Xi8" secondAttribute="trailing" id="LCA-Yu-q2c"/>
+                        <constraint firstItem="jcu-1Y-Xi8" firstAttribute="top" secondItem="Gsd-04-2QI" secondAttribute="top" id="eTk-Hc-6eR"/>
+                        <constraint firstItem="jcu-1Y-Xi8" firstAttribute="leading" secondItem="Gsd-04-2QI" secondAttribute="leading" id="gcE-gH-3pZ"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="9JP-jf-gWa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2AP-yQ-5aP"/>
                 <constraint firstItem="9JP-jf-gWa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BEd-9P-WG7"/>
-                <constraint firstItem="wpL-Vo-J5K" firstAttribute="top" secondItem="020-UC-gmH" secondAttribute="bottom" constant="8" symbolic="YES" id="LHL-fz-iTO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gsd-04-2QI" secondAttribute="bottom" id="Clv-Sz-G9R"/>
+                <constraint firstItem="Gsd-04-2QI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Q6d-Ti-XvR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gsd-04-2QI" secondAttribute="trailing" constant="16" id="TsC-vC-76M"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9JP-jf-gWa" secondAttribute="trailing" id="Umf-0t-3CG"/>
                 <constraint firstItem="020-UC-gmH" firstAttribute="top" secondItem="9JP-jf-gWa" secondAttribute="bottom" constant="-40" id="YQi-rt-xw2"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wpL-Vo-J5K" secondAttribute="trailing" id="b6j-tX-Xps"/>
-                <constraint firstItem="wpL-Vo-J5K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fb2-Bz-rVq"/>
+                <constraint firstItem="Gsd-04-2QI" firstAttribute="top" secondItem="020-UC-gmH" secondAttribute="bottom" id="Yd8-C4-Xp9"/>
                 <constraint firstItem="020-UC-gmH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jDq-79-bhf"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wpL-Vo-J5K" secondAttribute="bottom" id="mSK-mM-lVJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="020-UC-gmH" secondAttribute="trailing" id="tR7-bX-c1I"/>
             </constraints>
             <point key="canvasLocation" x="134.78260869565219" y="57.880434782608702"/>

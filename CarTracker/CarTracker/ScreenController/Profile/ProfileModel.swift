@@ -10,6 +10,11 @@ import Foundation
 class ProfileModel {
     
     var userInfo:UserInfo? = nil
+    var carDevices:[CarDevice]? = nil
+    
+    init() {
+        carDevices = CarDeviceDAO.getCarDevice("")
+    }
     
     func getCurrentUser(){
         userInfo = UserInfoDAO.getCurrentUserInfo()

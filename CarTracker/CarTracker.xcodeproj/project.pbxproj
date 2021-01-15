@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560A68D225B0AC7B007E3B47 /* CarDeviceSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A68D025B0AC7B007E3B47 /* CarDeviceSettingCell.swift */; };
+		560A68D325B0AC7B007E3B47 /* CarDeviceSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 560A68D125B0AC7B007E3B47 /* CarDeviceSettingCell.xib */; };
 		563DAEAD25679ED900EF3468 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DAEAB25679ED900EF3468 /* BrandCell.swift */; };
 		563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 563DAEAC25679ED900EF3468 /* BrandCell.xib */; };
 		563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DAEBF256BD9F800EF3468 /* BrandModel.swift */; };
@@ -113,6 +115,8 @@
 /* Begin PBXFileReference section */
 		434CC202B45CA5C46F0B5F7B /* Pods-CarTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.release.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.release.xcconfig"; sourceTree = "<group>"; };
 		48B5AF5FDBD880F5053404F4 /* Pods-CarTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTracker.debug.xcconfig"; path = "Target Support Files/Pods-CarTracker/Pods-CarTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		560A68D025B0AC7B007E3B47 /* CarDeviceSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDeviceSettingCell.swift; sourceTree = "<group>"; };
+		560A68D125B0AC7B007E3B47 /* CarDeviceSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarDeviceSettingCell.xib; sourceTree = "<group>"; };
 		563DAEAB25679ED900EF3468 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
 		563DAEAC25679ED900EF3468 /* BrandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandCell.xib; sourceTree = "<group>"; };
 		563DAEBF256BD9F800EF3468 /* BrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandModel.swift; sourceTree = "<group>"; };
@@ -453,6 +457,8 @@
 				56D6FF19257FE55600834C23 /* DVDInfoCell.xib */,
 				56D6FF242581412F00834C23 /* AgentCell.swift */,
 				56D6FF252581412F00834C23 /* AgentCell.xib */,
+				560A68D025B0AC7B007E3B47 /* CarDeviceSettingCell.swift */,
+				560A68D125B0AC7B007E3B47 /* CarDeviceSettingCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				5659DC682573C920007AD33E /* ProfileVC.xib in Resources */,
 				56DC159D255C58D200D5C4F1 /* MainVC.xib in Resources */,
 				5659DC25256EB9E3007AD33E /* ActiveDVDResultVC.xib in Resources */,
+				560A68D325B0AC7B007E3B47 /* CarDeviceSettingCell.xib in Resources */,
 				563DAEAE25679ED900EF3468 /* BrandCell.xib in Resources */,
 				56D33EB02538A7910026368C /* LaunchScreen.storyboard in Resources */,
 				56DC1592255B024E00D5C4F1 /* InfoInputVC.xib in Resources */,
@@ -776,6 +783,7 @@
 				56D632362557CA7000909F59 /* LoadingView.swift in Sources */,
 				565832462548835A00991FD4 /* WelcomeVC.swift in Sources */,
 				56583252254E8FAA00991FD4 /* BaseTabBarController.swift in Sources */,
+				560A68D225B0AC7B007E3B47 /* CarDeviceSettingCell.swift in Sources */,
 				56D6323B25596E6D00909F59 /* DateExtension.swift in Sources */,
 				5658324E254E86C600991FD4 /* MobilePhoneInputVC.swift in Sources */,
 				56D1EA552551BD0700DB0851 /* Request.swift in Sources */,
