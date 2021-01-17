@@ -70,6 +70,11 @@ class CarDeviceDAO{
                 let realmResults = realm.objects(CarDevice.self)
                 result = Array(realmResults)
             }
+            if result != nil && result!.count > 0 {
+                
+            }else{
+                result = nil
+            }
         } catch{
         }
         return result

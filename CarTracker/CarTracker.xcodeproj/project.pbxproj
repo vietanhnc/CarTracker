@@ -97,6 +97,8 @@
 		56DC5B572541DF4900AC3D66 /* MQTTConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B562541DF4900AC3D66 /* MQTTConnectionManager.swift */; };
 		56DC5B5A2543CA4600AC3D66 /* MQTTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */; };
 		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
+		56DFE7AE25B2DD4F006DA556 /* PasswordInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DFE7AC25B2DD4F006DA556 /* PasswordInputVC.swift */; };
+		56DFE7AF25B2DD4F006DA556 /* PasswordInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DFE7AD25B2DD4F006DA556 /* PasswordInputVC.xib */; };
 		56E2B622255981BF0011CEDA /* OTPInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2B620255981BF0011CEDA /* OTPInputVC.swift */; };
 		56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E2B621255981BF0011CEDA /* OTPInputVC.xib */; };
 		B1FA61CDC0D40B7ED636960C /* Pods_CarTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */; };
@@ -211,6 +213,8 @@
 		56DE6F972545375C006AA5BB /* CarTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DE6F992545375C006AA5BB /* CarTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTrackerTests.swift; sourceTree = "<group>"; };
 		56DE6F9B2545375C006AA5BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56DFE7AC25B2DD4F006DA556 /* PasswordInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputVC.swift; sourceTree = "<group>"; };
+		56DFE7AD25B2DD4F006DA556 /* PasswordInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordInputVC.xib; sourceTree = "<group>"; };
 		56E2B620255981BF0011CEDA /* OTPInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputVC.swift; sourceTree = "<group>"; };
 		56E2B621255981BF0011CEDA /* OTPInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPInputVC.xib; sourceTree = "<group>"; };
 		FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +282,8 @@
 				56E2B621255981BF0011CEDA /* OTPInputVC.xib */,
 				56DC158F255B024E00D5C4F1 /* InfoInputVC.swift */,
 				56DC1590255B024E00D5C4F1 /* InfoInputVC.xib */,
+				56DFE7AC25B2DD4F006DA556 /* PasswordInputVC.swift */,
+				56DFE7AD25B2DD4F006DA556 /* PasswordInputVC.xib */,
 			);
 			path = Activation;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				5658324F254E86C600991FD4 /* MobilePhoneInputVC.xib in Resources */,
 				565C8A1F2577B8EC00FCC370 /* HistorySelectDateVC.xib in Resources */,
 				5682F5DA2566930700A56C25 /* InfoPlist.strings in Resources */,
+				56DFE7AF25B2DD4F006DA556 /* PasswordInputVC.xib in Resources */,
 				56D6FF272581412F00834C23 /* AgentCell.xib in Resources */,
 				5659DC1D256D737F007AD33E /* SelectBrandVC.xib in Resources */,
 				56DC15A9255DA7AC00D5C4F1 /* LocationMainVC.xib in Resources */,
@@ -758,6 +765,7 @@
 				5659DC3B25700C05007AD33E /* CarDeviceCell.swift in Sources */,
 				56DC15C3255F8D8900D5C4F1 /* UIViewExt.swift in Sources */,
 				5659DC4F25721236007AD33E /* CarDeviceLocCell.swift in Sources */,
+				56DFE7AE25B2DD4F006DA556 /* PasswordInputVC.swift in Sources */,
 				56DC15A2255DA5F000D5C4F1 /* MainTabBarVC.swift in Sources */,
 				56D6322E25545E4400909F59 /* AppUtils.swift in Sources */,
 				56D0FE112565408600757E2A /* Brand.swift in Sources */,

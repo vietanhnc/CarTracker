@@ -62,14 +62,14 @@ class MainVC: BaseViewController {
             automaticallyAdjustsScrollViewInsets = false
         }
         
-        let appName = "WEBVISION"
-        let appName2 = "WEB"
-        var appNameAttr = NSMutableAttributedString()
-        appNameAttr = NSMutableAttributedString(string: appName, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30, weight: .heavy)])
-        appNameAttr.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(appName, appName2),length:appName2.count))
+//        let appName = "WEBVISION"
+//        let appName2 = "WEB"
+//        var appNameAttr = NSMutableAttributedString()
+//        appNameAttr = NSMutableAttributedString(string: appName, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30, weight: .heavy)])
+//        appNameAttr.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(appName, appName2),length:appName2.count))
         
         // set label Attribute
-        lblAppName.attributedText = appNameAttr
+        lblAppName.attributedText = self.getBrandNameText()
 
         
         carousel1.dataSource = self

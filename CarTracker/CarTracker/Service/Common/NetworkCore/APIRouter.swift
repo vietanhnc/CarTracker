@@ -25,6 +25,7 @@ enum APIRouter: URLRequestConvertible{
     case GetDvdList
     case getAgent
     case TakeALook(_ imei:String,_ deviceId:String)
+    case checkPhoneActive(_ phone:String)
     
     private var path: String {
         switch self {
@@ -56,12 +57,14 @@ enum APIRouter: URLRequestConvertible{
             return "getAgent"
         case .TakeALook:
             return "TakeALook"
+        case .checkPhoneActive:
+            return "checkPhoneActive"
         }
     }
     
     private var method: HTTPMethod{
         switch self {
-        case .sendOTP,.active,.reSendOTP,.UpdateInfo,.login,.ActiveDVD,.GetLocationHistory,.TakeALook:
+        case .sendOTP,.active,.reSendOTP,.UpdateInfo,.login,.ActiveDVD,.GetLocationHistory,.TakeALook,.checkPhoneActive:
             return .post
         default:
             return .get
@@ -85,6 +88,9 @@ enum APIRouter: URLRequestConvertible{
             return ["imei":imei,"deviceId":deviceId,"startTime":startTime,"endTime":endTime,"brief":"true"]
         case .TakeALook(let imei,let deviceId):
             return ["imei":imei,"deviceId":deviceId]
+        case .checkPhoneActive(let phone):
+            return ["phone":phone]
+            
         default:
             return nil
         }

@@ -25,6 +25,17 @@ class ActivationService{
         })
     }
     
+    func checkPhoneActive(_ phone :String,completion: @escaping (_ errorMsg:String?) -> Void) {
+        Request.shared().fetch(APIRouter.checkPhoneActive(phone), completion: {data in
+            guard data != nil else{ AlertView.show(); completion(""); return }
+            if data!.error.statusCode == 400 {
+                completion("PHONE_IS_NOT_ACTIVATED")
+            }else{
+                completion("OK")
+            }
+        })
+    }
+    
     func saveOTP(_ phone:String,_ otp:String){
         let currentUser = UserInfo()
         currentUser.phone = phone
@@ -128,8 +139,8 @@ class ActivationService{
         })
     }
     
-    func login(_ phone:String,_ activeCode:String,completion: @escaping (_ data:String?) -> Void){
-        Request.shared().fetch(APIRouter.login(phone, activeCode), completion: {data in
+    func login(_ phone:String,_ password:String,completion: @escaping (_ data:String?) -> Void){
+        Request.shared().fetch(APIRouter.login(phone, password), completion: {data in
             guard data != nil else{ AlertView.show(); completion(""); return }
             if data!.isSuccess {
                 //save accessToken
@@ -137,10 +148,20 @@ class ActivationService{
                 do{
                     let realm = try Realm()
                     let currentUser = realm.objects(UserInfo.self).first
-                    guard let currentUserUW = currentUser else{ completion(""); return }
-                    try realm.write {
-                        currentUserUW.accessToken = accessToken
+                    if currentUser == nil {
+                        let newUser = UserInfo()
+                        newUser.phone = phone
+                        newUser.password = password
+                        newUser.accessToken = accessToken
+                        try realm.write { realm.add(newUser) }
+                    }else{
+                        guard let currentUserUW = currentUser else{ completion(""); return }
+                        try realm.write {
+                            currentUserUW.accessToken = accessToken
+                            currentUserUW.password = password
+                        }
                     }
+                    
                     completion(nil)
                 } catch{
                     AlertView.show();completion(""); return

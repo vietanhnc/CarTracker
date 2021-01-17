@@ -29,9 +29,9 @@ class WelcomeVC: BaseViewController {
             let realm = try Realm()
             let currentUser = realm.objects(UserInfo.self).first
             if currentUser != nil {
-                if currentUser?.accessToken != nil {
+                if currentUser?.password != nil {
 //                    currentUser!.activeCode
-                    service.login(currentUser!.phone, "123456", completion: { error in
+                    service.login(currentUser!.phone, currentUser!.password, completion: { error in
                         if error == nil{
                             self.push(MainTabBarVC())
                         }else{
@@ -43,20 +43,6 @@ class WelcomeVC: BaseViewController {
                 }else{
                     self.push(MobilePhoneInputVC())
                 }
-//                if currentUser?.phone == nil || currentUser!.phone.isEmpty {
-//                    self.push(MobilePhoneInputVC())
-//                }else if currentUser?.activeCode == nil || currentUser!.activeCode.isEmpty{
-//                    self.push(OTPInputVC())
-//                }else if currentUser?.name == nil || currentUser!.name.isEmpty{
-//                    self.push(InfoInputVC())
-//                }else{
-//                    //login
-//                    service.login(currentUser!.phone, currentUser!.activeCode, completion: { error in
-//                        if error == nil{
-//                            self.push(MainTabBarVC())
-//                        }
-//                    })
-//                }
             }else{
                 self.push(MobilePhoneInputVC())
             }
@@ -66,9 +52,7 @@ class WelcomeVC: BaseViewController {
         
     }
     
-    func push(_ toViewController:UIViewController) {
-        self.navigationController?.pushViewController(toViewController, animated: false)
-    }
+    
     
     
     

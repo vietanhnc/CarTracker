@@ -93,18 +93,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gsd-04-2QI" userLabel="carDeviceView">
                     <rect key="frame" x="16" y="320" width="382" height="416"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jcu-1Y-Xi8">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="416"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jcu-1Y-Xi8">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="400"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="jcu-1Y-Xi8" secondAttribute="bottom" id="7Q8-91-gGy"/>
-                        <constraint firstAttribute="trailing" secondItem="jcu-1Y-Xi8" secondAttribute="trailing" id="LCA-Yu-q2c"/>
-                        <constraint firstItem="jcu-1Y-Xi8" firstAttribute="top" secondItem="Gsd-04-2QI" secondAttribute="top" id="eTk-Hc-6eR"/>
-                        <constraint firstItem="jcu-1Y-Xi8" firstAttribute="leading" secondItem="Gsd-04-2QI" secondAttribute="leading" id="gcE-gH-3pZ"/>
-                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

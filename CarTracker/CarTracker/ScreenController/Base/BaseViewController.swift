@@ -11,6 +11,17 @@ import SwiftyJSON
 import Localize_Swift
 class BaseViewController: UIViewController {
     var loading:UIActivityIndicatorView? = nil
+    
+    func getBrandNameText() -> NSMutableAttributedString {
+        let appName = "WEBVISION"
+        let appName2 = "WEB"
+        var appNameAttr = NSMutableAttributedString()
+        appNameAttr = NSMutableAttributedString(string: appName, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30, weight: .heavy)])
+        appNameAttr.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(appName, appName2),length:appName2.count))
+        
+        return appNameAttr
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
@@ -47,5 +58,9 @@ class BaseViewController: UIViewController {
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func push(_ toViewController:UIViewController) {
+        self.navigationController?.pushViewController(toViewController, animated: false)
     }
 }

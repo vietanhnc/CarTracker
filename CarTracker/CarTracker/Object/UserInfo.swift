@@ -16,6 +16,7 @@ class UserInfo: Object {
     @objc dynamic var accessToken = ""
     @objc dynamic var activeDate = ""
     @objc dynamic var mqttSubTopic = ""
+    @objc dynamic var password = ""
     
     func clone()->UserInfo {
         let result = UserInfo()
@@ -26,6 +27,7 @@ class UserInfo: Object {
         result.accessToken = self.accessToken
         result.activeDate = self.activeDate
         result.mqttSubTopic = self.mqttSubTopic
+        result.password = self.password
         return result
     }
     

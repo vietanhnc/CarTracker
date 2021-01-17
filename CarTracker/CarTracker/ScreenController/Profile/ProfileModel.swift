@@ -24,4 +24,14 @@ class ProfileModel {
         UserInfoDAO.deleteUser()
     }
     
+    func updateDeviceStatus(_ deviceID:String, _ imei:String,_ status:String){
+        let queryResult = CarDeviceDAO.getCarDevice("deviceId == '\(deviceID)' AND imei == '\(imei)'")
+        if queryResult == nil {
+        }else{
+            var cd = queryResult![0].clone()
+            cd.status = status
+            CarDeviceDAO.updateCarDevice(cd)
+            carDevices = CarDeviceDAO.getCarDevice("")
+        }
+    }
 }

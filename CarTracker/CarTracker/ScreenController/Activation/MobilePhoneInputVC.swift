@@ -55,10 +55,19 @@ class MobilePhoneInputVC: BaseViewController {
         if !self.validatePhone() {
             return
         }
-        service.sendOTP(txtPhone.text!, completion: { data in
-            let otpVC = OTPInputVC()
-            self.navigationController?.pushViewController(otpVC, animated: false)
+        service.checkPhoneActive(txtPhone.text!, completion: { data in
+            print(data)
+            if data == "OK" {
+                let pw = PasswordInputVC(phone: self.txtPhone.text!)
+                self.navigationController?.pushViewController(pw, animated: false)
+            }else{
+                self.service.sendOTP(self.txtPhone.text!, completion: { data in
+                    let otpVC = OTPInputVC()
+                    self.navigationController?.pushViewController(otpVC, animated: false)
+                })
+            }
         })
+        
     }
     
     func sendOTPCompletion(_ dataParam:JSON?,_ error:String){

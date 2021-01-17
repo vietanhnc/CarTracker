@@ -23,7 +23,11 @@ class HistoryDetailVC: BaseViewController {
     
     init(carDevice: CarDevice, locHisArr:[LocationHistory]) {
         self.selectedDevice = carDevice
-        self.locationHisArr = locHisArr
+        
+        let sortedLoc = locHisArr.sorted {
+            $0.time < $1.time
+        }
+        self.locationHisArr = sortedLoc
         super.init(nibName: nil, bundle: nil)
     }
     

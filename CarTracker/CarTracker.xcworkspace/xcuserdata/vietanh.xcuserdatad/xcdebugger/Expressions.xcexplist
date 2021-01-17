@@ -55,6 +55,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ProfileVC.viewDidLoad():ProfileVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "rowHeight * (profileModel.carDevices?.count ?? 0)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "HistoryDetailVC.setupUI():HistoryDetailVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -95,6 +103,9 @@
       </ContextState>
       <ContextState
          contextName = "OTPInputVC.setupData():OTPInputVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ProfileVC.setupUI():ProfileVC.swift">
       </ContextState>
       <ContextState
          contextName = "SelectBrandVC.collectionView(_:numberOfItemsInSection:):SelectBrandVC.swift">

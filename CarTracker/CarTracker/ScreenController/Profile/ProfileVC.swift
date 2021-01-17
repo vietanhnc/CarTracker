@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{//
     
     @IBOutlet var lblName: UILabel!
@@ -42,13 +42,21 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let rowHeight = 44
+        var frame:CGRect = self.tblCarDevice.frame;
+        frame.size.height = CGFloat(rowHeight * (profileModel.carDevices?.count ?? 0))
+//        self.tblCarDevice.frame = frame;
+//        tblCarDevice.frame.height = CGFloat(rowHeight * profileModel.carDevices?.count)
         // Do any additional setup after loading the view.
     }
 
 
     @IBAction func btnLogoutTOuch(_ sender: Any) {
         profileModel.deleteUser()
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
 //        let window:UIWindow? = UIWindow(frame: UIScreen.main.bounds)
         let vc = WelcomeVC()
         let navi = BaseNavigationController(rootViewController: vc)
@@ -56,6 +64,7 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
 //        window?.rootViewController = navi
 //        window?.makeKeyAndVisible()
         UIApplication.shared.keyWindow?.rootViewController = navi
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,6 +77,18 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+
+    @objc func switchChanged(mySwitch: UISwitch) {
+        let value = mySwitch.isOn
+        let tag = mySwitch.tag
+        var cd = profileModel.carDevices![tag]
+        if value {
+            profileModel.updateDeviceStatus(cd.deviceId, cd.imei, "ACTV")
+        }else{
+            profileModel.updateDeviceStatus(cd.deviceId, cd.imei, "DLTD")
+        }
+        tblCarDevice.reloadData()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profileModel.carDevices?.count ?? 0
     }
@@ -79,6 +100,8 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
         cell.lblName?.text = item.bks + " " + item.model
         cell.swiStatus?.isOn = item.status == "ACTV" ? true : false
         cell.addBottomBorderWithColor(color: UIColor.init(hexaRGB: "#F1F1F2")!, width: 1)
+        cell.swiStatus?.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        cell.swiStatus?.tag = indexPath.row
 //        if indexPath.row == 0 {
 //            cell.roundCorners(corners: [.topLeft, .topRight], radius: 10.0)
 //        }
