@@ -18,6 +18,8 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
     var profileModel:ProfileModel = ProfileModel()
     
     override func setupUI() {
+        profileModel.getCarDevices()
+        
         if let uiUW = profileModel.userInfo {
             lblName.text = uiUW.name
             lblPhone.text = uiUW.phone
@@ -52,18 +54,24 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
 
 
     @IBAction func btnLogoutTOuch(_ sender: Any) {
-        profileModel.deleteUser()
-        let realm = try! Realm()
-        try! realm.write {
-            realm.deleteAll()
-        }
-//        let window:UIWindow? = UIWindow(frame: UIScreen.main.bounds)
-        let vc = WelcomeVC()
-        let navi = BaseNavigationController(rootViewController: vc)
-        navi.navigationBar.isTranslucent = false
-//        window?.rootViewController = navi
-//        window?.makeKeyAndVisible()
-        UIApplication.shared.keyWindow?.rootViewController = navi
+        
+        let refreshAlert = UIAlertController(title: "Xác nhận", message: "Bạn có muốn đăng xuất ?", preferredStyle: UIAlertController.Style.alert)
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.profileModel.deleteUser()
+            let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll()
+            }
+            
+            let vc = WelcomeVC()
+            let navi = BaseNavigationController(rootViewController: vc)
+            navi.navigationBar.isTranslucent = false
+            UIApplication.shared.keyWindow?.rootViewController = navi
+        }))
+        refreshAlert.addAction(UIAlertAction(title: "Hủy", style: .cancel, handler: nil))
+        present(refreshAlert, animated: true, completion: nil)
+        
+        
         
     }
     

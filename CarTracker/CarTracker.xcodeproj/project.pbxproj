@@ -99,6 +99,7 @@
 		56DE6F9A2545375C006AA5BB /* CarTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE6F992545375C006AA5BB /* CarTrackerTests.swift */; };
 		56DFE7AE25B2DD4F006DA556 /* PasswordInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DFE7AC25B2DD4F006DA556 /* PasswordInputVC.swift */; };
 		56DFE7AF25B2DD4F006DA556 /* PasswordInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DFE7AD25B2DD4F006DA556 /* PasswordInputVC.xib */; };
+		56DFE7C625B74376006DA556 /* DeviceSwitchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DFE7C525B74376006DA556 /* DeviceSwitchProtocol.swift */; };
 		56E2B622255981BF0011CEDA /* OTPInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2B620255981BF0011CEDA /* OTPInputVC.swift */; };
 		56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E2B621255981BF0011CEDA /* OTPInputVC.xib */; };
 		B1FA61CDC0D40B7ED636960C /* Pods_CarTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */; };
@@ -215,6 +216,7 @@
 		56DE6F9B2545375C006AA5BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56DFE7AC25B2DD4F006DA556 /* PasswordInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputVC.swift; sourceTree = "<group>"; };
 		56DFE7AD25B2DD4F006DA556 /* PasswordInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordInputVC.xib; sourceTree = "<group>"; };
+		56DFE7C525B74376006DA556 /* DeviceSwitchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSwitchProtocol.swift; sourceTree = "<group>"; };
 		56E2B620255981BF0011CEDA /* OTPInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputVC.swift; sourceTree = "<group>"; };
 		56E2B621255981BF0011CEDA /* OTPInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPInputVC.xib; sourceTree = "<group>"; };
 		FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -532,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				56DC5B592543CA4600AC3D66 /* MQTTDelegate.swift */,
+				56DFE7C525B74376006DA556 /* DeviceSwitchProtocol.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				56D632312557961D00909F59 /* BaseError.swift in Sources */,
 				56DC172125619F8600D5C4F1 /* CarDevice.swift in Sources */,
 				56D6FEFB2578009B00834C23 /* DateUtils.swift in Sources */,
+				56DFE7C625B74376006DA556 /* DeviceSwitchProtocol.swift in Sources */,
 				56D33EC0253AFD1F0026368C /* AppConstant.swift in Sources */,
 				5659DC672573C920007AD33E /* ProfileVC.swift in Sources */,
 				563DAEC1256BD9F800EF3468 /* BrandModel.swift in Sources */,

@@ -16,6 +16,10 @@ class ProfileModel {
         carDevices = CarDeviceDAO.getCarDevice("")
     }
     
+    func getCarDevices(){
+        carDevices = CarDeviceDAO.getCarDevice("")
+    }
+    
     func getCurrentUser(){
         userInfo = UserInfoDAO.getCurrentUserInfo()
     }
@@ -23,7 +27,7 @@ class ProfileModel {
     func deleteUser(){
         UserInfoDAO.deleteUser()
     }
-    
+//    ,completion: @escaping (_ device:CarDevice?) -> Void
     func updateDeviceStatus(_ deviceID:String, _ imei:String,_ status:String){
         let queryResult = CarDeviceDAO.getCarDevice("deviceId == '\(deviceID)' AND imei == '\(imei)'")
         if queryResult == nil {
@@ -32,6 +36,14 @@ class ProfileModel {
             cd.status = status
             CarDeviceDAO.updateCarDevice(cd)
             carDevices = CarDeviceDAO.getCarDevice("")
+            //delegate
+            delegate?.update(deviceID, imei, status)
+            
         }
+    }
+    weak var delegate: DeviceSwitchProtocol?
+
+    init(delegate: DeviceSwitchProtocol) {
+        self.delegate = delegate
     }
 }

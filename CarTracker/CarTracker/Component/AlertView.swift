@@ -46,4 +46,17 @@ class AlertView{
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))        
         UIApplication.topMostViewController?.present(alert, animated: true, completion: nil)
     }
+    
+//    static func show(_ message: String?,OKCompletion: (@escaping ()->())?) {
+//        let msg = message ?? ""
+////        let msg = (message ?? "").isEmpty ? "Có lỗi xảy ra!" : message;
+//        let alert = UIAlertController(title: "Thông báo", message: msg, preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//        UIApplication.topMostViewController?.present(alert, animated: true, completion: nil)
+//        
+//        
+//
+//    }
+    
+    
 }

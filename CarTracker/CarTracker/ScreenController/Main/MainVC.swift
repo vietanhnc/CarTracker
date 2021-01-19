@@ -9,8 +9,14 @@
 import UIKit
 import RxSwift
 import RxCocoa
-class MainVC: BaseViewController {
-    
+//extension MainVC:DeviceSwitchProtocol {
+//
+//}
+class MainVC: BaseViewController,DeviceSwitchProtocol {
+    func update(_ deviceID: String, _ imei: String, _ status: String) {
+        print(deviceID+imei+status)
+//        self.setupData()
+    }
     @IBOutlet var view1: UIView!
     @IBOutlet var viewNodata: UIView!
     @IBOutlet weak var imgNoData: UIImageView!
@@ -29,6 +35,8 @@ class MainVC: BaseViewController {
     var dataSource:[CarDevice]? = nil
     var dvdList:[DVDInfo]? = nil
     var numberRequestCompleted = 0
+    var profileModel:ProfileModel?
+    
     private let disposeBag = DisposeBag()
     override func setupData() {
         locationService.fetchCarDevice(completion: { error,data in
@@ -70,8 +78,9 @@ class MainVC: BaseViewController {
         
         // set label Attribute
         lblAppName.attributedText = self.getBrandNameText()
-
         
+        profileModel = ProfileModel(delegate: self)
+        print(profileModel)
         carousel1.dataSource = self
         carousel1.delegate = self
         carousel1.register(UINib.init(nibName: "CarDeviceCell", bundle: nil), forCellWithReuseIdentifier: "CarDeviceCell")

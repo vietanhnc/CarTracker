@@ -139,6 +139,7 @@ class ActivationService{
         })
     }
     
+    
     func login(_ phone:String,_ password:String,completion: @escaping (_ data:String?) -> Void){
         Request.shared().fetch(APIRouter.login(phone, password), completion: {data in
             guard data != nil else{ AlertView.show(); completion(""); return }
