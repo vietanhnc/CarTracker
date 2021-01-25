@@ -7,6 +7,6 @@
 //
 
 import Foundation
-protocol DeviceSwitchProtocol:class {
-    func update(_ deviceID:String, _ imei:String,_ status:String)
+extension NSNotification.Name {
+  static let deviceChangeStatus = NSNotification.Name(rawValue: "deviceChangeStatus")
 }

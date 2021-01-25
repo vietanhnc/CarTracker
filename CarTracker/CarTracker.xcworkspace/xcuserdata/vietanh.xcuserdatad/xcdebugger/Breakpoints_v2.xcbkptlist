@@ -7,48 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CDDA0830-58A7-4045-A8E2-4D5F62DDA87E"
+            uuid = "96BC716A-039C-419C-B988-9B67567C846D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarTracker/ScreenController/Main/MainVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "update(_:_:_:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "deviceChangeStatus(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DB0D1A92-6E02-47C3-87EC-D2163453D00C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CarTracker/ScreenController/Profile/ProfileModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "updateDeviceStatus(_:_:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8703F73C-7DF6-445B-B056-C715247CDA15"
+            uuid = "7CB14388-5B1B-45C9-986A-11277FA4B177"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarTracker/ScreenController/Main/MainVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "setupUI()"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "realmInitObserver()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

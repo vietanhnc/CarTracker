@@ -9,14 +9,10 @@
 import UIKit
 import RxSwift
 import RxCocoa
-//extension MainVC:DeviceSwitchProtocol {
-//
-//}
-class MainVC: BaseViewController,DeviceSwitchProtocol {
-    func update(_ deviceID: String, _ imei: String, _ status: String) {
-        print(deviceID+imei+status)
-//        self.setupData()
-    }
+import RealmSwift
+
+class MainVC: BaseViewController {
+
     @IBOutlet var view1: UIView!
     @IBOutlet var viewNodata: UIView!
     @IBOutlet weak var imgNoData: UIImageView!
@@ -35,7 +31,6 @@ class MainVC: BaseViewController,DeviceSwitchProtocol {
     var dataSource:[CarDevice]? = nil
     var dvdList:[DVDInfo]? = nil
     var numberRequestCompleted = 0
-    var profileModel:ProfileModel?
     
     private let disposeBag = DisposeBag()
     override func setupData() {
@@ -62,13 +57,21 @@ class MainVC: BaseViewController,DeviceSwitchProtocol {
             self.scrollView.refreshControl?.endRefreshing()
         }
     }
-    
+
+    @objc func deviceChangeStatus(_ notification: Notification){
+           print(notification)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     override func setupUI() {
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
         }else {
             automaticallyAdjustsScrollViewInsets = false
         }
+        
+        //add Change Status Observer
         
 //        let appName = "WEBVISION"
 //        let appName2 = "WEB"
@@ -79,8 +82,6 @@ class MainVC: BaseViewController,DeviceSwitchProtocol {
         // set label Attribute
         lblAppName.attributedText = self.getBrandNameText()
         
-        profileModel = ProfileModel(delegate: self)
-        print(profileModel)
         carousel1.dataSource = self
         carousel1.delegate = self
         carousel1.register(UINib.init(nibName: "CarDeviceCell", bundle: nil), forCellWithReuseIdentifier: "CarDeviceCell")
@@ -146,9 +147,27 @@ class MainVC: BaseViewController,DeviceSwitchProtocol {
         self.dataSource = value
         self.carousel1.reloadData()
     }
+    var notificationToken: NotificationToken? = nil
+    func realmInitObserver(){
+        let realm = try! Realm()
+        let results = realm.objects(CarDevice.self)
+        notificationToken = results.observe { changes in
+            // ... handle update
+            switch changes {
+            case .update(_, let deletions, let insertions, let modifications):
+                print(modifications)
+                break
+            case .initial(_):
+                break
+            case .error(_):
+                break
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        realmInitObserver()
         //subcribe
         //        carDeviceArr.asObservable().subscribe { event in
         //            guard let value = event.element else{ return }

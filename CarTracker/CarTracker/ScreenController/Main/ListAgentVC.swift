@@ -34,7 +34,7 @@ class ListAgentVC: BaseViewController, UITableViewDataSource, UITableViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.post(name: NSNotification.Name("foobar"), object: nil,userInfo: nil)
         // Do any additional setup after loading the view.
     }
     

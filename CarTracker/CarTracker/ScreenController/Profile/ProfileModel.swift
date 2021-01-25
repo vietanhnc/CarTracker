@@ -36,14 +36,12 @@ class ProfileModel {
             cd.status = status
             CarDeviceDAO.updateCarDevice(cd)
             carDevices = CarDeviceDAO.getCarDevice("")
-            //delegate
-            delegate?.update(deviceID, imei, status)
-            
+            broadcast()
         }
     }
-    weak var delegate: DeviceSwitchProtocol?
-
-    init(delegate: DeviceSwitchProtocol) {
-        self.delegate = delegate
+    
+    func broadcast(){
+        let loginResponse = ["userInfo": ["userID": 6, "userName": "John"]]
+        NotificationCenter.default.post(name: NSNotification.Name("foobar"), object: nil,userInfo: loginResponse)
     }
 }

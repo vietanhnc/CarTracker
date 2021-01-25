@@ -42,6 +42,24 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
     override func setupData() {
         profileModel.getCurrentUser()
     }
+    
+    var notificationToken: NotificationToken? = nil
+    func realmInitObserver(){
+        let realm = try! Realm()
+        let results = realm.objects(CarDevice.self)
+        notificationToken = results.observe { changes in
+            // ... handle update
+            switch changes {
+            case .update(_, let deletions, let insertions, let modifications):
+                print(modifications)
+                break
+            case .initial(_):
+                break
+            case .error(_):
+                break
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let rowHeight = 44
@@ -50,6 +68,7 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
 //        self.tblCarDevice.frame = frame;
 //        tblCarDevice.frame.height = CGFloat(rowHeight * profileModel.carDevices?.count)
         // Do any additional setup after loading the view.
+        realmInitObserver()
     }
 
 
@@ -85,7 +104,10 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-
+//    func broadcast(){
+//        let loginResponse = ["userInfo": ["userID": 6, "userName": "John"]]
+//        NotificationCenter.default.post(name: NSNotification.Name("foobar"), object: nil,userInfo: nil)
+//    }
     @objc func switchChanged(mySwitch: UISwitch) {
         let value = mySwitch.isOn
         let tag = mySwitch.tag
@@ -97,6 +119,7 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
         }
         tblCarDevice.reloadData()
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profileModel.carDevices?.count ?? 0
     }
