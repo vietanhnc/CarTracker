@@ -110,6 +110,17 @@ class LocationService{
         })
     }
     
+    func queryCarDeviceDB(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
+        let queryResult = CarDeviceDAO.getCarDevice("status == 'ACTV'")
+        if queryResult == nil {
+            
+        }else{
+            setSetlectedDevice(0)
+        }
+        self.dataSource = queryResult
+        completion(nil,queryResult)
+    }
+    
     func fetchCarDevice(completion: @escaping (_ errorMsg:String?,_ carDevices:[CarDevice]?) -> Void) {
         Request.shared().fetch(APIRouter.GetInfo,completion: {data in
             guard let dataUW = data else{ AlertView.show(); return }

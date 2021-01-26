@@ -33,10 +33,13 @@
                             <rect key="frame" x="0.0" y="50" width="154" height="73"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="H7O-ak-1Rf">
-                            <rect key="frame" x="41" y="94" width="210" height="48"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMe-jl-tev">
+                            <rect key="frame" x="40" y="100" width="300" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -167,10 +170,17 @@
             <point key="canvasLocation" x="28.985507246376812" y="73.369565217391312"/>
         </view>
     </objects>
+    <designables>
+        <designable name="3pe-CE-bsP">
+            <size key="intrinsicContentSize" width="5" height="23.333333333333332"/>
+        </designable>
+        <designable name="9Od-wO-biv">
+            <size key="intrinsicContentSize" width="5" height="23.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <image name="bg" width="375" height="667"/>
         <image name="ic_acc" width="160.66667175292969" height="74"/>
-        <image name="logo" width="210" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

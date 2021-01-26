@@ -15,6 +15,7 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet var btnLogout: UIButton!
     @IBOutlet var tblCarDevice: UITableView!
     @IBOutlet var viewTableContainer: UIView!
+    @IBOutlet var lblBrandName: UILabel!
     var profileModel:ProfileModel = ProfileModel()
     
     override func setupUI() {
@@ -34,7 +35,7 @@ class ProfileVC: BaseViewController, UITableViewDataSource, UITableViewDelegate{
         tblCarDevice.dataSource = self
         tblCarDevice.delegate = self
         tblCarDevice.register(UINib(nibName: "CarDeviceSettingCell", bundle: nil), forCellReuseIdentifier: "CarDeviceSettingCell")
-        
+        lblBrandName.attributedText = self.getBrandNameText()
 //        viewTableContainer.layer.cornerRadius = AppConstant.CORNER_RADIUS
 //        viewTableContainer.makeShadow()
     }

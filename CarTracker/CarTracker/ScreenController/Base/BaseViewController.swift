@@ -15,11 +15,11 @@ class BaseViewController: UIViewController {
     func getBrandNameText() -> NSMutableAttributedString {
         let appName = "WEBVISION"
         let appName2 = "WEB"
-        var appNameAttr = NSMutableAttributedString()
-        appNameAttr = NSMutableAttributedString(string: appName, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30, weight: .heavy)])
-        appNameAttr.addAttribute(NSAttributedString.Key.foregroundColor, value: AppUtils.getAccentColor(), range: NSRange(location:AppUtils.getSubtringIndex(appName, appName2),length:appName2.count))
-        
-        return appNameAttr
+        let boldItalicsFont = UIFont(name: "Avenir-BlackOblique", size: 30)!
+
+        let attributedString = NSMutableAttributedString(string: appName, attributes: [NSAttributedString.Key.font : boldItalicsFont])
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.init(hexaRGB: "#EE0007")!, range: NSRange(location:AppUtils.getSubtringIndex(appName, appName2),length:appName2.count))
+        return attributedString
     }
     
     override func viewDidLoad() {

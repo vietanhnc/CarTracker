@@ -100,6 +100,7 @@
 		56DFE7AE25B2DD4F006DA556 /* PasswordInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DFE7AC25B2DD4F006DA556 /* PasswordInputVC.swift */; };
 		56DFE7AF25B2DD4F006DA556 /* PasswordInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DFE7AD25B2DD4F006DA556 /* PasswordInputVC.xib */; };
 		56DFE7C625B74376006DA556 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DFE7C525B74376006DA556 /* NSNotification.swift */; };
+		56E147D025C085A700F739AF /* FontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E147CF25C085A700F739AF /* FontExt.swift */; };
 		56E2B622255981BF0011CEDA /* OTPInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E2B620255981BF0011CEDA /* OTPInputVC.swift */; };
 		56E2B623255981BF0011CEDA /* OTPInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E2B621255981BF0011CEDA /* OTPInputVC.xib */; };
 		B1FA61CDC0D40B7ED636960C /* Pods_CarTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */; };
@@ -217,6 +218,7 @@
 		56DFE7AC25B2DD4F006DA556 /* PasswordInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputVC.swift; sourceTree = "<group>"; };
 		56DFE7AD25B2DD4F006DA556 /* PasswordInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordInputVC.xib; sourceTree = "<group>"; };
 		56DFE7C525B74376006DA556 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
+		56E147CF25C085A700F739AF /* FontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExt.swift; sourceTree = "<group>"; };
 		56E2B620255981BF0011CEDA /* OTPInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputVC.swift; sourceTree = "<group>"; };
 		56E2B621255981BF0011CEDA /* OTPInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPInputVC.xib; sourceTree = "<group>"; };
 		FB9007F268105E7F6E159E43 /* Pods_CarTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -432,6 +434,7 @@
 				56D6323A25596E6D00909F59 /* DateExtension.swift */,
 				56DC15C2255F8D8900D5C4F1 /* UIViewExt.swift */,
 				56DBE4B225682D1400EF87E0 /* UIColorExt.swift */,
+				56E147CF25C085A700F739AF /* FontExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				56D1EA5B25530CF100DB0851 /* APIRouter.swift in Sources */,
 				56DC172A2561A13600D5C4F1 /* MainService.swift in Sources */,
 				565C8A1825778F4200FCC370 /* CarDeviceDetailVC.swift in Sources */,
+				56E147D025C085A700F739AF /* FontExt.swift in Sources */,
 				56D6C4302587CA25000F49B7 /* HistoryDetailVC.swift in Sources */,
 				563DAEDA256F90D000EF3468 /* UserInfoDAO.swift in Sources */,
 				56D632382557D17F00909F59 /* AlertView.swift in Sources */,

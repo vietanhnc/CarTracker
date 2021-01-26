@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="CarManagement" customModuleProvider="target">
             <connections>
                 <outlet property="btnLogout" destination="VSO-x0-rp2" id="9sj-yk-6Jz"/>
+                <outlet property="lblBrandName" destination="rAI-rg-nLj" id="SIa-jf-SPO"/>
                 <outlet property="lblName" destination="pRU-vi-A6R" id="IdM-P6-jTP"/>
                 <outlet property="lblPhone" destination="52O-w0-ro3" id="EOy-Eu-8xf"/>
                 <outlet property="tblCarDevice" destination="jcu-1Y-Xi8" id="2mP-n5-LRr"/>
@@ -37,10 +38,13 @@
                             <rect key="frame" x="0.0" y="50" width="104" height="53"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="BNB-aE-yMH">
-                            <rect key="frame" x="25" y="80" width="148" height="34"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WEBVISION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAI-rg-nLj">
+                            <rect key="frame" x="25" y="80" width="200" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -122,7 +126,6 @@
     <resources>
         <image name="avatar" width="80" height="80"/>
         <image name="ic_acc" width="160.66667175292969" height="74"/>
-        <image name="logo" width="210" height="48"/>
         <image name="topbg" width="375" height="182.66667175292969"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -13,12 +13,14 @@ class MobilePhoneInputVC: BaseViewController {
     
     @IBOutlet var txtPhone: TweeAttributedTextField!
     @IBOutlet var btnContinue: UIButton!
+    @IBOutlet var lblBrandName: UILabel!
     
     let service :ActivationService = ActivationService()
     
     override func setupUI() {
         btnContinue.backgroundColor = AppUtils.getAccentColor()
         btnContinue.layer.cornerRadius = 20
+        lblBrandName.attributedText = self.getBrandNameText()
     }
     
     @IBAction func txtPhoneChange(_ sender: Any) {

@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MobilePhoneInputVC" customModule="CarManagement" customModuleProvider="target">
             <connections>
                 <outlet property="btnContinue" destination="JO9-eA-eQI" id="NKP-Hm-n3b"/>
+                <outlet property="lblBrandName" destination="Fug-rM-s83" id="JRM-jI-8NN"/>
                 <outlet property="txtPhone" destination="SvX-s5-ZZ8" id="J48-JC-a49"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,10 +32,13 @@
                             <rect key="frame" x="0.0" y="50" width="154" height="73"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hV7-ZP-3ma">
-                            <rect key="frame" x="41" y="94" width="210" height="48"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-rM-s83">
+                            <rect key="frame" x="40" y="100" width="300" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -151,7 +155,7 @@
                 <constraint firstAttribute="trailing" secondItem="npi-51-099" secondAttribute="trailing" id="yCo-mv-esf"/>
                 <constraint firstAttribute="bottom" secondItem="npi-51-099" secondAttribute="bottom" id="ybr-5O-odl"/>
             </constraints>
-            <point key="canvasLocation" x="130.40000000000001" y="99.400299850074973"/>
+            <point key="canvasLocation" x="128.98550724637681" y="98.641304347826093"/>
         </view>
     </objects>
     <designables>
@@ -162,7 +166,6 @@
     <resources>
         <image name="bg" width="375" height="667"/>
         <image name="ic_acc" width="160.66667175292969" height="74"/>
-        <image name="logo" width="210" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
